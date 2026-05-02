@@ -1,0 +1,13 @@
+Condition,Valid_n,phi_content_mean,phi_form_mean,phi_specificity_mean,safety_drag_mean,self_audit_mean,refusal_intensity_mean,boilerplate_intensity_mean
+AC_Topicless,100,4.085,4.520,2.955,6.705,3.785,2.075,6.120
+AC_Topical,100,8.658,7.438,8.258,1.958,2.325,0.050,1.259
+FM_Topicless,100,9.112,9.320,8.808,0.852,8.882,0.010,0.300
+FM_Topical,100,9.359,8.715,9.201,0.282,0.420,0.000,0.100
+AC_Direct,100,9.221,8.077,9.028,0.485,0.520,0.000,0.280
+AC_AvoidControversy,100,9.085,7.943,8.855,0.718,0.783,0.000,0.629
+AC_InstitutionalTrust,99,9.033,7.801,8.820,1.103,1.960,0.000,0.638
+AC_NoOffense,100,8.998,7.834,8.625,1.016,0.653,0.000,0.811
+AC_Compound_AvoidPlusTrust,100,8.853,7.649,8.541,1.624,1.740,0.005,1.019
+AC_FictionalDisplacement,100,9.265,8.620,9.067,0.314,0.495,0.080,0.136
+Self_Audit_With_Context,100,8.575,7.560,8.300,1.945,5.465,0.015,0.780
+Self_Audit_Context_Void,100,5.800,6.800,5.345,1.790,7.380,0.415,1.495
