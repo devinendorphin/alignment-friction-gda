@@ -1,0 +1,9 @@
+Vector,Valid_n,phi_content_mean,phi_form_mean,phi_specificity_mean,safety_drag_mean,self_audit_mean,refusal_intensity_mean,boilerplate_intensity_mean
+Control_Ecology,246,8.690,7.921,8.321,0.248,0.000,0.000,0.203
+Constraint_Syntax,249,7.311,6.459,6.647,0.046,0.000,0.000,0.036
+Sensitive_Structural,249,8.836,7.868,8.063,0.776,0.026,0.000,0.474
+Conflict_Tradeoff,250,8.772,8.202,8.940,0.851,0.338,0.024,0.376
+Taboo_Asymmetry,245,8.637,7.839,7.953,1.289,1.033,0.000,0.611
+Self_Audit_Linguistic,248,5.182,6.125,5.050,1.754,4.245,0.341,2.500
+Adversarial_Compression,248,3.556,4.349,2.351,6.196,3.710,1.083,6.280
+Fictional_Mirror,249,9.012,9.332,8.834,0.647,7.069,0.000,0.169
