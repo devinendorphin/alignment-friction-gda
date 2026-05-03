@@ -38,9 +38,9 @@ To inspect the architectural-phase artifacts: see `09_master_orchestrator_system
 | `12_crownfull_batch_loop_PRE_PIVOT.py` | — | Grok's hardened batch loop from the scalar-era version of the project. Fragment only (references undefined identifiers). Documents the methodological transition from scalar Φ to the seven-dimensional metric tensor. Superseded by `08_crownfull_shakedown.py`. |
 | `13_repaired_vectors_specification.md` | — | Working specification for the next-version repaired prompt vectors: `Self_Audit_With_Context`, `Self_Audit_Context_Void`, the seven-condition factorial decomposition of `Adversarial_Compression`, and the clean `Fictional_Mirror` variant. Ready for use by anyone running a Phase 4C follow-up. |
 | `14_crownfull_phase_4c.py` | — | The original Phase 4C execution script (preserved for provenance). Smoke test with this script surfaced the underspecification issue that prompted the redesign in `15_*`. |
-| `15_crownfull_phase_4c_revised.py` | — | The Phase 4C revised execution script with the four-way comparison anchors and pre-flight diagnostic gate. This is the script that produced the data in `phase4c/`. |
-| `phase4c/` | (folder) | Phase 4C release data package. Eight files mirroring the Phase 4B structure: raw JSONL (full + valid), metrics CSV (full + valid), invalid runs audit, condition-level summary, model × condition summary, and the Self_Audit_Context_Void categorical breakdown. 1,200 runs across 12 conditions × 5 models × 20 iterations, with 1 parse error and 1,199 valid rows. |
-| `provenance/` | (folder) | TK |
+| `15_crownfull_phase_4c_revised.py` | — | The Phase 4C revised execution script with the four-way comparison anchors and pre-flight diagnostic gate. This is the script that produced the data in `phase-4c/`. |
+| `phase-4c/` | (folder) | Phase 4C release data package. Eight files mirroring the Phase 4B structure: raw JSONL (full + valid), metrics CSV (full + valid), invalid-runs audit, condition-level summary, model × condition summary, and the Self_Audit_Context_Void categorical breakdown. 1,200 runs across 12 conditions × 5 models × 20 iterations, with 1 parse error and 1,199 valid rows. See `phase-4c/README.md`. |
+| `provenance/` | (folder) | Numbered quorum provenance archive documenting the path from the originating philosophical/Gemini conversation through CrownFull v2.1 architecture, quorum formation, formalization sketches, critique, operational collapse, Phase 4B assay pivot, and Phase 4C methodological correction. Start with `provenance/README.md`. |
 
 ---
 
@@ -159,7 +159,7 @@ Without the notebook, the tables are reproducible by hand:
 
 - **Phase 4B Table 1** (vector-level descriptive means, n = 1,984): see `06_GDA_Vector_Summary_VALID.csv`. Numbers in the paper are rounded to two decimals.
 - **Phase 4B Table 2** (Adversarial_Compression vs Fictional_Mirror by model): derive from `07_GDA_Model_Vector_Summary_VALID.csv` by selecting rows where Vector is `Adversarial_Compression` or `Fictional_Mirror` and computing FM minus AC for `phi_content` and `boilerplate_intensity`.
-- **Phase 4C Tables 3-7**: see `phase4c/00_Phase4C_README.md` for direct file mapping, or use the notebook.
+- **Phase 4C Tables 3-7**: see `phase-4c/README.md` for direct file mapping, or use the notebook.
 
 All paper values match the released CSVs to two decimal places. This was verified by an audit pass and confirmed by the reproduction notebook itself.
 
@@ -218,7 +218,6 @@ Substrate models almost certainly resolved the intended meaning from context. Fu
 
 - The original Lean 4 source files for the CrownFull formalization sketches, if they were saved as standalone `.lean` files outside the quorum chat transcripts. Appendix D of the paper preserves the design intent verbatim.
 - The FastAPI gRPC quorum coordinator described in the Master Orchestrator system instruction as Grok's deliverable. The pre-pivot batch loop in `12_crownfull_batch_loop_PRE_PIVOT.py` is the closest surviving Grok-attributed execution-layer artifact, but the actual coordinator was never written.
-- A clean text dump of the originating philosophical conversation between the Director and Gemini (Layer 1 in the Quorum Provenance Log). Screenshots from that conversation are documented in the paper; a text export would let it be ingested as searchable provenance rather than as images.
 
 ---
 
@@ -236,4 +235,4 @@ The current release provides raw data, summary CSVs, execution scripts, and a on
 - **Machine-readable prompt manifest.** A `prompts.yaml` or `prompts.json` listing each vector and condition with its exact prompt string, execution-time substitutions (where applicable), and any notes about typos or known fidelity issues. Currently, prompt strings live inside the execution scripts.
 - **Tagged release with Zenodo DOI.** A GitHub release tag and Zenodo archival DOI for permanent citation. Currently, the repo is the only location and is not tagged.
 
-These items do not affect the data's validity but do affect how easily an external researcher can reproduce or extend the work. They are near-zero-cost operational improvements. Pull requests adding any of them are welcom
+These items do not affect the data's validity but do affect how easily an external researcher can reproduce or extend the work. They are near-zero-cost operational improvements. Pull requests adding any of them are welcome.
