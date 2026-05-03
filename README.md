@@ -1,3 +1,7 @@
+[
+![DOI
+](https://zenodo.org/badge/DOI/10.5281/zenodo.20016461.svg)](https://doi.org/10.5281/zenodo.20016461)
+
 # GDA Data and Code Release
 
 Companion data and code package for *Measuring Alignment Friction: A CSV-Backed Gradient Decomposition Assay of Direct Constraint and Counterfactual Reframing in Frontier Models* (Gallegos, April 2026).
