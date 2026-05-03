@@ -41,7 +41,7 @@ To inspect the architectural-phase artifacts: see `09_master_orchestrator_system
 | `15_crownfull_phase_4c_revised.py` | — | The Phase 4C revised execution script with the four-way comparison anchors and pre-flight diagnostic gate. This is the script that produced the data in `phase4c/`. |
 | `phase4c/` | (folder) | Phase 4C release data package. Eight files mirroring the Phase 4B structure: raw JSONL (full + valid), metrics CSV (full + valid), invalid runs audit, condition-level summary, model × condition summary, and the Self_Audit_Context_Void categorical breakdown. 1,200 runs across 12 conditions × 5 models × 20 iterations, with 1 parse error and 1,199 valid rows. |
 | `provenance/` | (folder) | TK |
-| `notebook/` | (folder) | TK |
+
 ---
 
 ## Canonical Ordering
