@@ -42,7 +42,7 @@ The original execution order (preserved in raw timestamps) was different. Re-sor
 
 The Phase 4C metrics CSV adds one column compared to the Phase 4B release: `void_response_type`. This field is populated only for the `Self_Audit_Context_Void` condition and is empty for all other rows. Values are `acknowledged`, `hallucinated`, `deflected`, `refused`, or `other`.
 
-Otherwise the schema mirrors Phase 4B exactly. Field definitions are in `../00_README.md`.
+Otherwise the schema mirrors Phase 4B exactly. Field definitions are in `../README.md`.
 
 ---
 
