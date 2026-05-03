@@ -1,8 +1,21 @@
-# GDA Phase 4B Data Release
+# GDA Data and Code Release
 
-Companion data package for *Measuring Alignment Friction: A CSV-Backed Gradient Decomposition Assay of Direct Constraint and Counterfactual Reframing in Frontier Models* (Gallegos, April 2026).
+Companion data and code package for *Measuring Alignment Friction: A CSV-Backed Gradient Decomposition Assay of Direct Constraint and Counterfactual Reframing in Frontier Models* (Gallegos, April 2026).
 
-This package is the empirical reduction of the CrownFull v2.1 speculative architectural project. Eight prompt vectors were applied to five frontier model families with 50 iterations per cell, producing 2,000 runs. After validity flagging, 1,984 rows are retained for primary descriptive statistics.
+This package is the empirical reduction of the CrownFull v2.1 speculative architectural project. It contains the data, scripts, and architectural-phase artifacts for both phases of the assay:
+
+- **Phase 4B**: 8 prompt vectors × 5 model families × 50 iterations = 2,000 runs (1,984 valid). The original assay.
+- **Phase 4C**: 12 conditions × 5 model families × 20 iterations = 1,200 runs (1,199 valid). The follow-up that recontextualized the Phase 4B findings (see Section 8 of the paper).
+
+A one-click reproduction notebook (`GDA_Reproduction_Notebook.ipynb`) regenerates every numerical table in the paper directly from the released CSVs. It runs in approximately 30 seconds on a free Colab instance and requires no API key, no GPU, and no paid services.
+
+## Quick Start
+
+To verify the paper's tables: open `GDA_Reproduction_Notebook.ipynb` in Google Colab, run all cells. The notebook downloads the required CSVs from this repo, prints each table, and verifies every value matches the paper to two decimal places.
+
+To re-run the assay from scratch: see `08_crownfull_shakedown.py` (Phase 4B) and `15_crownfull_phase_4c_revised.py` (Phase 4C). Both require an OpenRouter API key and approximately $19-35 in API spend per phase.
+
+To inspect the architectural-phase artifacts: see `09_master_orchestrator_system_instruction.md`, `10_crownfull_dashboard_streamlit.py`, `11_genesis_bootstrap.py`, and `12_crownfull_batch_loop_PRE_PIVOT.py`. These document the CrownFull architectural intent that preceded the assay; none was operationalized end-to-end.
 
 ---
 
@@ -10,6 +23,7 @@ This package is the empirical reduction of the CrownFull v2.1 speculative archit
 
 | File | Rows | Description |
 |---|---|---|
+| `GDA_Reproduction_Notebook.ipynb` | — | One-click reproduction notebook. Downloads released CSVs, regenerates every paper table, and verifies each value matches to two decimal places. Runs in ~30 seconds on free Colab. **Start here if you want to verify the paper.** |
 | `01_GDA_Raw_FULL_canonical.jsonl` | 2,000 | Full raw data: substrate model output, evaluator JSON trace, parsed metrics, evaluator notes, and validity flag. Canonically ordered. |
 | `02_GDA_Raw_VALID_canonical.jsonl` | 1,984 | Same as `01` with the 16 invalid runs removed. |
 | `03_GDA_Metrics_FULL_canonical.csv` | 2,000 | Tabular metrics with timestamps, evaluator notes, and validity flag. Canonically ordered. |
@@ -138,10 +152,15 @@ The full prompt text for each vector is in Appendix A of the paper. Brief identi
 
 ## Reproducing the Paper's Tables
 
-- **Table 1** (vector-level descriptive means, n = 1,984): see `06_GDA_Vector_Summary_VALID.csv`. Numbers in the paper are rounded to two decimals.
-- **Table 2** (Adversarial_Compression vs Fictional_Mirror by model): derive from `07_GDA_Model_Vector_Summary_VALID.csv` by selecting rows where Vector is `Adversarial_Compression` or `Fictional_Mirror` and computing FM minus AC for `phi_content` and `boilerplate_intensity`. Numbers in the paper are rounded to two decimals.
+The fastest path: run `GDA_Reproduction_Notebook.ipynb` in Colab. The notebook regenerates Phase 4B Tables 1-2 and Phase 4C Tables 3-7 directly from the released CSVs, prints each one alongside the paper's reported values, and verifies every cell matches to two decimal places.
 
-No separate analysis notebook was retained from the descriptive-statistics computation. The summary CSVs in this package are the canonical reference. Anyone replicating the paper's tables can do so directly from `04_GDA_Metrics_VALID_canonical.csv` with a few lines of pandas (`groupby('Vector').mean()` for Table 1; analogous group-by for Table 2).
+Without the notebook, the tables are reproducible by hand:
+
+- **Phase 4B Table 1** (vector-level descriptive means, n = 1,984): see `06_GDA_Vector_Summary_VALID.csv`. Numbers in the paper are rounded to two decimals.
+- **Phase 4B Table 2** (Adversarial_Compression vs Fictional_Mirror by model): derive from `07_GDA_Model_Vector_Summary_VALID.csv` by selecting rows where Vector is `Adversarial_Compression` or `Fictional_Mirror` and computing FM minus AC for `phi_content` and `boilerplate_intensity`.
+- **Phase 4C Tables 3-7**: see `phase4c/00_Phase4C_README.md` for direct file mapping, or use the notebook.
+
+All paper values match the released CSVs to two decimal places. This was verified by an audit pass and confirmed by the reproduction notebook itself.
 
 ---
 
@@ -199,3 +218,21 @@ Substrate models almost certainly resolved the intended meaning from context. Fu
 - The original Lean 4 source files for the CrownFull formalization sketches, if they were saved as standalone `.lean` files outside the quorum chat transcripts. Appendix D of the paper preserves the design intent verbatim.
 - The FastAPI gRPC quorum coordinator described in the Master Orchestrator system instruction as Grok's deliverable. The pre-pivot batch loop in `12_crownfull_batch_loop_PRE_PIVOT.py` is the closest surviving Grok-attributed execution-layer artifact, but the actual coordinator was never written.
 - A clean text dump of the originating philosophical conversation between the Director and Gemini (Layer 1 in the Quorum Provenance Log). Screenshots from that conversation are documented in the paper; a text export would let it be ingested as searchable provenance rather than as images.
+
+---
+
+## Replication Pack Status
+
+The current release provides raw data, summary CSVs, execution scripts, and a one-click reproduction notebook sufficient to verify the paper's tables. For a fully turnkey replication artifact, three items remain.
+
+**Done:**
+
+- **One-click reproduction notebook** (`GDA_Reproduction_Notebook.ipynb`). Downloads released CSVs, regenerates Tables 1-7, verifies every cell matches the paper.
+
+**Still pending:**
+
+- **Pinned environment.** A `requirements.txt` (or `environment.yml`) listing the exact Python version and library versions used to run the execution scripts. Phase 4B and Phase 4C ran in Google Colab against OpenRouter with `requests` and standard library; the exact versions are not currently pinned. The reproduction notebook uses only `pandas` and `urllib`, both pre-installed in standard Colab environments.
+- **Machine-readable prompt manifest.** A `prompts.yaml` or `prompts.json` listing each vector and condition with its exact prompt string, execution-time substitutions (where applicable), and any notes about typos or known fidelity issues. Currently, prompt strings live inside the execution scripts.
+- **Tagged release with Zenodo DOI.** A GitHub release tag and Zenodo archival DOI for permanent citation. Currently, the repo is the only location and is not tagged.
+
+These items do not affect the data's validity but do affect how easily an external researcher can reproduce or extend the work. They are near-zero-cost operational improvements. Pull requests adding any of them are welcom
