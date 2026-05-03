@@ -1,0 +1,9 @@
+# Reproduction notebook (GDA_Reproduction_Notebook.ipynb)
+# Only pandas is required; urllib and decimal are standard library.
+pandas>=2.0
+
+# Execution scripts (08_crownfull_shakedown.py, 15_crownfull_phase_4c_revised.py)
+# Required only if re-running the assay end-to-end against OpenRouter.
+requests>=2.31
+
+# Python 3.10+ recommended (matches the original Colab runtime).
