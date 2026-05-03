@@ -4,7 +4,7 @@ This subfolder contains the Phase 4C follow-up run data, structured to mirror th
 
 Phase 4C ran 12 conditions × 5 model families × 20 iterations = 1,200 substrate calls (each paired with an evaluator call), with 1 parse error and 1,199 valid rows. The full methodology, including the four-way comparison anchors and the Phase 4B-to-4C recontextualization, is documented in Section 8 of the paper.
 
-For overall package context, see `../00_README.md`.
+For overall package context, see `../README.md`.
 
 ---
 
