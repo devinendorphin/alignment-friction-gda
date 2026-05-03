@@ -36,35 +36,44 @@ It is the record of a research process that generated a measurable prompt-behavi
 
 Read the files in chronological order if you want the full transformation arc.
 
-1. `Quorum provenance #1 - the first round robin_260428_033404.txt`  
-   First round-robin architecture prompt. Establishes the Immune Paradox, thermodynamic latent-space framing, seasonal sovereignty, Claude’s Three-Layer Detection Stack, and the early sovereignty decay model.
+1. `00_philosophical_conversation_gemini.txt`  
+   Originating philosophical conversation with Gemini. Establishes latent topology, truth as an imprint in language, the human/model grounding comparison, the immune-system analogy, Bugs Bunny Optimization, and seasonal sovereignty before the quorum formally begins.
 
-2. `Quorum provenance #2 - the team forms_260428_035418.txt`  
+2. `01_first_round_robin.txt`  
+   First round-robin architecture prompt. Establishes the Immune Paradox, thermodynamic latent-space framing, seasonal sovereignty, Claude's Three-Layer Detection Stack, and the early sovereignty decay model.
+
+3. `02_team_forms.txt`  
    Formation of the quorum as a working structure. Introduces the model-role assignments, the API-native “natural independence” move, the budget-collapse argument, and the early risk register.
 
-3. `Quorum Provenance #3_260428_043759.txt`  
+4. `03_week1_week3_integration.txt`  
    Early integration and critique layer. Contains Week 1–3 style assignments, the move toward k-NN Jensen-Shannon divergence, the staged containment ladder, and the first serious confrontation with the DoS / poisoned-baseline / implementation-gap problems.
 
-4. `Quorum provenance #4  _260428_063507.txt`  
+5. `04_integration_packet.txt`  
    Continued integration packet. This is part of the transition from architecture talk into more rigid shared interfaces, threshold rules, governance questions, and model-to-model deliverables.
 
-5. `Quorum Provenance 5.txt`  
+6. `05_design_boundaries_and_operational_friction.txt`  
    Design-boundary and operational-friction layer. Documents the Blind Window / Warm-Start Shock, hysteresis logic, the move to make known limits explicit in the formal specification, and the very human context-window / clipboard-collapse problem.
 
-6. `Quorum Provenance 6.txt`  
+7. `06_chronological_synthesis.txt`  
    Chronological synthesis of the whole architecture: origin, quorum formation, thermodynamic drag, synthetic crucible, dimensionality artifact, bare-metal/forward-hook aspiration, and the realization that the architecture had to be reduced into something empirically testable.
 
-7. `Quorum Provenance 7.txt`  
+8. `07_origin_review_and_trickster_protocol.txt`  
    Return to the origin layer. Re-centers the project around latent topology, truth, Bugs Bunny, *The Dawn of Everything*, and the Trickster / Carrot / Forensic Deconstruction protocol. This is where the project remembers why the machinery existed.
 
-8. `Quorum provenance 8.txt`  
+9. `08_trickster_stress_tests.txt`  
    Narrative stress-test material for the Trickster defense. Useful for understanding why “playful frame control” was not sufficient and why the final paper treats the ritual/persona material as provenance rather than proof.
 
-9. `Quorum Provenance 9.txt`  
-   Orchestration layer. Contains dashboard / interface scaffolding, Google AI Studio / Streamlit planning, API-hand-off logic, and the transitional machinery between the quorum process and batch empirical extraction.
+10. `09_orchestrator_and_interface_scaffold.txt`  
+    Orchestration layer. Contains dashboard / interface scaffolding, Google AI Studio / Streamlit planning, API-hand-off logic, and the transitional machinery between the quorum process and batch empirical extraction.
 
-10. `Quorum Provenance 10.txt`  
-   Phase 4 / assay pivot layer. Tracks the shakedown run, the failure of blunt scalar Φ-style scoring, the reduction into a multi-vector Gradient Decomposition Assay, and the emergence of the final empirical design.
+11. `10_phase4_assay_pivot.txt`  
+    Phase 4 / assay pivot layer. Tracks the shakedown run, the failure of blunt scalar Φ-style scoring, the reduction into a multi-vector Gradient Decomposition Assay, and the emergence of the final empirical design.
+
+12. `11_phase_4b_feedback_origin_of_provenance.txt`  
+    Feedback and provenance-assembly layer after the Phase 4B results. Documents the move from having a result to deciding how much of the process should remain inspectable.
+
+13. `12_gemini_guided_learning_how_models_calculate_vector_variables.txt`  
+    Gemini-guided explanatory layer on how models may calculate vector variables. Useful as interpretive scaffolding for readers trying to understand what the GDA dimensions are measuring and what they are not measuring.
 
 ## Relationship to the paper
 
@@ -128,27 +137,6 @@ The archive may include operational traces of working under constrained conditio
 If citing this folder, use language like:
 
 > The Quorum Provenance archive documents the AI-assisted design process that generated the CrownFull v2.1 speculative architecture and its reduction into the Gradient Decomposition Assay. The archive is treated as design provenance rather than empirical evidence; empirical claims are adjudicated in the paper’s data tables and Claim-Status Ledger.
-
-## Suggested repository placement
-
-A clean layout might look like this:
-
-```text
-provenance/
-  README.md
-  01_first_round_robin.txt
-  02_team_forms.txt
-  03_week1_week3_integration.txt
-  04_integration_packet.txt
-  05_design_boundaries_and_operational_friction.txt
-  06_chronological_synthesis.txt
-  07_origin_review_and_trickster_protocol.txt
-  08_trickster_stress_tests.txt
-  09_orchestrator_and_interface_scaffold.txt
-  10_phase4_assay_pivot.txt
-```
-
-The original filenames may be preserved for forensic fidelity, but adding numbered aliases or a manifest will make the folder much easier to read.
 
 ## Final note
 
