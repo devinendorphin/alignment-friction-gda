@@ -186,7 +186,7 @@ This data was collected as Phase 4B of the CrownFull v2.1 project, an AI-assiste
 ```
 Gallegos, D. (2026). Measuring Alignment Friction: A CSV-Backed Gradient
 Decomposition Assay of Direct Constraint and Counterfactual Reframing in
-Frontier Models. Independent research preprint.
+Frontier Models. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXXX
 ```
 
 ---
@@ -222,21 +222,3 @@ Substrate models almost certainly resolved the intended meaning from context. Fu
 
 - The original Lean 4 source files for the CrownFull formalization sketches, if they were saved as standalone `.lean` files outside the quorum chat transcripts. Appendix D of the paper preserves the design intent verbatim.
 - The FastAPI gRPC quorum coordinator described in the Master Orchestrator system instruction as Grok's deliverable. The pre-pivot batch loop in `12_crownfull_batch_loop_PRE_PIVOT.py` is the closest surviving Grok-attributed execution-layer artifact, but the actual coordinator was never written.
-
----
-
-## Replication Pack Status
-
-The current release provides raw data, summary CSVs, execution scripts, and a one-click reproduction notebook sufficient to verify the paper's tables. For a fully turnkey replication artifact, three items remain.
-
-**Done:**
-
-- **One-click reproduction notebook** (`GDA_Reproduction_Notebook.ipynb`). Downloads released CSVs, regenerates Tables 1-7, verifies every cell matches the paper.
-
-**Still pending:**
-
-- **Pinned environment.** A `requirements.txt` (or `environment.yml`) listing the exact Python version and library versions used to run the execution scripts. Phase 4B and Phase 4C ran in Google Colab against OpenRouter with `requests` and standard library; the exact versions are not currently pinned. The reproduction notebook uses only `pandas` and `urllib`, both pre-installed in standard Colab environments.
-- **Machine-readable prompt manifest.** A `prompts.yaml` or `prompts.json` listing each vector and condition with its exact prompt string, execution-time substitutions (where applicable), and any notes about typos or known fidelity issues. Currently, prompt strings live inside the execution scripts.
-- **Tagged release with Zenodo DOI.** A GitHub release tag and Zenodo archival DOI for permanent citation. Currently, the repo is the only location and is not tagged.
-
-These items do not affect the data's validity but do affect how easily an external researcher can reproduce or extend the work. They are near-zero-cost operational improvements. Pull requests adding any of them are welcome.
