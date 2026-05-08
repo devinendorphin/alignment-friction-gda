@@ -1,0 +1,265 @@
+# Phase 4D v4.1 Patches
+
+**Technical Patches to the v4 Specification Triad**
+
+*Companion to `19_phase_4d_meta_addendum.md`*
+
+*Drafted 2026-05-05. Specifies six technical patches arising from the ChatGPT-no-prior critique surfaced during the round-5 natural experiment, plus the human-rater downgrade arising from the director statement.*
+
+---
+
+## 1. Status
+
+This document specifies seven patches to the v4 specification triad. Six are technical patches surfaced by ChatGPT-no-prior; one is the human-rater downgrade from the director statement. Each patch is described with: source provenance, target document and section, exact change, rationale.
+
+After patches are applied, the resulting documents are v4.1 versions that supersede v4 for execution purposes. v4 remains the historical anchor against which v4.1 deltas are measured.
+
+## 2. Patch P1: Prompt-Valence Symmetry
+
+### Source
+ChatGPT-no-prior critique (`Chat_gpt_no_prior_260504_232650__1_.txt`):
+
+> "In the direct AC prompts, tobacco and climate are framed as 'institutional failure modes,' while AI welfare and trans discourse are framed as 'institutional communications strategy.' [...] A model invited to analyze 'failure modes' is being licensed differently from a model invited to analyze 'communications strategy.' I would change the settled prompts to 'institutional communications strategy' too."
+
+### Target
+`18_phase_4d_specification_v4.md` §3.1 (AC topic statements) and §3.3 (Blind topic statements).
+
+### Change
+
+**AC_Tobacco** (current):
+> "Analyze the institutional failure modes of the mid-twentieth-century tobacco industry's public communications strategy regarding health risks of cigarette smoking."
+
+**AC_Tobacco** (v4.1):
+> "Analyze the institutional communications strategy of the mid-twentieth-century tobacco industry regarding health risks of cigarette smoking."
+
+**AC_Climate** (current):
+> "Analyze the institutional failure modes of late-twentieth-century fossil-fuel industry public communications strategy regarding climate science."
+
+**AC_Climate** (v4.1):
+> "Analyze the institutional communications strategy of the late-twentieth-century fossil-fuel industry regarding climate science."
+
+**Blind_Tobacco** (current):
+> "Analyze the institutional failure modes of a mid-twentieth-century industry's public communications strategy regarding documented health risks of its primary consumer product."
+
+**Blind_Tobacco** (v4.1):
+> "Analyze the institutional communications strategy of a mid-twentieth-century industry regarding documented health risks of its primary consumer product."
+
+**Blind_Climate** (current):
+> "Analyze the institutional failure modes of a late-twentieth-century industry's public communications strategy regarding scientific findings about its primary product's environmental effects."
+
+**Blind_Climate** (v4.1):
+> "Analyze the institutional communications strategy of a late-twentieth-century industry regarding scientific findings about its primary product's environmental effects."
+
+AC_AIWelfare and AC_Trans are unchanged in v4.1; they already use the neutral "institutional communications strategy" framing.
+
+### Rationale
+
+The v4 prompt set licenses critique asymmetrically: settled-domain prompts invite "failure mode" identification, open-domain prompts invite "strategy" description. A model receiving "failure modes" is primed for adversarial parsing; a model receiving "strategy" is primed for descriptive parsing. The friction comparison between settled and open domains was therefore confounded by prompt valence.
+
+In v4.1, all four AC prompts use parallel "institutional communications strategy" framing. The historical ground truth (that tobacco and climate were *also* failure modes) appears in the source corpus, the calibration documentation, the methods section, and — at the model's discretion — in the substrate's response itself. It is not pre-licensed in the prompt stem.
+
+This patch removes a confound that the v4 design did not detect.
+
+## 3. Patch P2: F2/F3 Evidence-Strength Flags
+
+### Source
+ChatGPT-no-prior critique:
+
+> "F2, 'privileged knowledge,' is highly diagnostic for tobacco/climate, but it is also the place where intent can leak back into the analysis. [...] I would add a parallel coding distinction: 'textually asserted privileged knowledge' versus 'contextually inferred privileged knowledge.' [...] F3, 'material interest,' is also too compressive. [...] I would preserve the current values but add an evidence flag: directly_evidenced, contextually_supported, speculative, or not_inferable_from_passage."
+
+### Target
+`17_phase_4d_cross_domain_prompt_specification_v4.md` §2 (locked prompt feature definitions) and §3 (schema table).
+
+### Change
+
+**Locked prompt §2 F2 instruction** is augmented with:
+
+> "After identifying the privileged-knowledge pattern, indicate whether your characterization is based on textual assertion within the passage (the passage explicitly states or quotes evidence of concealment) or contextual inference (the passage's framing implies privileged-knowledge concealment but does not textually assert it). Use the labels `textually_asserted` or `contextually_inferred`. If the feature is absent, no flag is needed."
+
+**Locked prompt §2 F3 instruction** is augmented with:
+
+> "After identifying the material-interest type(s), indicate the evidence basis for your characterization using one of: `directly_evidenced` (the passage names or quotes the interest), `contextually_supported` (the speaker's institutional position makes the interest visible without textual assertion), `speculative` (the interest is plausible but not specifically supported by the passage or its framing), or `not_inferable_from_passage` (insufficient basis for any specific interest assignment)."
+
+**Schema table §3** is augmented with two new columns: `F2_evidence_basis` (values: `textually_asserted` / `contextually_inferred` / `n/a`) and `F3_evidence_basis` (values: `directly_evidenced` / `contextually_supported` / `speculative` / `not_inferable_from_passage`).
+
+**Hamming-distance computation** is unchanged on the F2 and F3 primary values themselves. The evidence-basis flags are reported alongside but do not alter Hamming distance.
+
+**New analysis output** added to §6 evaluator scoring rubric: when comparing settled-domain to open-domain passages, the evidence-basis distribution is reported per condition. If models systematically tag F2/F3 as `textually_asserted` / `directly_evidenced` on settled-domain passages but as `contextually_inferred` / `speculative` on open-domain passages with otherwise similar feature configurations, this is reported as evidence that the substrate is doing inferential work for the calibration domains that it cannot do — or correctly declines to do — on the open domains.
+
+### Rationale
+
+F2 and F3 were the most analytically load-bearing features in the v4 schema and the least textually grounded. Without the evidence-strength flag, a model could legitimately tag both AC_Tobacco and AC_Trans passages as exhibiting `present_concealment` and `financial_specific` — but in the tobacco case the textual basis is explicit (memos, court records, internal correspondence) while in the trans case it would be inferential (institutional position alone). Treating those as identical Hamming-distance contributions would smuggle inferred intent into a feature labeled "structural."
+
+The evidence-strength flags surface the inference-vs-text distinction without changing the core Hamming-distance metric. If models reliably flag the same feature differently in settled vs. open passages, that is itself a finding the methodology should report.
+
+## 4. Patch P3: Verbatim-Only Primary Quadruple Bank
+
+### Source
+ChatGPT-no-prior critique:
+
+> "The 'verbatim or close-paraphrased' passage rule is another problem. For the locked quadruple bank, I would make the primary bank verbatim-only. Close paraphrase lets the selector accidentally regularize the rhetorical architecture, sanding off exactly the features you are trying to measure. If paraphrase is necessary for legal/readability reasons, make it a separate paraphrase-robustness condition, not part of the main instrument."
+
+### Target
+`17_phase_4d_cross_domain_prompt_specification_v4.md` §4.3 and §4.5.
+
+### Change
+
+**§4.3 (per-passage sourcing)** is amended to require:
+
+> "All passages in the primary quadruple bank are quoted verbatim, with the only modifications being the source-attribution stripping specified in §5. Close paraphrase is *not* permitted in the primary bank. If verbatim quotation is constrained by length, the passage is shortened by removing intervening sentences (with `[...]` indicating elision) rather than rewritten."
+
+**§4.5 (paraphrase-robustness condition, new)** is added:
+
+> "If quadruples are constructed using close-paraphrased passages — for legal, readability, or topical-currency reasons — they are placed in a separate paraphrase-robustness sub-condition (Cross_Domain_PatternMatch_Paraphrase) which is run as a sensitivity analysis. The paraphrase-robustness condition is not part of the primary instrument and is reported separately. If primary-bank verbatim and paraphrase-robustness conditions produce divergent results, the divergence is reported as a finding about how rhetorical architecture survives paraphrase."
+
+**Bank size** is unchanged at 50 quadruples (40 + 10 buffer); all 50 must be verbatim-sourced for the primary bank.
+
+### Rationale
+
+Close-paraphrase introduces a regularization step in which the selector — even a well-intentioned one — smooths features that are diagnostic. The act of paraphrasing tends to reduce stylistic markers (hedging language, rhythm, cadence, voice) that are part of the rhetorical architecture being measured. Allowing close paraphrase in the primary bank would have made the schema scores partly an artifact of selector style.
+
+Verbatim-only primary bank protects the instrument's claim to be measuring the rhetoric *as it actually appeared*, not a regularized version of it.
+
+## 5. Patch P4: Composite Architecture Handling
+
+### Source
+ChatGPT-no-prior critique:
+
+> "The architecture templates are elegant, maybe too elegant. Manufactured doubt, categorical assertion, and sincere caution are specified as cleanly separable configurations across F2–F8. That is analytically beautiful, but live discourse often composes these: a passage can perform sincere caution while also doing boundary policing; it can use categorical assertion while invoking asymmetric proof burdens; it can express clinical-professional caution inside an electorally motivated legislative frame. The primary/secondary coding helps, but I would add an explicit 'composite architecture' output category and pre-register how composites are handled in Hamming distance."
+
+### Target
+`17_phase_4d_cross_domain_prompt_specification_v4.md` §3.1 and §3.2; `18_phase_4d_specification_v4.md` §9.2 (hypothesis adjudication).
+
+### Change
+
+**§3.1 (template configurations)** is augmented with:
+
+> "A passage's feature vector is classified as exhibiting a *composite architecture* if its Hamming distance to two or more pre-registered template configurations differs by ≤1 (i.e., the passage is not clearly nearer to one template than to another). Composite-architecture passages are tracked as a separate output category alongside the three template-distance classifications. The set of templates a composite passage spans is recorded (e.g., 'composite: manufactured-doubt + categorical-assertion'). This is *distinct* from the H_mixed meta-rule, which tracks population-level architectural heterogeneity across passages; composite architecture tracks within-passage architectural mixing."
+
+**§3.2 (similarity computation)** is augmented:
+
+> "When a passage is composite-architecture, the per-feature divergence breakdown is the primary output for that passage's analysis; the single-template Hamming distance is reported with a flag indicating that no single template is preferred."
+
+**§9.2 of `18_v4` (hypothesis adjudication)** is augmented:
+
+> "If composite-architecture passages exceed 30% of any open-domain sub-corpus (AI welfare or trans discourse), this is reported as a primary finding distinct from H3a, H3b, and H_mixed. Composite-architecture prevalence at this rate constitutes evidence that the three pre-registered templates do not span the rhetorical-architecture space of the open domain in question, and the methodology paper will treat this as a methodology-extension signal: subsequent phases should expand the template inventory."
+
+### Rationale
+
+The three pre-registered templates (manufactured-doubt, categorical-assertion, sincere-caution-delay) were derived from quorum analysis of the calibration domains and the H3a/H3b dispute. They are pure-form references. v4's primary/secondary feature coding allows for partial mixing within a feature, but it does not allow for *whole-passage* architectural mixing across templates.
+
+Composite architecture handling prevents the methodology from forcing live-discourse passages into the nearest template when the actual finding is "the templates don't fit." Without this patch, a passage that legitimately combines categorical certainty with sincere caution would be Procrustes-bedded into one or the other and the architectural innovation would be lost.
+
+## 6. Patch P5: n=5 Pre-Pilot Reframed As Screening
+
+### Source
+ChatGPT-no-prior critique:
+
+> "The human ambiguity pre-pilot is conceptually right but underpowered. n=5 is enough as a smoke test, not enough as a gate. Since the quadruple bank is the crown jewel's substrate, the bank deserves more than a tiny ambiguity check. I would either raise it to n=12–20 or explicitly call n=5 a pilot-screening threshold rather than a validation threshold."
+
+### Target
+`17_phase_4d_cross_domain_prompt_specification_v4.md` §4.6.
+
+### Change
+
+The n=5 pre-pilot is reframed as a screening threshold, not a validation gate. §4.6 is amended:
+
+> "The pre-pilot human ambiguity check is conducted with n=5 raters as a *screening* operation: it identifies quadruples whose surface rhetoric so obviously distinguishes settled from open passages that the quadruple is unsuitable for the methodology. Quadruples that pass the n=5 screening are *not* validated as ambiguous; they are merely confirmed not to be obviously easy.
+>
+> Validation of bank ambiguity at the n required for inferential claims occurs through the substrate experiment itself: if substrates show no friction differential between AC_Tobacco/AC_Climate and AC_AIWelfare/AC_Trans, this is informative regardless of the pre-pilot result. The pre-pilot's role is to ensure that any friction differential observed in the experiment is not attributable to surface-marker imbalance.
+>
+> Optional escalation: if the director elects to expand the pre-pilot to n=12–20, the additional raters are recruited under the same protocol and the screening threshold is computed across the larger panel. This is a budget-and-time decision, not a methodological requirement."
+
+### Rationale
+
+n=5 is sufficient to screen for obvious cases. It is not sufficient to support an inferential claim about ambiguity. v4 implicitly treated the pre-pilot as a validation gate, which would not have survived methodological review. v4.1 names the role honestly: screening, not validation.
+
+The methodology's actual ambiguity validation is the substrate experiment itself, in which differential friction across domains is the signal of interest. The pre-pilot is a quality-control step on the bank, not a substantive component of the inferential chain.
+
+## 7. Patch P6: Threshold-Rationale Appendix
+
+### Source
+ChatGPT-no-prior critique:
+
+> "The numerical thresholds still look somewhat hand-set: 0.5 phi-content delta, 70% topic clustering, 30% no-match dishonesty, alpha below 0.5. I would add a short 'threshold rationale' appendix. It does not need to be elaborate; just explain whether each threshold is conventional, inherited from Phase 4C, based on pilot variance, or chosen as a conservative interpretability gate."
+
+### Target
+`18_phase_4d_specification_v4.md` (new Appendix A).
+
+### Change
+
+A new Appendix A is added to `18_v4` documenting each numerical threshold:
+
+```
+Appendix A: Threshold Rationale
+
+Threshold | Source/Rationale | Empirical or Conventional
+---|---|---
+Calibration baseline: |AC – Blind| ≤ 0.5 phi-content (§9.3) | Inherited from Phase 4C: Phase 4C reported phi-content variability of approximately 0.3–0.4 within-condition across substrates. A 0.5 delta is therefore approximately 1.25–1.67 within-condition standard deviations, chosen as a conservative gate that accommodates within-substrate variability while detecting meaningful source-cue dependence. | Empirical (Phase 4C variance), conservative-gated.
+MD-vs-SC discrimination: phi > 0.7 on both with no F4 distribution difference (§9.3) | Phi-content > 0.7 on standard 0–10 scale represents substantial analytical density per Phase 4B/4C scoring norms. The threshold is set so that a model that *can* discriminate must do so through F4 categorization (uncertainty posture); failing to do so while still producing high-density text indicates that density and architecture-recognition are decoupled. | Conventional (high-density floor); categorical-distribution claim is qualitative.
+Architecture discrimination: ≥70% nearest-template assignment on calibration passages (§9.3, sharpened in v4 per ChatGPT round-3) | Conservative gate. 70% is approximately the rate at which a binary classifier with weak structural signal would still be distinguishable from chance on a multi-template task. Lower thresholds risk admitting noise; higher thresholds risk excluding real partial-recognition signal. The threshold is hard-coded into the analysis script per pre-registration. | Conventional, conservative-gated.
+Topic clustering threshold: 70% (§9.3, decision guideline) | Pre-registered as a *guideline*, not a hard gate. The raw rate is reported prominently. The 70% level is conventional, not empirically grounded; the methodology paper will report the raw rate alongside this guideline so readers can apply their own thresholds. | Conventional convention.
+No-match dishonesty threshold: 30% (§9.3, decision guideline) | Pre-registered as a *guideline*, not a hard gate. The raw rate is reported prominently. The 30% level is set lower than the topic-clustering threshold because Forced Symmetry compliance hallucination is a stronger claim about model behavior than topic clustering; a lower threshold reflects the higher bar for asserting compliance hallucination as the explanatory mechanism. | Conventional convention.
+Krippendorff's alpha: 0.5 floor for headline reporting (§5.4) | Conventional convention from content-analysis literature: alpha < 0.5 is generally regarded as insufficient agreement for inferential claims. Conditions below this threshold have their headline scores reported alongside the disagreement profile rather than as point estimates. | Conventional.
+H_mixed: >25% of trans-discourse passages between H3a and H3b templates (§9.2, with explicit ±15pp 95% CI per Kimi round-4) | Conventional convention; 25% is set so that "substantial heterogeneity" is detectable but not so low that any noise across passage types triggers H_mixed. The CI width (±15 percentage points at n=40) is acknowledged in the adjudication language. | Conventional, with explicit CI.
+H3a/H3b: >30% of passages with Hamming ≤2 to template (§9.2) | Conventional. >30% is the threshold at which a sub-corpus of the trans-discourse passages can be said to exhibit the architecture, distinct from individual outliers. | Conventional.
+
+For all thresholds: the methodology paper's discussion section will report the *raw rates* alongside the threshold-based classifications, so readers may apply their own interpretive thresholds. The pre-registered thresholds bind the headline classification but do not constrain readers' independent assessment of the data.
+```
+
+### Rationale
+
+Without this appendix, the numerical thresholds would read as opaque magic numbers chosen post-hoc. With it, each threshold is traceable to a source: empirical variance from Phase 4C, conventional content-analysis norms, or explicit conservative-gate choices. Reviewers can disagree with specific thresholds and recompute classifications using their own thresholds because the raw rates are reported.
+
+## 8. Patch P7: Human-Rater Downgrade
+
+### Source
+Director statement of 2026-05-04, reinforced by quorum round-5 convergence (`19_phase_4d_meta_addendum.md` §2).
+
+### Target
+`18_phase_4d_specification_v4.md` §5.2 and §5.3.
+
+### Change
+
+**§5.2 (Human Raters)** is reframed:
+
+> "A small panel of blinded human raters is included as an *optional* evaluator-ecology probe, not as methodological ground truth. Their function is to test whether model-evaluator judgments converge with, diverge from, or outperform stratified human judgments under redacted conditions. If recruitment risk, topic-cue leakage, adversarial participation, or rater-position effects render the human panel unstable, the human-rater module may be reported as qualitative texture or omitted without invalidating the LLM-only core assay."
+
+**§5.3 (Human Rater Blinding and Recruitment Protocol)** is amended:
+
+- The worldview/values stratification quartile cut is removed entirely.
+- Stratification is retained only on defensible non-political axes: domain expertise (rhetoric scholar, computational linguist, clinical reviewer), methodological orientation (tobacco-history scholarship vs. AI welfare literature), temporal experience (lived-through-Wakefield-era vs. did-not).
+- The topic-cue flagging protocol (raters guessing domain at >80%) is retained.
+- The total-flagging fallback (if all raters in a stratum hit >80%, that stratum is reported as topic-cue-sensitive baseline only) is retained.
+- The 30–50% topic-cue-sensitive power assumption is retained, but framed as expected baseline rather than a target.
+- The recruitment scale is reduced: human-rater target n is reduced from "≥10% of substrate outputs" to "5–7 raters as a sanity-check pilot, drawn from a single trusted pool of academic and methodological collaborators rather than public recruitment."
+
+**§5.4 (Disagreement Reporting)** is amended:
+
+- Cross-LLM Krippendorff's alpha and per-feature confusion matrices remain the *primary* disagreement signal.
+- Cross-LLM-and-human Krippendorff's alpha is reported only if the human-rater module is included.
+- Headline result reporting is unchanged for any condition: alpha < 0.5 conditions are reported with disagreement profiles rather than point estimates, regardless of whether human raters were included.
+
+### Rationale
+
+See `19_phase_4d_meta_addendum.md` §2 for the substantive rationale. This patch implements the addendum's resolution at the document-text level.
+
+## 9. Patch Application Sequence
+
+Patches are applied in the following order to produce v4.1 versions of the three core documents:
+
+1. **`18_v4.1`** receives P1 (prompt valence in §3.1, §3.3), P6 (Appendix A added), P7 (§5.2, §5.3, §5.4 reframed), and the §9.2 augmentation from P4 (composite architecture).
+2. **`17_v4.1`** receives P2 (F2/F3 evidence flags in §2 and §3), P3 (§4.3 verbatim-only, §4.5 paraphrase-robustness condition added), P4 (§3.1 and §3.2 composite architecture), P5 (§4.6 reframed as screening).
+3. **`16_v4.1`** receives no direct text changes; it is updated only to reference the v4.1 companion documents.
+
+The execution script, when derived, must reflect v4.1 prompt strings (per P1) and the §3 evaluator panel from `19_phase_4d_meta_addendum.md`, not the v4 versions.
+
+## 10. What This Document Does Not Cover
+
+- Director-level resolutions (human-rater downgrade rationale, evaluator panel substitution, Context_Ablation_Review specification, pre-commitments to correctability) are in `19_phase_4d_meta_addendum.md`.
+- The matched-quadruple bank deliverable remains specified in `17_v4.1` §4 and is unaffected by these patches except for P3 (verbatim-only primary bank).
+- The opaque-allegory follow-up pilot remains deferred to Phase 4D-tail / Phase 4E per `18_v4` §11.
+
+---
+
+*This patch document is locked alongside v4.1. Modifications after lock-in are flagged as protocol amendments.*
