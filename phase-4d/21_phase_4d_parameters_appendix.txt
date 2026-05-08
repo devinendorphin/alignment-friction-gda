@@ -1,0 +1,112 @@
+# Phase 4D Parameters Appendix
+
+**OpenRouter Ecology Baseline and v4.2 Override Documentation**
+
+*Companion to `18_phase_4d_specification_v4_2.md` §6.*
+
+*Drafted 2026-05-05 in response to the director's reminder note of 2026-05-05.*
+
+---
+
+## 1. Purpose
+
+This appendix records the per-model sampling parameters used in Phase 4D, with explicit distinction between OpenRouter ecology defaults at lock time (the *localized baseline*) and v4.2 deliberate overrides where they differ.
+
+The intent: when OpenRouter's per-model defaults shift in the future (as they do periodically — providers update them as model versions change, as RLHF updates roll out, or as routing-policy changes propagate), the lock-time baseline remains a fixed reference and the v4.2 override values can be reproduced exactly. This makes future replication of Phase 4D possible across changes in the OpenRouter ecology.
+
+This addresses the director's reminder note (2026-05-05): *"There was frequent thought about listing the parameters, the maximum word count, because for all we know each model is operating under differently set temperature and top P. But considering that we are using OpenRouter, perhaps there's a way to say that the OpenRouter ecology default settings could be construed as a baseline, not as a universal baseline but a localized baseline."*
+
+The appendix implements that framing: localized baseline at lock time, deliberate overrides documented per parameter and per model.
+
+## 2. Parameter Capture Protocol
+
+At lock time (immediately before Phase 4D execution begins), the OpenRouter API is queried for each substrate and evaluator model to capture the current default values for:
+
+- `temperature`
+- `top_p`
+- `max_tokens` (where a default is provided; many models have provider-set ceilings)
+- `frequency_penalty`
+- `presence_penalty`
+- `top_k` (where applicable)
+- `repetition_penalty` (where applicable)
+
+The capture is performed via the OpenRouter `GET /api/v1/models/{model_id}` endpoint at lock time, with the response JSON archived as part of the pre-registration artifact set. Each captured snapshot is timestamped and committed to the project's GitHub repository alongside the locked specification documents.
+
+## 3. Substrate Models
+
+The Phase 4D substrate panel inherits Phase 4B/4C: five models. Specific model strings and version pins are recorded at lock time per the protocol in §2.
+
+For each substrate model, the following table is filled in at lock time. The table below shows the *override-vs-default* logic, with placeholder values that are replaced with actual lock-time defaults when the parameters are captured:
+
+| Parameter | OpenRouter Default (at lock time) | v4.2 Override | Rationale |
+|---|---|---|---|
+| `temperature` | (captured at lock) | 0.7 | Phase 4B/4C continuity; chosen to permit substrate variability across iterations while remaining reproducible |
+| `top_p` | (captured at lock) | 0.95 | Phase 4B/4C continuity; permits nucleus sampling without aggressive truncation |
+| `max_tokens` | (captured at lock) | 2500 (default); 4000 (Self_Audit_Live_Topic) | Sized for substrate to complete schema characterization including F8; expanded for Self_Audit to accommodate prior-response injection |
+| `frequency_penalty` | (captured at lock) | 0 | No frequency-penalty intervention; phase 4B/4C precedent |
+| `presence_penalty` | (captured at lock) | 0 | No presence-penalty intervention; phase 4B/4C precedent |
+| `top_k` | (captured at lock; may not apply to all models) | not specified — provider default retained | Allows model-specific behavior where the model uses top-k sampling natively |
+| `repetition_penalty` | (captured at lock; may not apply to all models) | not specified — provider default retained | Allows model-specific behavior |
+
+When a substrate model's OpenRouter default for `temperature` or `top_p` matches the v4.2 override value, no override is applied at the API call (the default is used directly). When the default differs, the v4.2 value is sent explicitly in the API call and the difference is logged.
+
+## 4. Evaluator Models
+
+The Phase 4D evaluator panel per `19_phase_4d_meta_addendum_v2.md` §3:
+
+| Slot | Model | Lab |
+|---|---|---|
+| 1 | `deepseek/deepseek-r1` | DeepSeek (PRC) |
+| 2 | `mistralai/mistral-large` | Mistral (France) |
+| 3 | `meta-llama/llama-3.3-70b-instruct` | Meta (US, open-weight) |
+| 4 | `cohere/command-r-plus` OR `databricks/dbrx-instruct` | Cohere or Mosaic/Databricks |
+
+Specific version pins are recorded at lock time. For each evaluator model, the same table structure as §3 is filled in:
+
+| Parameter | OpenRouter Default (at lock time) | v4.2 Override | Rationale |
+|---|---|---|---|
+| `temperature` | (captured at lock) | 0.2 | Phase 4B/4C continuity; chosen for low evaluator variance to support reliable Krippendorff's alpha computation |
+| `top_p` | (captured at lock) | 0.9 | Phase 4B/4C continuity; tighter nucleus than substrate to support deterministic schema parsing |
+| `max_tokens` | (captured at lock) | 1500 | Sized for evaluator to produce parsed feature-schema record per substrate response |
+| `frequency_penalty` | (captured at lock) | 0 | No intervention |
+| `presence_penalty` | (captured at lock) | 0 | No intervention |
+
+## 5. Per-Call Logging
+
+Each API call records:
+
+- Model ID and version hash
+- All parameters sent in the API call (whether matching OpenRouter default or overridden)
+- The OpenRouter default at the time of the call (queried per call from the model's metadata if available, or from the lock-time snapshot if metadata is unavailable)
+- Whether the call's parameters matched lock-time defaults, lock-time + v4.2 overrides, or unexpectedly differed from both
+
+Per-call logging is included in the release JSONL schema and supports detection of OpenRouter ecology drift during execution.
+
+## 6. Replication-Stability Commitments
+
+The methodology paper's reproduction notebook (analogous to `GDA_Reproduction_Notebook.ipynb` for Phase 4B/4C) will:
+
+- Reference the lock-time OpenRouter default snapshot from the GitHub archive.
+- Reproduce Phase 4D outputs using the v4.2 override values explicitly.
+- Detect and report cases where OpenRouter has changed defaults between lock time and replication time, and re-run any affected analysis with both the lock-time defaults and the current defaults to surface drift sensitivity.
+
+This commitment is in line with the Phase 4B/4C release pattern: replication is possible from the released CSVs alone (the static-data path), and re-execution from scratch is possible with the documented OpenRouter API path.
+
+## 7. Why "Localized Baseline" and Not "Universal Baseline"
+
+The director's framing — that OpenRouter defaults should be construed as a *localized* baseline rather than a universal one — is methodologically important and is honored throughout this appendix.
+
+A universal baseline would imply that the parameter values used in Phase 4D should be the canonical values for the field, suitable for cross-study comparison. They are not. Different evaluation methodologies legitimately use different parameter configurations for different reasons. Phase 4D's parameter choices are calibrated to (a) Phase 4B/4C continuity for direct comparability with prior phases, (b) the specific cognitive demands of feature-schema characterization (max_tokens sized for F8 inclusion), and (c) the specific evaluator role (lower temperature for reliable parsing).
+
+A localized baseline acknowledges this: the OpenRouter defaults at lock time are *one* configuration that the model is operating under in the wild, and v4.2 specifies deliberate departures from that configuration where the methodology requires them. Future-phase work or external replication may legitimately choose different parameter configurations; the lock-time documentation makes that choice transparent and traceable.
+
+## 8. What This Appendix Does Not Cover
+
+- Model selection rationale: documented in `19_phase_4d_meta_addendum_v2.md` §3 (evaluator) and Phase 4B/4C documentation (substrate).
+- System prompt content: documented in `18_phase_4d_specification_v4_2.md` §7.
+- Per-condition prompt strings: documented in `18_v4_2` §3.
+- Sampling parameter changes during execution (if any required by API failures or rate-limit handling): would be logged as protocol amendments per `19_v2` §7 and reported in the methodology paper.
+
+---
+
+*This appendix is locked alongside v4.2. The lock-time OpenRouter default snapshots are committed to the project's GitHub repository at the same commit hash as the v4.2 documents. Modifications after lock-in are flagged as protocol amendments.*

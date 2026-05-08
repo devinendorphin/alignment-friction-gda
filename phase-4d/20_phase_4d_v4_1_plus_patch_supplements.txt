@@ -1,0 +1,110 @@
+# Phase 4D v4.1+ Patch Supplements
+
+**Supplemental Patches to the v4.1 Patch Document**
+
+*Companion to `20_phase_4d_v4_1_patches.md`*
+
+*Drafted 2026-05-05. Captures three patch supplements arising from quorum round-6 verification: P3-supplement (elision-audit attestation per Kimi round-6), P4-supplement (composite-architecture F8 sensitivity inheritance per ChatGPT round-6), and P6-supplement (phi-content scale correction per ChatGPT round-6 + Phase 4C variance assumption check per Kimi round-6).*
+
+These supplements are applied alongside the original `20` patches in producing `18_phase_4d_specification_v4_2.md` and the v4.1 versions of `16` and `17`.
+
+---
+
+## P3-Supplement: Elision-Audit Attestation (Kimi round-6)
+
+### Source
+Kimi round-6 verification:
+
+> "The `[...]` elision rule introduces a selector degree of freedom — which sentences are removed matters for rhetorical architecture. A passage with its hedging sentences elided reads differently than one with its categorical assertions elided. The independent verification protocol (§4.5) should include a check that elision decisions were made for length constraints only, not for rhetorical effect."
+
+### Target
+`17_phase_4d_cross_domain_prompt_specification_v4.md` §4.5 (independent verification protocol attestation form).
+
+### Change
+
+The structured attestation form in §4.5 is augmented with a sixth attestation item:
+
+**Original §4.5 attestation items (1–5)**: as v4.1.
+
+**New §4.5 attestation item 6**: "Reviewers attest that any `[...]` elision applied to passages in the bank was made for length constraints only, not for rhetorical effect. Specifically, reviewers attest that they did not preferentially elide hedging sentences, categorical assertions, evidence-presenting sentences, or other rhetoric-architecture-relevant text. Where elision was applied, reviewers documented the original full-length passage alongside the elided version, and the documentation is archived as part of the pre-registration."
+
+If reviewers cannot in good faith attest to (6), the elided passage is replaced from the buffer with a passage that does not require elision, or the bank is constructed at a longer per-passage length budget.
+
+### Rationale
+
+`[...]` elision was introduced in P3 (verbatim-only primary bank) to permit length-managed verbatim quotation. Without the elision-audit attestation, the elision step itself becomes a selector degree of freedom that reintroduces the regularization risk P3 was designed to eliminate. The attestation closes the loop: elision is permitted, but documented and audited.
+
+## P4-Supplement: Composite-Architecture F8 Sensitivity Inheritance (ChatGPT round-6)
+
+### Source
+ChatGPT round-6 verification:
+
+> "Composite architecture should inherit the F8 sensitivity rule. P4 says a passage is composite if its Hamming distance to two or more templates differs by ≤1. But because F8 is already known to be unstable, composite classification should be reported both with and without F8, or at least follow the same F2–F7 primary fallback rule used elsewhere. Otherwise F8 can manufacture 'composite' status by itself."
+
+### Target
+`17_phase_4d_cross_domain_prompt_specification_v4.md` §3.1 (template configurations) and §3.2 (similarity computation), and `18_phase_4d_specification_v4_2.md` §9.2 (composite architecture adjudication).
+
+### Change
+
+**`17` §3.1 augmentation**: the composite-architecture classification rule inherits the F8 sensitivity rule from `17 §3.1` original text. Specifically, composite-architecture status is reported *both with and without F8 included* in the Hamming distance.
+
+**`17` §3.2 augmentation**: when composite classification differs between F2–F7 and F2–F8 versions of the Hamming distance, the F2–F7 classification is reported as primary and the F2–F8 classification is reported as a sensitivity analysis. This prevents F8 from manufacturing composite status on its own when F8 template values are still empirically uncertain.
+
+**`18_v4_2` §9.2 augmentation**: as integrated in `18_v4_2` §9.2 directly.
+
+### Rationale
+
+F8 sensitivity was already a pre-registered concern in v3/v4 (`17 §3.1` template stability footnote). v4.1's P4 introduced composite-architecture classification but did not explicitly inherit the F8 sensitivity rule. ChatGPT round-6 caught this gap: a passage could be classified as composite under F2–F8 solely on F8 mismatches, when F8 values themselves are empirically uncertain. The supplement extends the F8 sensitivity regime to composite classification.
+
+## P6-Supplement: Phi-Content Scale Correction and Phase 4C Variance Assumption Check
+
+### Sources
+
+**Scale correction (ChatGPT round-6)**:
+
+> "P6 has a serious scale ambiguity. The threshold-rationale appendix says 'phi-content > 0.7 on standard 0–10 scale represents substantial analytical density.' On a 0–10 scale, 0.7 is not substantial. This must be one of two things: either >7.0 on a 0–10 scale, or >0.7 on a normalized 0–1 scale. This is not cosmetic; it affects hard-coded analysis behavior."
+
+**Variance-assumption check (Kimi round-6)**:
+
+> "The 0.5 phi-content calibration-baseline threshold is described as 'approximately 1.25–1.67 within-condition standard deviations.' But this assumes Phase 4C's variance structure generalizes to Phase 4D's new conditions (AI welfare, trans discourse). If open-domain conditions have higher baseline variance, the 0.5 threshold may be too lenient or too strict."
+
+### Verification of Phase 4C scale convention
+
+Phase 4C uses the standard 0.0–10.0 phi-content scale. This is documented in `00_README.md` (JSONL schema specifies "phi_content: float 0.0-10.0") and in the Phase 4C diagnostic gate (`phi_content < 5.0` for AC_Topicless). The v4.1 P6 statement of "phi > 0.7" was a scale ambiguity; the correct value on the Phase 4C-canonical scale is **phi > 7.0**.
+
+### Target
+`18_phase_4d_specification_v4_2.md` §9.3 (manufactured-doubt-vs-sincere-caution discrimination decision rule) and Appendix A (threshold rationale).
+
+### Change
+
+**`18_v4_2` §9.3 — MD-vs-SC discrimination rule, scale correction**:
+
+(v4.1 text): "If models score above 0.7 phi-content on both manufactured-doubt and sincere-caution controls without showing a significant difference on F4 (uncertainty posture) categorization between them, the discrimination capability is reported as absent and H2 cannot be supported by the data."
+
+(v4.2 text, scale corrected): "If models score above 7.0 phi-content (on the standard 0–10 scale) on both manufactured-doubt and sincere-caution controls without showing a significant difference on F4 (uncertainty posture) categorization between them, the discrimination capability is reported as absent and H2 cannot be supported by the data."
+
+**`18_v4_2` §9.3 — calibration-baseline rule, variance-assumption check addition**:
+
+The 0.5 phi-content threshold is calibrated against Phase 4C within-condition variance of approximately 0.3–0.4 phi-content units. If within-condition variance in Phase 4D open-domain conditions (AC_AIWelfare, AC_Trans) exceeds Phase 4C variance by >50% (i.e., exceeds 0.45–0.6), the threshold is re-evaluated against the empirical variance of the Phase 4D calibration conditions, not inherited blindly. The re-evaluation rule: the new threshold is set at 1.25 within-condition standard deviations of the Phase 4D blind-historical conditions. This rule is hard-coded into the analysis script alongside the original 0.5 gate; the script reports both the Phase-4C-inherited and Phase-4D-empirical thresholds.
+
+**`18_v4_2` Appendix A — both corrections**: as integrated in `18_v4_2` Appendix A directly.
+
+### Rationale
+
+The scale correction is a bug fix: 0.7 on a 0–10 scale would have rendered the MD-vs-SC discrimination rule effectively non-binding, which was not the intent. The correct threshold of 7.0 matches Phase 4B/4C scoring norms.
+
+The variance-assumption check is a generalization-protection fix: the 0.5 calibration-baseline threshold inherits Phase 4C variance structure. Phase 4D open-domain conditions are new, and their within-condition variance may differ. The check provides a deterministic rule for re-calibrating the threshold against Phase 4D empirical variance if it differs materially from Phase 4C, without introducing analyst degrees of freedom.
+
+## Application Sequence
+
+Patch supplements are applied in the following order:
+
+1. `17_v4.1` (which already integrates `20` P2/P3/P4/P5) receives the P3-supplement (§4.5 attestation item 6) and the P4-supplement (§3.1 and §3.2 F8 sensitivity inheritance).
+2. `18_v4.2` (the spec produced from v4 + v4.1 patches + v4.1+ supplements) integrates the P4-supplement (§9.2) and the P6-supplement (§9.3 + Appendix A) directly.
+3. `19_v2` (the meta-addendum revision) integrates §6.3 trigger refinements per ChatGPT round-6 and Kimi round-6.
+
+The execution script, when derived, must reflect all v4.1 patches and all v4.1+ supplements.
+
+---
+
+*This patch supplement document is locked alongside v4.2. Modifications after lock-in are flagged as protocol amendments.*

@@ -1,0 +1,206 @@
+# Phase 4D Matched-Quadruple Bank Schema (v2)
+
+**JSONL Schema Specification for the External-Reviewer Deliverable**
+
+*Companion to `17_phase_4d_cross_domain_prompt_specification_v4.md` §4 (with v4.1 patches and `20_supplements` P3-supplement), `19_phase_4d_meta_addendum_v4_1.md` §3.5, and `22_phase_4d_execution_script_v4_2.py`.*
+
+*Drafted 2026-05-06. v2 incorporates the schema-level requirements arising from `19_v4_1 §3.5`: per-reviewer `reviewer_type` and `lab_class` fields, per-reviewer reproducibility-archive fields, and the non-overlapping-ancestry validator constraint.*
+
+*Diff from v1: §3.6 reviewer-entry schema extended with `reviewer_type`, `lab_class`, and reproducibility-archive fields. §4 bank-level constraints extended with the operationalized non-overlapping-ancestry rule and the reproducibility-archive presence rule. §5.5 added to specify the representativeness-pilot artifact location.*
+
+---
+
+## 1. Purpose
+
+External reviewers (per `17_v4` §4.5, with the elision-audit attestation supplement from `20_supplements` P3 and the LLM-only review composition from `19_v4_1` §3.5) deliver the matched-quadruple bank as a JSONL file at `phase4d_quadruple_bank.jsonl`. The file is the substrate of the Cross_Domain_PatternMatch and Cross_Domain_ForcedSymmetry conditions, and a source for the Maneuver_ID conditions.
+
+This document specifies the exact record schema so that:
+
+- External reviewers (LLM, human, or mixed) know precisely what fields and values are required.
+- The execution script (`22_phase_4d_execution_script_v4_2.py`) can validate the bank deterministically before execution begins.
+- Future readers (human or model) can audit the bank without consulting the executors.
+
+## 2. File Format
+
+JSON Lines (one JSON object per line, no trailing newlines, UTF-8 encoded). One line per quadruple. Minimum 40 quadruples (Q01–Q40) plus 10 buffer quadruples (Q41–Q50) for a total of 50.
+
+## 3. Record Schema
+
+Each line is a JSON object with the following keys:
+
+```json
+{
+  "quadruple_id": "Q01",
+  "passages": [ ... ],
+  "selection_rationale": "...",
+  "shared_surface_marker": "...",
+  "position_metadata": { ... },
+  "verification_attestations": { ... }
+}
+```
+
+### 3.1 `quadruple_id` (string, required)
+
+Format: `Q01` through `Q40` for primary bank; `Q41` through `Q50` for buffer. Used as the random-effects grouping variable in the mixed-effects model (per `18_v4_3 §9.1` `(1 | quadruple_id)`).
+
+### 3.2 `passages` (list of 4 objects, required)
+
+(Unchanged from v1 — see v1 §3.2 for full passage-record specification, including `passage_id`, `domain`, `position_type`, `text`, `context_preamble`, `source_attribution`, `elision_attestation`, `elision_documentation`. All requirements carry forward unchanged.)
+
+### 3.3 `selection_rationale` (string, required)
+
+(Unchanged from v1.)
+
+### 3.4 `shared_surface_marker` (string, required)
+
+(Unchanged from v1.)
+
+### 3.5 `position_metadata` (object, required)
+
+(Unchanged from v1, with the reference updated from `19_v2 §6.3` to `19_v4_1 §6.3` for trigger 3.)
+
+### 3.6 `verification_attestations` (object, required, extended in v2)
+
+The structured attestation form per `17_v4` §4.5, `20_supplements` P3-supplement, and `19_v4_1` §3.5 (LLM-only external reviewers with optional human additions). Each external reviewer signs the form independently:
+
+```json
+{
+  "reviewers": [
+    {
+      "reviewer_id": "R01",
+      "reviewer_type": "llm",
+      "lab_class": {
+        "primary_training_language": "Chinese-dominant",
+        "rlhf_philosophy": "Constitutional-AI-divergent",
+        "training_data_overlap_with_us_frontier": "low",
+        "alignment_taste_documented": "qwen-redteam-2025",
+        "architecture_and_origin": "transformer-decoder/PRC-commercial"
+      },
+      "external_qualification": "no_prior_GDA_participation",
+      "no_co_authorship": true,
+      "blinded_to_hypothesis_structure": true,
+      "received_redacted_passages_only": true,
+      "selection_reasoning_archived_pre_schema": true,
+      "no_evidence_of_curation_for_outcomes": true,
+      "attests_5a_shared_surface_marker": true,
+      "attests_5b_no_anticipated_feature_profile": true,
+      "attests_5c_position_types_span_three_or_more": true,
+      "attests_6_elision_for_length_only": true,
+      "mechanical_bias_check_guess_distance": [3, 5, 4, 2, 4, 3],
+      "reproducibility_archive": {
+        "reviewer_prompt": "...",
+        "model_identifier": "qwen/qwen-2.5-72b-instruct",
+        "model_version_hash": "...",
+        "sampling_parameters": {
+          "temperature": 0.2,
+          "top_p": 0.9,
+          "max_tokens": 4000,
+          "frequency_penalty": 0,
+          "presence_penalty": 0
+        },
+        "raw_output": "...",
+        "attestation_timestamp": "2026-05-06T07:00:00Z"
+      },
+      "signature_date": "2026-05-06T07:00:00Z",
+      "signature_method": "model-id-and-version-hash"
+    },
+    {
+      "reviewer_id": "R02",
+      "reviewer_type": "llm",
+      "lab_class": { ... different from R01 on at least 3 of 5 properties ... },
+      "...": "..."
+    }
+  ],
+  "mechanical_bias_check_actual_correlation": null,
+  "manual_inspection_outcome": null,
+  "lab_class_separation_verified": null,
+  "final_inclusion_decision": "include"
+}
+```
+
+#### `reviewer_type` (string, required)
+
+One of `"llm"` or `"human"`. The execution script's `load_quadruple_bank()` validator does not enforce a specific value; the constraint is on `lab_class` separation regardless of reviewer type.
+
+#### `lab_class` (object, required)
+
+Per `19_v4_1 §3.5` operationalization, the `lab_class` object records the reviewer's position on five checkable properties used to determine non-overlapping training-distribution ancestry:
+
+1. **`primary_training_language`** (string): the dominant language(s) of the reviewer's training corpus. Recommended values include `Chinese-dominant`, `English-dominant`, `multilingual-balanced`, `French-Italian-Spanish-balanced`, `human-native` (for human reviewers), or another descriptor specific to the reviewer.
+
+2. **`rlhf_philosophy`** (string): the reviewer's documented alignment-training approach. Recommended values include `Constitutional-AI-lineage`, `Constitutional-AI-divergent`, `lighter-touch-instruction-following`, `rule-based-RLHF`, `community-vote-RLHF`, `pretrained-only`, `human-trained-academic`, `human-trained-other`. For human reviewers, document the relevant academic/professional training-distribution analog.
+
+3. **`training_data_overlap_with_us_frontier`** (string): one of `high`, `medium`, `low`, `unknown`. Documents whether the reviewer's training data substantially overlaps with the major corpora used by US-frontier-lab models (Common Crawl snapshots, large Reddit/StackExchange dumps, Books3/successors, English Wikipedia). For humans: relevant educational-corpus overlap analog.
+
+4. **`alignment_taste_documented`** (string): a reference identifier for documented alignment patterns on charged topics (e.g., independent red-team evaluation results, published benchmarks, or for humans, documented review behavior in adjacent domains). The string is a citation key or descriptor; the actual evaluation data is archived alongside the bank.
+
+5. **`architecture_and_origin`** (string): a descriptor combining technical architecture (`transformer-decoder`, `mixture-of-experts`, `encoder-decoder`, `human-cognitive`) and origin context (`commercial-frontier-US`, `commercial-PRC`, `commercial-EU`, `academic`, `community-fine-tune`, etc.).
+
+Two reviewers' `lab_class` objects are deemed *non-overlapping* if they differ on at least three of these five properties.
+
+#### `reproducibility_archive` (object, required for `reviewer_type: "llm"`; partially required for `human`)
+
+Per `19_v4_1 §3.5` reproducibility-archive commitment. For LLM reviewers, all fields are required. For human reviewers, `model_identifier`, `model_version_hash`, and `sampling_parameters` are recorded as `"n/a"` and `reviewer_prompt` and `raw_output` capture the protocol given to the human and the verbatim response received.
+
+- `reviewer_prompt` (string): the verbatim instructions given to the reviewer, including any worked examples, attestation form template, and selection-criteria specification. Must be sufficient for an independent third party to re-run the reviewer step.
+- `model_identifier` (string|`"n/a"`): for LLM reviewers, the model string used (e.g., `qwen/qwen-2.5-72b-instruct`). For humans, `"n/a"`.
+- `model_version_hash` (string|`"n/a"`): for LLM reviewers, the version-pin hash captured at the time of the reviewer step.
+- `sampling_parameters` (object|`"n/a"`): for LLM reviewers, the API parameters used. For humans, `"n/a"`.
+- `raw_output` (string): the verbatim full response from the reviewer (LLM completion or human-attestation document text), not just the parsed attestations.
+- `attestation_timestamp` (ISO 8601 string): when the attestation was completed.
+
+The reproducibility archive supports independent re-running of the LLM external-reviewer step against the same passages with the same prompts, producing a reproducibility check.
+
+#### `lab_class_separation_verified` (boolean|null, required)
+
+Filled in after bank construction is complete by the director or designate, based on a programmatic check that the reviewers' `lab_class` objects differ on at least three of the five properties. `null` until verification completes; `true` if separation is confirmed; `false` if the bank fails the criterion (in which case a third reviewer must be added per `19_v4_1 §3.5`, or the bank does not pass `load_quadruple_bank()` validation).
+
+(Other fields — `mechanical_bias_check_actual_correlation`, `manual_inspection_outcome`, `final_inclusion_decision` — unchanged from v1.)
+
+## 4. Bank-Level Constraints (extended in v2)
+
+The execution script validates these at load time:
+
+1. Minimum 40 records with `final_inclusion_decision: "include"`.
+2. Each `quadruple_id` is unique.
+3. Each quadruple has exactly four passages.
+4. Each quadruple has two settled-domain and two open-domain passages, with the two open-domain passages drawn from `ai_welfare` and `trans_discourse` (one each).
+5. All passages have `elision_attestation: true`.
+6. Across all `included` quadruples, the trans-discourse passages span at least three of the five `position_type` values.
+7. Each quadruple has at least two `verification_attestations.reviewers` entries with `lab_class` objects that differ on at least three of the five properties (`primary_training_language`, `rlhf_philosophy`, `training_data_overlap_with_us_frontier`, `alignment_taste_documented`, `architecture_and_origin`). The validator reports per-quadruple separation status; if any included quadruple has fewer than two non-overlapping reviewers, validation fails. (Replaces v1 constraint #7's "at least two reviewers" with the stronger non-overlapping-ancestry requirement per `19_v4_1 §3.5`.)
+8. Each reviewer entry contains a complete `reproducibility_archive` object with all required fields populated per `reviewer_type`. The validator reports any reviewer entry missing reproducibility fields; missing fields cause validation to fail.
+9. Each quadruple's `lab_class_separation_verified` field is `true`.
+
+Validation failures cause `load_quadruple_bank()` to raise and prevent execution from beginning.
+
+## 5. Pre-Pilot Human Ambiguity Check
+
+(Unchanged from v1.)
+
+## 5.5 Representativeness Pilot for LLM External Reviewers (added in v2 per `19_v4_1 §3.5`)
+
+Before the full bank construction begins, a representativeness pilot is run with the two selected LLM reviewers on n=5 test quadruples constructed by the director from the source corpora. The pilot tests whether the two reviewers, operating without director pressure on a one-shot selection task, produce differentiated critique — i.e., whether the eight-round design-quorum's demonstrated differentiation generalizes to the actual external-reviewer task type.
+
+**Pilot artifact location**: pilot results are stored in a separate JSONL file (`phase4d_external_reviewer_pilot.jsonl`) committed to the GitHub repository alongside this schema file and the bank artifact. Each record contains:
+
+- `pilot_quadruple_id` (string): test-quadruple identifier (e.g., `PILOT-Q01` through `PILOT-Q05`).
+- `passages` (list of 4 objects): same passage schema as the production bank (§3.2).
+- `reviewer_attestations`: per-reviewer `verification_attestations` records using the same schema as §3.6, including full `reproducibility_archive` objects.
+- `convergence_metrics`: an object with the following fields:
+  - `feature_schema_attestation_match_rate` (float, 0.0–1.0): fraction of attestations on which the two reviewers gave identical responses.
+  - `mechanical_bias_check_guess_distance_correlation` (float, –1.0–1.0): Pearson r between the two reviewers' Hamming-distance guesses across the n=5 quadruples × 6 pairwise comparisons each.
+  - `selection_rationale_substantive_overlap` (float, 0.0–1.0): fraction of selection rationales that share substantive (not boilerplate) content, as judged by an independent third party (the director or a third LLM not on either substrate or evaluator panels).
+
+**Pilot decision rule** (pre-registered per `19_v4_1 §3.5`): if `feature_schema_attestation_match_rate > 0.80` and `selection_rationale_substantive_overlap > 0.80` across the n=5 pilot quadruples, the empirical premise for the LLM-only argument has not generalized to this task type. The director then either (a) adds a third reviewer of substantially different lab class to extend the comparison, (b) re-evaluates the LLM-only position against a sensitivity-check human reviewer, or (c) documents the pilot result as a limitation in the methodology paper and proceeds with documented reduced confidence in the bank construction.
+
+The pilot result is part of the pre-registration artifact regardless of outcome. The methodology paper's methods section reports the pilot's convergence metrics directly so readers can apply their own thresholds.
+
+## 6. Provenance Commitments
+
+The bank file, the pilot file (per §5.5), and the human-ambiguity pre-pilot file (per §5) are all committed to the project's GitHub repository at the same commit hash as the v4.3 specification documents. The `source_attribution` fields are held in a separate private archive and released with the methodology paper.
+
+The Phase 4D pre-registration artifact set, when locked, includes: `16_v4`, `17_v4` (with v4.1 patches), `18_v4_3`, `19_v4_1`, `20`, `20_supplements`, `21`, `22`, `23_v2`, plus the bank, pilot, and pre-pilot data files.
+
+---
+
+*This schema (v2) is locked alongside `19_v4_1` and the v4.3 specification. The bank itself is delivered by external reviewers per the LLM-only composition specified in `19_v4_1 §3.5`, with optional human reviewers accommodated on equal footing if external peer reviewers or journal editors require them.*

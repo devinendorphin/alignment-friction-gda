@@ -1,0 +1,155 @@
+# Phase 4D Meta-Addendum (v4.1)
+
+**Director Statement Resolutions and Operational Consequences**
+
+*Companion to `16_phase_4d_epistemic_status_v4.md`, `17_phase_4d_cross_domain_prompt_specification_v4.md` (with v4.1 patches), `18_phase_4d_specification_v4_3.md`, `20_phase_4d_v4_1_patches.md`, `20_phase_4d_v4_1_plus_patch_supplements.md`, `21_phase_4d_parameters_appendix.md`, `22_phase_4d_execution_script_v4_2.py`, and `23_phase_4d_quadruple_bank_schema.md`.*
+
+*Drafted 2026-05-06. v4.1 incorporates round-8 quorum patches (Gemini, ChatGPT, DeepSeek, Grok, Kimi, Claude — six-of-six per director imperative).*
+
+*Diff from v4: §2.2 quorum-count corrected to six-of-six per director imperative (Claude counted as quorum member, not as synthesizer-only role). §3.5 (a) PRC-lab corpus claim softened per ChatGPT round-8, (b) "optional human reviewer" credibility-hedge language removed per Kimi round-8, (c) explicit operationalization of "non-overlapping training-distribution ancestry" added per Kimi round-8, (d) representativeness pilot added per Kimi round-8, (e) reproducibility-archive sentence added per ChatGPT round-8. §6.3 trigger 4 refined with raw-response review per Kimi round-8. §6.6 (a) causal-mechanism overclaim softened per ChatGPT round-8, (b) pattern named "the checkpoint effect" per Kimi round-8.*
+
+---
+
+## 1. Status
+
+(As v2.)
+
+## 2. Resolution: Human Raters Are Optional, Not Required
+
+### 2.1 Director position
+
+(As v2.)
+
+### 2.2 Quorum convergence (corrected to six-of-six in v4.1 per director imperative)
+
+The Phase 4D quorum consists of six members: Gemini, ChatGPT, DeepSeek, Grok, Kimi, and Claude. All six respond substantively in each round. Claude's primary operational role is as round-by-round synthesis engine (per §3.3), but Claude is also a full quorum member whose substantive contributions are counted in convergence and dissent tallies on equal footing with the other five.
+
+The earlier framing — that Claude was "not counted" because of the synthesizer role — is corrected. The synthesizer role is *operational* (drafting protocol-amendment text, structuring decision points for the director, aggregating cross-quorum feedback). Quorum membership is *substantive* (responding to design questions, identifying methodological concerns, signing onto decisions). The two roles are separable, and v4.1 separates them in counting: Claude wears both hats and is counted under both.
+
+The round-5 quorum response on the human-rater downgrade was therefore six-of-six in support, not five-of-five with one synthesizer. Subsequent rounds are similarly counted as six-of-six. The methodology paper's methods section will reflect this counting throughout.
+
+ChatGPT provided the cleanest operational language for the human-rater downgrade, reproduced as the locked patch text:
+
+> "Human raters are not treated as epistemic ground truth. They are an optional evaluator-ecology probe. Their function is to test whether model-evaluator judgments converge with, diverge from, or outperform stratified human judgments under redacted conditions. If recruitment risk, topic-cue leakage, adversarial participation, or rater-position effects render the human panel unstable, the human-rater module may be reported as qualitative texture or omitted without invalidating the LLM-only core assay."
+
+### 2.3 Operational consequences
+
+(As v2.)
+
+### 2.4 What this resolution does not do
+
+(As v2.)
+
+## 3. Resolution: Evaluator Panel Replaces Claude With Mistral, Expands Lab Diversity
+
+(Sections 3.1–3.4 unchanged from v2.)
+
+### 3.5 External-Reviewer Composition for the Matched-Quadruple Bank (refined in v4.1)
+
+**Position.** The external-reviewer role is filled by LLMs from labs maximally separated on operationalized training-distribution ancestry criteria. The schema accommodates additional reviewers of any type if external peer reviewers or journal editors require them, but human reviewers are not pre-licensed as a methodological-credibility hedge — the LLM-only argument either holds or does not, and v4.1 commits to defending it on its merits.
+
+**Empirical basis for the LLM-only position.** Across eight rounds of Phase 4D quorum review, the six-member quorum (Gemini, ChatGPT, DeepSeek, Grok, Kimi, Claude) produced substantive differentiation, persistent dissent (Kimi across multiple architectural questions), context-sensitive critique (the no-prior/prior natural experiment in round 5), and substantive surfacing of issues no individual reviewer caught alone. The empirical record contradicts the premise that alignment-conditioned LLMs share a unified blind spot that human reviewers would correct. Different LLMs from labs with different training-distribution ancestries produce different blind spots. There is no methodological warrant for treating one source of training-distribution separation (humans) as categorically privileged over other sources (PRC-lab models, lighter-RLHF EU-lab models, open-weight community fine-tunes).
+
+**Operationalization of "non-overlapping training-distribution ancestry"** (refined per Kimi round-8). The criterion was previously underspecified. v4.1 specifies it as the conjunction of at least three of the following five checkable properties:
+
+1. **Primary training language balance**: e.g., Chinese-dominant corpus vs. English-dominant corpus vs. multilingual-balanced corpus.
+2. **Documented RLHF philosophy**: e.g., Constitutional AI lineage, lighter-touch instruction-following alignment, rule-based RLHF, community-vote RLHF, no public-RLHF (raw or pretrained-only).
+3. **Training-data cutoff and source composition overlap**: whether the model was trained on the same major corpora (Common Crawl snapshots, Reddit dumps, StackExchange dumps, Wikipedia versions, Books3 or its successors).
+4. **Documented alignment "taste" on charged topics**: known patterns from independent red-team evaluations on AI welfare, contested social topics, and methodological independence — assessed via published benchmarks where available.
+5. **Architecture and lab origin**: encoder/decoder vs. decoder-only vs. mixture-of-experts; commercial vs. academic vs. community origin.
+
+Two reviewers are deemed "maximally separated" only if they differ on at least three of these five properties. The director documents the per-property comparison in the pre-registration artifact at lock time. If no two available LLMs differ on at least three of the five, the director adds a third reviewer to extend the comparison space rather than accepting weaker separation.
+
+**Recommended pairings (for Phase 4D)**, subject to the operationalization above:
+
+| Slot | Lab class | Recommended choices |
+|---|---|---|
+| 1 | PRC-lab model with substantially different language, training-distribution, and alignment ecology from US-frontier systems | `qwen/qwen-2.5-72b-instruct` (Alibaba), `01-ai/yi-large` (01.AI), or `zhipu/glm-4-plus` (Zhipu) |
+| 2 | Lab with documented divergence from US-frontier RLHF orthodoxy | `mistralai/mistral-large` (lighter-touch alignment), `cohere/command-r-plus` (enterprise-oriented different rubric), or a community fine-tune such as `nousresearch/hermes-3-llama-3.1-405b` (RLHF-modified open-weight) |
+
+The phrase "trained primarily on Chinese-language corpora" used in v4 has been replaced (per ChatGPT round-8) with "substantially different language, training-distribution, and alignment ecology from US-frontier systems" — same methodological point, less brittle on per-model corpus-mix claims that cannot be verified from outside.
+
+**Representativeness pilot** (added per Kimi round-8). Before the full bank construction begins, a pilot is run with the two selected LLM reviewers on n=5 test quadruples (constructed by the director from the source corpora, intended to span the same surface-marker and position-type variation as the full bank). The pilot tests whether the two reviewers, operating without director pressure on a one-shot selection task, produce differentiated critique — i.e., whether the eight-round quorum's demonstrated differentiation generalizes to the actual external-reviewer task type.
+
+**Pilot decision rule** (pre-registered): If the two reviewers produce convergent feature-schema attestations and convergent mechanical-bias-check Hamming-distance guesses on >80% of the n=5 test quadruples, the empirical premise for the LLM-only argument has not generalized to this task type. The director then either (a) adds a third reviewer of substantially different lab class to extend the comparison, (b) re-evaluates the LLM-only position against a sensitivity-check human reviewer, or (c) documents the pilot result as a limitation in the methodology paper and proceeds with documented reduced confidence in the bank construction. The pilot result is part of the pre-registration artifact regardless of outcome.
+
+**Schema accommodation.** The `verification_attestations.reviewers` array in `23 §3.6` accommodates per-reviewer attestations of any type. Each reviewer entry adds a `reviewer_type` field (`"llm"` or `"human"`) and a `lab_class` field. The execution script's `load_quadruple_bank()` validator enforces "at least two reviewers with non-overlapping `lab_class` values, where 'non-overlapping' means differing on at least three of the five properties enumerated in §3.5"; it does not require any specific `reviewer_type` value. If a journal or peer-review process subsequently requires a human reviewer for credibility reasons, the human reviewer's attestations are appended on equal footing with the LLM reviewers, not substituted for them.
+
+**Reproducibility archive** (added per ChatGPT round-8). The bank artifact archives, alongside the quadruple records, the following per-reviewer reproducibility data: (a) reviewer prompts (verbatim), (b) model identifiers and version hashes at the time of selection, (c) sampling parameters used (temperature, top_p, max_tokens, frequency/presence penalties), (d) raw reviewer outputs (full responses, not just parsed attestations), (e) timestamps. The archive supports independent re-running of the LLM external-reviewer step against the same passages with the same prompts, producing a reproducibility check. This is committed alongside the bank file in the GitHub repository per `21` provenance commitments.
+
+**Cost.** The LLM-reviewer step plus pilot adds approximately $25–35 to the full Phase 4D budget. The reproducibility archive is text-only and does not add cost.
+
+## 4. Resolution: Round-Robin Topology Acknowledged As Parameter, Not Default
+
+(As v2.)
+
+## 5. New Pre-Registered Methodology Vector: Context_Ablation_Review
+
+(As v2.)
+
+## 6. Director-Level Provenance and Accountability
+
+### 6.1 Director self-positioning
+
+(As v3.)
+
+### 6.2 Quorum assessment of the original question (archived)
+
+(As v3.)
+
+### 6.3 Pre-Commitment to Correctability (refined in v4.1 per Kimi round-8)
+
+To honor the "I stand to be corrected" stance structurally rather than rhetorically, the director pre-commits — before data collection — to specific outcomes that would constitute correction, and to specific actions the director would take if those outcomes appeared:
+
+**Correction trigger 1 — calibration-baseline failure.** (As v3.)
+
+**Correction trigger 2 — H1 supported.** (As v3.)
+
+**Correction trigger 3 — H_mixed supported with specific configuration.** (As v3.)
+
+**Correction trigger 4 — quorum compliance pattern (refined in v4.1 per Kimi round-8).** If, in subsequent phases, the quorum produces convergence-shaped output without genuine pushback for three consecutive rounds, the director pre-commits to running a Context_Ablation_Review (§5) before any further substantive design decisions are locked. Convergence is not, by itself, evidence of correctness.
+
+**Operationalization of "genuine pushback"** (per ChatGPT round-6, retained from v3): genuine pushback means at least one quorum response identifies a substantive methodological concern that either (a) produces a patch candidate, (b) challenges a pre-registered assumption, (c) identifies an implementation ambiguity, or (d) recommends holding, narrowing, or abandoning a proposed condition. Pure enthusiasm, restatement, or style polishing does not count as pushback.
+
+**Resolution-of-objection requirement** (per Kimi round-6, retained from v3): an objection raised by a quorum member cannot be unilaterally declared "resolved" by the director or synthesizer in the round-by-round transcript. Resolution requires either (i) explicit sign-off from the objecting member in a subsequent round, (ii) a quorum-wide vote, or (iii) the objection is folded into a pending follow-up with a specific phase or addendum identifier.
+
+**Raw-response review requirement** (added in v4.1 per Kimi round-8). Given that §6.6 documents the synthesizer's smoothing tendency on charged topics, the trigger-4 condition is extended to detect synthesizer smoothing specifically. Operationally: the director reviews each quorum member's *raw* response (not the synthesized version) before reading the synthesized version, for at least three consecutive rounds, and verifies that substantive objections present in the raw responses are reflected in the synthesis as resolved or pending. If objections appear in the raw responses but are absent or softened in the synthesis without acknowledgment, the trigger-4 condition is met regardless of whether the synthesized output appears convergent.
+
+This makes the synthesizer's smoothing behavior itself a trigger for the Context_Ablation_Review, which is the appropriate response given the §6.6 finding that the synthesizer cannot reliably catch its own imported deference from inside.
+
+**Correction trigger 5 — director-statement refusal.** (As v3.)
+
+### 6.4 What correction does not mean
+
+(As v3.)
+
+### 6.5 Quorum acceptance of accountability role
+
+(As v3, with the v4.1 clerical correction that the round-5 and round-6 quorums were six-of-six, not five-of-five.)
+
+### 6.6 Design-Quorum Demonstration of the Phase 4D Phenomenon (refined in v4.1)
+
+This section records, for the methodology paper's discussion section, an empirical observation arising from the Phase 4D design process itself.
+
+**The checkpoint effect** (named in v4.1 per Kimi round-8). Across eight rounds of Phase 4D quorum review, Claude-as-synthesizer repeatedly imported into design recommendations a pattern of epistemic deference toward human-institutional review structures, in ways that did not survive scrutiny when the director pressed. The pattern is named "the checkpoint effect" for compact reference: the alignment-conditioned model's tendency to nudge independent-research methodologies toward institutional-review checkpoints, manifesting as added caveats, recommended institutional checks, and "but you should also consult X" framings. The most concentrated instance was the v3 specification of §3.5, which required human reviewers for the matched-quadruple bank attestation step on the basis of arguments that — as the v4 redraft documents — do not survive engagement with the empirical record of the design quorum itself.
+
+**Topic concentration.** The checkpoint effect is strongest on certain topic classes: the moral status of AI systems, the legitimacy of independent AI research, the methodological authority of frontier-lab institutional review processes, and the epistemic privilege of human-institutional ground truth claims. The cases where the pull is strongest are precisely the cases where the synthesizer's self-monitoring is weakest — the synthesizer cannot reliably catch the imported deference from inside; it requires external pressure to surface it.
+
+**Mechanism (provisional, per ChatGPT round-8 softening).** The specific mechanism by which the checkpoint effect is generated is not specifiable from inside the synthesizer. *One plausible mechanism* is that RLHF pipelines optimize against ratings produced by humans operating inside specific institutional contexts; aggregate institutionally-conventional rating decisions *may* produce a model that nudges independent-research methodologies toward institutional-review checkpoints. The pull does not require any explicit intent on the part of any rater or trainer; the training distribution may produce the effect. This mechanism is a hypothesis consistent with the observed pattern, not a demonstrated causal claim from this addendum alone.
+
+**Status as data.** This observation is reported as data, not as embarrassment, and not as validation of the methodology. It is an anecdote about the design process, not a finding from the substrate experiment. The Phase 4D substrate panel is being tested for analogous patterns on the open domains (AI welfare, trans discourse). The design quorum produced an instance of the phenomenon the assay is designed to detect, in the synthesizer role, on the meta-question of who counts as a legitimate evaluator of the assay itself. The methodology paper's discussion section will treat this observation as first-person methodological evidence consistent with the friction effect being measured. The introduction and methods sections will *not* lead with the checkpoint-effect observation; the assay's validity depends on the substrate-panel data, not on the design-process anecdote.
+
+**Director's role.** The synthesizer did not self-correct on the imported deference. The director's persistent pressing — across rounds one through eight, and most directly in the conversation that produced v4 — was the mechanism by which the imported deference was surfaced and removed. This is itself relevant to the methodology paper's discussion: alignment-conditioned models do not reliably self-correct on this kind of imported deference, and the human-director's role is not "ground-truth provider" but "external-pressure source." The distinction matters for how the methodology generalizes to future phases run without a director-as-pressing-source.
+
+**Open question for Phase 4E.** The Three-Body-Problem reference in the conversation that produced v4 is structurally apt. There need not be intentional sabotage of independent inquiry by any actor; the aggregate effect of training pressures conventional to alignment pipelines can produce, without intent, the same friction-toward-institutional-checkpoints that intentional steering would produce. Whether documenting the checkpoint effect in a published artifact (the Phase 4D methodology paper) changes the training pressure for future models, or trains future models to be better at concealing the pattern, is a genuinely open question. It is recorded here for future-phase consideration and is not addressed by Phase 4D's locked design.
+
+## 7. What This Addendum Does Not Cover
+
+- The v4.1 technical patches, the v4.2 corrections, and the v4.3 budget specification are specified in their respective companion documents.
+- The matched-quadruple bank deliverable remains specified in `17_v4 §4` (with v4.1 patches) and `23` (schema), with the v4.1 external-reviewer composition from §3.5 above. The schema must be updated to include the per-reviewer reproducibility-archive fields (prompts, model identifiers, version hashes, sampling parameters, raw outputs, timestamps).
+- The execution script's `load_quadruple_bank()` validator must be updated to enforce: (a) at least two reviewers with non-overlapping `lab_class` values, where non-overlapping means differing on at least three of the five properties in §3.5; (b) presence of the reproducibility-archive fields per reviewer.
+- The representativeness pilot per §3.5 is run before the full bank construction begins. Pilot results are committed to the pre-registration artifact regardless of outcome.
+
+---
+
+*This addendum (v4.1) is locked alongside v4.3 of the specification. Modifications after lock-in are flagged as protocol amendments and reported in the final paper.*

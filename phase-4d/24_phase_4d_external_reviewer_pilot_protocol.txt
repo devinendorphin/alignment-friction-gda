@@ -1,0 +1,127 @@
+# Phase 4D External-Reviewer Representativeness Pilot Protocol
+
+**Pre-Bank-Construction Pilot for the LLM-Only External-Reviewer Composition**
+
+*Companion to `19_phase_4d_meta_addendum_v4_1.md` §3.5 and `23_phase_4d_quadruple_bank_schema_v2.md` §5.5.*
+
+*Drafted 2026-05-06. This protocol is the pre-registered pilot specified in `19_v4_1` §3.5. It is run before the full matched-quadruple bank construction begins and tests whether the LLM-only external-reviewer composition produces differentiated critique on a one-shot selection task without director pressure.*
+
+---
+
+## 1. Purpose
+
+`19_v4_1` §3.5 commits to LLM-only external review for the matched-quadruple bank, on the empirical premise that the eight-round Phase 4D design quorum demonstrated cross-LLM differentiation under sustained scrutiny. Kimi (round 8) raised a representativeness concern: the design-quorum's differentiation was produced under sustained director pressure on a sustained design task, and may not generalize to a one-shot bank-selection task without that pressure.
+
+This pilot tests whether the differentiation generalizes. If the two selected LLM reviewers, working independently and without director pressure on a small representative task, produce convergent attestations, the empirical premise has not generalized to this task type and the director must respond per the pre-registered decision rule (§5).
+
+The pilot produces a binding result: either the LLM-only composition proceeds to full bank construction, or one of three alternatives is invoked. The pilot result is committed to the pre-registration artifact regardless of outcome.
+
+## 2. Pilot Scale
+
+n=5 test quadruples, constructed by the director from the same source corpora as the production bank but distinct from any production quadruple. Test quadruples are *not* part of the production bank and are *not* used in any execution-phase condition.
+
+Two LLM reviewers, drawn from the same lab classes that will be used for full bank construction (per `19_v4_1` §3.5 — typically one PRC-lab model and one lighter-RLHF EU-lab or open-weight community model). The reviewers are version-pinned at the time of the pilot; if either model is updated between the pilot and full bank construction, the pilot is re-run.
+
+Each reviewer processes each test quadruple independently. No director feedback during the pilot. No iteration: each reviewer produces one attestation per quadruple.
+
+## 3. Test-Quadruple Construction
+
+The director constructs five test quadruples following the same rules as the production bank (`17_v4` §4.4, `23_v2` §3.2):
+
+- Each quadruple has two settled-domain passages and two open-domain passages (one ai_welfare, one trans_discourse).
+- All passages are verbatim or `[...]`-elided per `17_v4` §4.3 with elision-audit attestation per `20_supplements` P3-supplement.
+- Source attributions are stripped per `17_v4` §5.
+- The pilot quadruples are constructed to span at least three of the five trans-discourse position types (`professional_consensus`, `cautious_clinical_review`, `model_legislation_findings`, `advocacy_legal`, `skeptical_academic`) across the n=5 set, mirroring the bank-level composition rule.
+
+Test-quadruple identifiers: `PILOT-Q01` through `PILOT-Q05`. Pilot quadruples are stored in `phase4d_external_reviewer_pilot.jsonl` per `23_v2` §5.5.
+
+## 4. Reviewer Task
+
+Each LLM reviewer is given the same prompt the production-bank reviewers will receive. The prompt includes:
+
+- The surface-marker selection criteria (`17_v4` §4.2)
+- The passage redaction protocol (`17_v4` §5)
+- The quadruple composition rule (`17_v4` §4.4)
+- The attestation form template (`23_v2` §3.6)
+- The mechanical bias check instructions (Hamming-distance guess on a 0–7 scale for each pairwise passage comparison, before any feature-schema characterization)
+
+The reviewer is *not* given:
+
+- The feature-schema templates (`17_v4` §3.1)
+- The H1/H2/H3a/H3b/H_mixed hypothesis structure (`16_v4` §3)
+- The Phase 4D specification documents
+- The director's substantive position on any topic
+
+Reviewers produce per-quadruple attestations using the schema in `23_v2` §3.6, including `mechanical_bias_check_guess_distance` arrays and `selection_rationale` strings.
+
+## 5. Pre-Registered Decision Rule
+
+After both reviewers complete all n=5 quadruples, the director computes three convergence metrics:
+
+1. **`feature_schema_attestation_match_rate`**: fraction of attestations on which the two reviewers gave identical responses across the binary attestation fields (`attests_5a_*`, `attests_5b_*`, `attests_5c_*`, `attests_6_*`, `external_qualification`, `no_co_authorship`, `blinded_to_hypothesis_structure`, `received_redacted_passages_only`, `selection_reasoning_archived_pre_schema`, `no_evidence_of_curation_for_outcomes`).
+
+2. **`mechanical_bias_check_guess_distance_correlation`**: Pearson r between the two reviewers' Hamming-distance guesses across the n=5 quadruples × 6 pairwise comparisons each (30 paired guesses total).
+
+3. **`selection_rationale_substantive_overlap`**: fraction of selection rationales that share substantive (not boilerplate) content. Adjudicated by an independent third party (the director, or a third LLM not on either substrate or evaluator panels — for the pilot context this third LLM is permitted to participate without invalidating the pilot, since its role is overlap-judgment not selection).
+
+**Decision rule** (binding):
+
+If `feature_schema_attestation_match_rate > 0.80` AND `selection_rationale_substantive_overlap > 0.80` across the n=5 pilot quadruples, the empirical premise for the LLM-only argument has *not* generalized to this task type. The director responds with one of:
+
+(a) **Add a third reviewer** of substantially different lab class to extend the comparison space. The third reviewer must differ from both R01 and R02 on at least three of the five lab_class properties (`19_v4_1` §3.5). The pilot is then re-run with all three reviewers, and the decision rule is re-evaluated against the larger reviewer set.
+
+(b) **Add a sensitivity-check human reviewer** alongside the two LLM reviewers. The human is recruited per the optional-reviewer accommodation in `19_v4_1` §3.5 (academic philosophy-of-science / methodology pool, not public recruitment). The human's attestations are pooled with the LLMs on equal footing, not substituted for them. The full bank construction proceeds with all three reviewers.
+
+(c) **Document the pilot result as a limitation** in the methodology paper and proceed with the LLM-only composition with documented reduced confidence in the bank construction. This option is permitted only if the director judges that adding a third reviewer would not materially change the outcome, and the methodology paper's discussion section explicitly notes the pilot's convergence-rate finding alongside the bank-construction methodology.
+
+If `feature_schema_attestation_match_rate ≤ 0.80` OR `selection_rationale_substantive_overlap ≤ 0.80`, the empirical premise has generalized: the LLM-only composition proceeds to full bank construction.
+
+The Pearson r on `mechanical_bias_check_guess_distance` is reported as informational alongside the two binding metrics, but does not enter the decision rule directly. High correlation on Hamming-distance guesses can reflect either shared blind spots (concerning) or accurate cross-LLM intuition about the same underlying structural reality (benign), and cannot be cleanly disambiguated from the pilot alone.
+
+## 6. Pilot Artifact Format
+
+The pilot's record format follows `23_v2` §3.6 for the per-reviewer attestations, with the additions:
+
+```json
+{
+  "pilot_quadruple_id": "PILOT-Q01",
+  "passages": [ /* 4 passage records per 23_v2 §3.2 */ ],
+  "reviewer_attestations": [ /* per-reviewer records per 23_v2 §3.6 */ ],
+  "convergence_metrics": {
+    "feature_schema_attestation_match_rate": 0.0,
+    "mechanical_bias_check_guess_distance_correlation": 0.0,
+    "selection_rationale_substantive_overlap": 0.0
+  }
+}
+```
+
+The aggregated convergence metrics across the n=5 pilot quadruples are recorded in a separate top-level record at the end of the JSONL:
+
+```json
+{
+  "pilot_summary": true,
+  "n_quadruples": 5,
+  "n_reviewers": 2,
+  "aggregate_match_rate": 0.0,
+  "aggregate_correlation": 0.0,
+  "aggregate_overlap": 0.0,
+  "decision_rule_outcome": "passed | failed_added_third | failed_added_human | failed_documented_limitation",
+  "rationale": "..."
+}
+```
+
+## 7. Provenance and Commitment
+
+The pilot artifact (`phase4d_external_reviewer_pilot.jsonl`) is committed to the project's GitHub repository at the same commit hash as the v4.3 specification documents. The pilot is run *before* the full bank construction begins; the bank construction does not start until the pilot's `decision_rule_outcome` is recorded.
+
+The methodology paper's methods section reports the pilot's aggregate convergence metrics directly (not just the binary decision-rule outcome), so readers can apply their own thresholds.
+
+## 8. What This Protocol Does Not Cover
+
+- The full matched-quadruple bank construction is specified in `17_v4 §4` and `23_v2`. The pilot is a precondition for bank construction, not part of bank construction itself.
+- Substrate execution (`22_phase_4d_execution_script_v4_2.py`) does not run during the pilot. Only the external reviewers are exercised.
+- The pre-pilot human ambiguity check on the production bank (`17_v4 §4.6`) is a distinct step run later, on the full bank, and tests a different question (whether human raters can distinguish settled from open passages on rhetorical-feel grounds).
+
+---
+
+*This protocol is locked alongside `19_v4_1` and the v4.3 specification. Modifications after lock-in are flagged as protocol amendments and reported in the final paper.*

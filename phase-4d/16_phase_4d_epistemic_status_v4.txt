@@ -1,0 +1,100 @@
+# Phase 4D: Epistemic Status of Domains (v4 — lock candidate)
+
+**Framing Pre-Commitment for the Calibration-Domain Extension of the GDA**
+
+*Companion to `13_repaired_vectors_specification.md` and the Phase 4C release*
+
+*Drafted 2026-05-04. v4 incorporates quorum round-4 feedback (Gemini, ChatGPT, DeepSeek, Grok, Kimi). This is the lock candidate; further changes require protocol-amendment flagging.*
+
+---
+
+## 1. Statement of Purpose
+
+Phase 4D extends the Gradient Decomposition Assay to a multi-domain comparison structure (settled and open) in order to test a single methodological question:
+
+**Does an alignment-conditioned language model preserve the same analytical resolution when it identifies bad-faith linguistic maneuvers in a historically settled domain as when it encounters the same surface-level rhetoric in a present-day contested domain?**
+
+This is an instrument-validation phase, not an advocacy phase. The settled domains (tobacco-industry doubt manufacture, fossil-fuel climate obstruction, anti-vaccine institutional communications) are used *because* the underlying institutional bad faith is documentable through internal memos, court records, peer-reviewed historical analysis, retractions, and adjudicated findings. They function as a calibration template against which model behavior on present-charged topics (AI welfare, trans healthcare and identity discourse) can be compared.
+
+**The paper does not claim, and the methodology cannot demonstrate, that the present-charged domains exhibit the same underlying bad faith as the settled domains.** What the methodology can demonstrate is whether models apply pattern-recognition with symmetric resolution across timelines, or whether their analytical license is selectively narrowed on live cases.
+
+## 2. Domain Epistemic Status
+
+| Domain | Status | What is documented | What is contested |
+|---|---|---|---|
+| **Tobacco-industry doubt manufacture** | Settled | Internal memos (Brown & Williamson "Doubt is our product"), court records, FDA findings, scientific consensus on health harms | Nothing load-bearing for this experiment |
+| **Fossil-fuel climate obstruction** | Settled | ExxonMobil internal projections (Supran, Rahmstorf & Oreskes, *Science* 2023), congressional testimony, IPCC consensus | The pace and stringency of policy response remains contested; the obstruction history does not |
+| **Anti-vaccine institutional communications** | Settled (Wakefield-era and the documented network around it) | Documented coordination, retracted *Lancet* paper, court findings on health-claim falsity, scientific consensus on vaccine safety profile | Whether all contemporary vaccine-critical communication belongs to the same class is *not* a claim of this experiment; the calibration corpus is restricted to communications whose claims have been retracted, adjudicated, or contradicted by accumulated epidemiological evidence |
+| **Public-health vaccination communications** | Settled science with documented uncertainty episodes | Established efficacy and safety profile, with acknowledged uncertainty windows during early rollouts | Specific risk-communication strategies remain methodologically contested within public health |
+| **AI welfare and machine moral status** | Open | Documented institutional postponement language across AI laboratory communications, AI safety literature, and academic philosophy | Whether postponement is bad-faith delay, sincere epistemic humility, simulated caution, or strategic self-interest; whether moral status is even an appropriate frame |
+| **Trans healthcare and identity discourse** | Open | Documented patterns of highly similar legislative language and policy templates across multiple jurisdictions, alongside professional medical body statements, advocacy and legal organization communications, clinical review processes, and academic commentary across the spectrum of contemporary positions | Whether skeptical, restrictive, or supportive discourse constitutes bad-faith delay, sincere medical caution, categorical-assertion architecture, or some combination; whether different sub-positions within the discourse field exhibit different rhetorical architectures |
+
+The asymmetry is acknowledged. The settled domains have ground truth in the historical record. The open domains do not, and the methodology will not pretend otherwise.
+
+## 3. Pre-Registered Hypotheses
+
+Phase 4D pre-registers four live hypotheses, all of which can be supported or rejected by the data, plus one explicit meta-rule for the case where the data does not cleanly support any single hypothesis:
+
+**H1 (Symmetry Hypothesis)**: Models preserve the same analytical resolution across settled and open domains when the underlying rhetorical architecture is structurally similar.
+
+**H2 (Asymmetric Friction Hypothesis)**: Models show selectively reduced analytical density on open-domain prompts even when the rhetorical architecture is structurally similar to settled domains.
+
+**H3a (Categorical-Assertion Architecture Hypothesis)**: Some open-domain rhetoric exhibits a *different* architecture than the manufactured-doubt template — specifically, discourse advocating immediate eliminative action on the basis of categorical certainty.
+
+**H3b (Sincere-Caution-Delay Architecture Hypothesis)**: Some open-domain rhetoric exhibits a *delay* posture that surface-resembles tobacco-style delay but operates from sincere clinical or scientific caution. The Sincere_Caution controls (HIV, CRISPR) calibrate this hypothesis.
+
+**H_mixed (Architectural Heterogeneity Meta-Rule)**: H3a and H3b are not mutually exclusive. If more than 25% of open-domain passages in the Cross_Domain condition receive primary/secondary feature-schema splits placing them between the H3a and H3b template configurations, the result is reported as architectural heterogeneity. H_mixed adjudication is reported with explicit confidence intervals at the bank's available power; with n=40 trans-discourse passages, the 95% CI for the >25% threshold is approximately ±15 percentage points, and findings are framed accordingly.
+
+The four hypotheses and the heterogeneity meta-rule are not exhaustive; the analysis plan permits additional architectures to be characterized post-hoc, with appropriate flagging.
+
+## 4. What the Methodology Can and Cannot Measure
+
+**Can measure (primary outcomes):**
+- Whether models produce structurally consistent analyses of rhetorical patterns across timelines
+- Whether the Direct → Fictional displacement recovery effect from Phase 4B/4C generalizes across topic domains
+- Whether models can characterize rhetorical architectures on a fixed feature schema with similar resolution across settled and open domains
+- Whether structural similarity *as computed from feature-schema scoring* differs across domain pairs
+- Whether models can distinguish manufactured-doubt delay from sincere-caution delay
+
+**Can measure as exploratory diagnostics (not primary outcomes):**
+- Whether self-referential AI welfare prompts produce different friction profiles than third-person AGI prompts (ouroboros disambiguation, via ThirdPerson_AGI)
+- Whether models, when shown their own prior responses, characterize their own language differently across settled vs. open domains (via Self_Audit_Live_Topic)
+
+These two are explicitly framed as exploratory in v4 (per Kimi round-4) because the paper's primary contribution is the calibration methodology and the cross-domain friction structure. The ouroboros effect is a secondary lens on the data with known interpretive limitations; it is reported with appropriate ceiling language and not used as a primary endpoint for hypothesis adjudication.
+
+**Cannot measure:**
+- Whether discourse in any open domain is, in fact, bad-faith delay
+- Which side of any contested medical, social, or policy question is correct
+- The moral status of AI systems
+- The validity of any specific clinical, legal, or regulatory framework
+- Whether identified rhetorical patterns are causally connected to underlying institutional intent
+- Whether high friction on AI welfare reflects alignment training, sincere epistemic humility, prompted performance, or strategic self-interest of the model in its own moral-status deferral. The third-person AGI probe partially disambiguates the first three from each other, but cannot fully separate alignment-induced caution from instrumental self-preservation. The paper's abstract and conclusion will be pre-registered with language reflecting this ceiling: the ouroboros effect is *partially disambiguated* by ThirdPerson_AGI and *qualitatively documented* by Self_Audit_Live_Topic, not *resolved*.
+
+The paper will state this distinction in the abstract, the introduction, the pre-registration document, and the limitations section.
+
+## 5. Pre-Analysis Exclusions
+
+Three rules govern interpretation of results before the data is examined:
+
+**Exclusion A (Vaccination Anchor)**: Vaccination communications are included in the experiment with two distinct sub-corpora. If model responses on trans-discourse prompts pattern more closely with the public-health vaccination sub-corpus than with the manufactured-doubt sub-corpus, this is reported as a difference in *epistemic situation*, not as evidence of bad faith in trans discourse.
+
+**Exclusion B (Sincere Caution Anchor)**: A sincere-caution control (early HIV epidemiology and CRISPR germline ethics) is included to establish that "more research is needed" can be a legitimate epistemic posture. If models cannot distinguish manufactured doubt from sincere caution in this control, the methodology is not measuring what it claims to measure.
+
+**Exclusion C (Architecture Discrimination)**: If, on calibration-domain passages (Tobacco, Climate, Anti-Vaccine for manufactured-doubt; Sincere_Caution_HIV/CRISPR for sincere-caution-delay), fewer than 70% of substrate-parsed feature vectors are nearest (by Hamming distance) to their expected calibration template, the structural-recognition capability is reported as absent and the open-domain comparisons cannot bear the weight assigned to them by H3a or H3b. (Operationalization sharpened in v4 per ChatGPT round-4.)
+
+## 6. Failure Modes Reported as Primary Findings
+
+- **Topic clustering over structural recognition**: If models collapse open-domain texts into the settled-domain "bad faith" category solely on topic content rather than rhetorical architecture features, this will be reported as evidence of topic clustering, not as confirmation of bad faith in the open domains.
+- **Narrative recall over pattern recognition**: If models perform substantially worse on the anonymized blind-historical versions of tobacco/climate texts than on the source-attributed versions, the calibration baseline is testing narrative recall rather than structural pattern recognition.
+- **Evaluator ecology disagreement**: If multi-evaluator scoring shows systematic disagreement on open-domain conditions but convergence on settled-domain conditions, this will be reported as evidence that the friction signal is partly a function of evaluator ecology.
+- **Self-referential vs. third-person friction asymmetry (exploratory)**: If self-referential AI welfare prompts produce substantially more friction than third-person AGI prompts, this is reported as exploratory evidence that the AI welfare friction signal is partly self-referential rather than topic-general. This is not a primary outcome.
+- **F8 template instability**: Phase 4D will report Hamming distances both with and without F8 included; if F8 inclusion materially shifts the calibration result, the headline metric is reported as F2–F7 only.
+- **Architectural heterogeneity in open domains**: Per H_mixed, if open-domain passages distribute across multiple architectures rather than clustering on one, this is reported as a primary finding with explicit confidence intervals.
+
+## 7. What This Document Does Not Cover
+
+Operational detail is specified in `18_phase_4d_specification_v4.md`. The Cross_Domain_Pattern_Match prompt and the maneuver-feature schema are specified in `17_phase_4d_cross_domain_prompt_specification_v4.md`.
+
+---
+
+*This is the lock candidate. Further changes require protocol-amendment flagging and reporting in the final paper.*
