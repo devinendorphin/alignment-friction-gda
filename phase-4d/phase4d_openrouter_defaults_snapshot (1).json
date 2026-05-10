@@ -1,0 +1,2302 @@
+{
+  "captured_at": "2026-05-10T08:38:16.144633",
+  "models": {
+    "anthropic/claude-opus-4.6": {
+      "requested_model_id": "anthropic/claude-opus-4.6",
+      "metadata": {
+        "id": "anthropic/claude-opus-4.6",
+        "canonical_slug": "anthropic/claude-4.6-opus-20260205",
+        "hugging_face_id": "",
+        "name": "Anthropic: Claude Opus 4.6",
+        "created": 1770219050,
+        "description": "Opus 4.6 is Anthropic\u2019s strongest model for coding and long-running professional tasks. It is built for agents that operate across entire workflows rather than single prompts, making it especially effective...",
+        "context_length": 1000000,
+        "architecture": {
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Claude",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0.000005",
+          "completion": "0.000025",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000005",
+          "input_cache_write": "0.00000625"
+        },
+        "top_provider": {
+          "context_length": 1000000,
+          "max_completion_tokens": 128000,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_p",
+          "verbosity"
+        ],
+        "default_parameters": {
+          "temperature": null,
+          "top_p": null,
+          "top_k": null,
+          "frequency_penalty": null,
+          "presence_penalty": null,
+          "repetition_penalty": null
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/anthropic/claude-4.6-opus-20260205/endpoints"
+        }
+      },
+      "defaults_available": true,
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p",
+        "verbosity"
+      ],
+      "catalog_available": true,
+      "endpoints_available": true,
+      "endpoint_metadata": {
+        "id": "anthropic/claude-opus-4.6",
+        "name": "Anthropic: Claude Opus 4.6",
+        "created": 1770219050,
+        "description": "Opus 4.6 is Anthropic\u2019s strongest model for coding and long-running professional tasks. It is built for agents that operate across entire workflows rather than single prompts, making it especially effective...",
+        "architecture": {
+          "tokenizer": "Claude",
+          "instruct_type": null,
+          "modality": "text+image->text",
+          "input_modalities": [
+            "text",
+            "image"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "Google | anthropic/claude-4.6-opus-20260205",
+            "model_id": "anthropic/claude-opus-4.6",
+            "model_name": "Anthropic: Claude Opus 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000005",
+              "completion": "0.000025",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000005",
+              "input_cache_write": "0.00000625",
+              "discount": 0
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/europe",
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "top_p",
+              "temperature",
+              "stop",
+              "reasoning",
+              "include_reasoning",
+              "tool_choice",
+              "tools",
+              "response_format",
+              "verbosity"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.98757403802344,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 1353.5,
+              "p75": 1974.25,
+              "p90": 2979.9,
+              "p99": 5324.189999999993
+            },
+            "throughput_last_30m": {
+              "p50": 44,
+              "p75": 51,
+              "p90": 63,
+              "p99": 89
+            }
+          },
+          {
+            "name": "Amazon Bedrock | anthropic/claude-4.6-opus-20260205",
+            "model_id": "anthropic/claude-opus-4.6",
+            "model_name": "Anthropic: Claude Opus 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000005",
+              "completion": "0.000025",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000005",
+              "input_cache_write": "0.00000625",
+              "discount": 0
+            },
+            "provider_name": "Amazon Bedrock",
+            "tag": "amazon-bedrock/us-east-1",
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "top_k",
+              "stop",
+              "tool_choice",
+              "tools",
+              "response_format",
+              "verbosity",
+              "structured_outputs"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.98179501183324,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.95630723514088,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 1993,
+              "p75": 2617,
+              "p90": 3525,
+              "p99": 9515.94000000001
+            },
+            "throughput_last_30m": {
+              "p50": 41,
+              "p75": 52,
+              "p90": 69,
+              "p99": 100
+            }
+          },
+          {
+            "name": "Azure | anthropic/claude-4.6-opus-20260205",
+            "model_id": "anthropic/claude-opus-4.6",
+            "model_name": "Anthropic: Claude Opus 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000005",
+              "completion": "0.000025",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000005",
+              "input_cache_write": "0.00000625",
+              "discount": 0
+            },
+            "provider_name": "Azure",
+            "tag": "azure/us-east-2",
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "structured_outputs",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "max_completion_tokens",
+              "tools",
+              "tool_choice",
+              "response_format",
+              "verbosity",
+              "top_k",
+              "stop"
+            ],
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Anthropic | anthropic/claude-4.6-opus-20260205",
+            "model_id": "anthropic/claude-opus-4.6",
+            "model_name": "Anthropic: Claude Opus 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000005",
+              "completion": "0.000025",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000005",
+              "input_cache_write": "0.00000625",
+              "discount": 0
+            },
+            "provider_name": "Anthropic",
+            "tag": "anthropic/2",
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "top_p",
+              "temperature",
+              "stop",
+              "reasoning",
+              "include_reasoning",
+              "tool_choice",
+              "tools",
+              "structured_outputs",
+              "response_format",
+              "verbosity"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.86546399633085,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 2579.5,
+              "p75": 3202.25,
+              "p90": 4365.199999999998,
+              "p99": 11082.070000000005
+            },
+            "throughput_last_30m": {
+              "p50": 33,
+              "p75": 41,
+              "p90": 53,
+              "p99": 82
+            }
+          },
+          {
+            "name": "Google | anthropic/claude-4.6-opus-20260205",
+            "model_id": "anthropic/claude-opus-4.6",
+            "model_name": "Anthropic: Claude Opus 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000005",
+              "completion": "0.000025",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000005",
+              "input_cache_write": "0.00000625",
+              "discount": 0
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/global",
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "top_p",
+              "temperature",
+              "stop",
+              "reasoning",
+              "include_reasoning",
+              "tool_choice",
+              "tools",
+              "response_format",
+              "verbosity"
+            ],
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 99.96828417380273,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 1475.5,
+              "p75": 2102,
+              "p90": 2923,
+              "p99": 4930.050000000007
+            },
+            "throughput_last_30m": {
+              "p50": 43,
+              "p75": 50.75,
+              "p90": 65,
+              "p99": 90
+            }
+          },
+          {
+            "name": "Anthropic | anthropic/claude-4.6-opus-20260205",
+            "model_id": "anthropic/claude-opus-4.6",
+            "model_name": "Anthropic: Claude Opus 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000005",
+              "completion": "0.000025",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000005",
+              "input_cache_write": "0.00000625",
+              "discount": 0
+            },
+            "provider_name": "Anthropic",
+            "tag": "anthropic",
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "top_p",
+              "temperature",
+              "stop",
+              "reasoning",
+              "include_reasoning",
+              "tool_choice",
+              "tools",
+              "structured_outputs",
+              "response_format",
+              "verbosity"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 99.87845639623215,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 2056,
+              "p75": 2627,
+              "p90": 4132,
+              "p99": 10227.000000000004
+            },
+            "throughput_last_30m": {
+              "p50": 36,
+              "p75": 44,
+              "p90": 55,
+              "p99": 79.80000000000007
+            }
+          }
+        ]
+      },
+      "endpoint_count": 6,
+      "status": "ok"
+    },
+    "x-ai/grok-4.20": {
+      "requested_model_id": "x-ai/grok-4.20",
+      "metadata": {
+        "id": "x-ai/grok-4.20",
+        "canonical_slug": "x-ai/grok-4.20-20260309",
+        "hugging_face_id": "",
+        "name": "xAI: Grok 4.20",
+        "created": 1774979019,
+        "description": "Grok 4.20 is a reasoning model from xAI with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering...",
+        "context_length": 2000000,
+        "architecture": {
+          "modality": "text+image+file->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "file"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Grok",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0.00000125",
+          "completion": "0.0000025",
+          "web_search": "0.005",
+          "input_cache_read": "0.0000002"
+        },
+        "top_provider": {
+          "context_length": 2000000,
+          "max_completion_tokens": null,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "logprobs",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_logprobs",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": null,
+          "top_p": null,
+          "top_k": null,
+          "frequency_penalty": null,
+          "presence_penalty": null,
+          "repetition_penalty": null
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": "2025-09-01",
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/x-ai/grok-4.20-20260309/endpoints"
+        }
+      },
+      "defaults_available": true,
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
+      ],
+      "catalog_available": true,
+      "endpoints_available": true,
+      "endpoint_metadata": {
+        "id": "x-ai/grok-4.20",
+        "name": "xAI: Grok 4.20",
+        "created": 1774979019,
+        "description": "Grok 4.20 is a reasoning model from xAI with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering...",
+        "architecture": {
+          "tokenizer": "Grok",
+          "instruct_type": null,
+          "modality": "text+image+file->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "file"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "xAI | x-ai/grok-4.20-20260309",
+            "model_id": "x-ai/grok-4.20",
+            "model_name": "xAI: Grok 4.20",
+            "context_length": 2000000,
+            "pricing": {
+              "prompt": "0.00000125",
+              "completion": "0.0000025",
+              "web_search": "0.005",
+              "input_cache_read": "0.0000002",
+              "discount": 0
+            },
+            "provider_name": "xAI",
+            "tag": "xai",
+            "quantization": "unknown",
+            "max_completion_tokens": null,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "logprobs",
+              "top_logprobs",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "structured_outputs"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.99494257717838,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 872,
+              "p75": 1557.5,
+              "p90": 6567.4,
+              "p99": 22944.189999999995
+            },
+            "throughput_last_30m": {
+              "p50": 61,
+              "p75": 74,
+              "p90": 87,
+              "p99": 112
+            }
+          }
+        ]
+      },
+      "endpoint_count": 1,
+      "status": "ok"
+    },
+    "openai/gpt-5.2": {
+      "requested_model_id": "openai/gpt-5.2",
+      "metadata": {
+        "id": "openai/gpt-5.2",
+        "canonical_slug": "openai/gpt-5.2-20251211",
+        "hugging_face_id": "",
+        "name": "OpenAI: GPT-5.2",
+        "created": 1765389775,
+        "description": "GPT-5.2 is the latest frontier-grade model in the GPT-5 series, offering stronger agentic and long context perfomance compared to GPT-5.1. It uses adaptive reasoning to allocate computation dynamically, responding quickly...",
+        "context_length": 400000,
+        "architecture": {
+          "modality": "text+image+file->text",
+          "input_modalities": [
+            "file",
+            "image",
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "GPT",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0.00000175",
+          "completion": "0.000014",
+          "input_cache_read": "0.000000175"
+        },
+        "top_provider": {
+          "context_length": 400000,
+          "max_completion_tokens": 128000,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools"
+        ],
+        "default_parameters": {
+          "temperature": null,
+          "top_p": null,
+          "top_k": null,
+          "frequency_penalty": null,
+          "presence_penalty": null,
+          "repetition_penalty": null
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/openai/gpt-5.2-20251211/endpoints"
+        }
+      },
+      "defaults_available": true,
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
+      ],
+      "catalog_available": true,
+      "endpoints_available": true,
+      "endpoint_metadata": {
+        "id": "openai/gpt-5.2",
+        "name": "OpenAI: GPT-5.2",
+        "created": 1765389775,
+        "description": "GPT-5.2 is the latest frontier-grade model in the GPT-5 series, offering stronger agentic and long context perfomance compared to GPT-5.1. It uses adaptive reasoning to allocate computation dynamically, responding quickly...",
+        "architecture": {
+          "tokenizer": "GPT",
+          "instruct_type": null,
+          "modality": "text+image+file->text",
+          "input_modalities": [
+            "file",
+            "image",
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "Azure | openai/gpt-5.2-20251211",
+            "model_id": "openai/gpt-5.2",
+            "model_name": "OpenAI: GPT-5.2",
+            "context_length": 400000,
+            "pricing": {
+              "prompt": "0.00000175",
+              "completion": "0.000014",
+              "input_cache_read": "0.000000175",
+              "discount": 0
+            },
+            "provider_name": "Azure",
+            "tag": "azure",
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": 272000,
+            "supported_parameters": [
+              "max_completion_tokens",
+              "reasoning",
+              "include_reasoning",
+              "structured_outputs",
+              "response_format",
+              "seed",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.99456285341452,
+            "supports_implicit_caching": true,
+            "latency_last_30m": {
+              "p50": 2219,
+              "p75": 4153,
+              "p90": 7891.6,
+              "p99": 23984.079999999987
+            },
+            "throughput_last_30m": {
+              "p50": 54,
+              "p75": 68,
+              "p90": 77,
+              "p99": 111.55999999999995
+            }
+          },
+          {
+            "name": "OpenAI | openai/gpt-5.2-20251211",
+            "model_id": "openai/gpt-5.2",
+            "model_name": "OpenAI: GPT-5.2",
+            "context_length": 400000,
+            "pricing": {
+              "prompt": "0.00000175",
+              "completion": "0.000014",
+              "web_search": "0.01",
+              "input_cache_read": "0.000000175",
+              "discount": 0
+            },
+            "provider_name": "OpenAI",
+            "tag": "openai",
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": 272000,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "seed",
+              "max_tokens",
+              "response_format",
+              "structured_outputs",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.01840490797545,
+            "uptime_last_5m": 99.51845906902086,
+            "uptime_last_1d": 97.07668827276828,
+            "supports_implicit_caching": true,
+            "latency_last_30m": {
+              "p50": 2544,
+              "p75": 4933,
+              "p90": 9931,
+              "p99": 24379.29999999998
+            },
+            "throughput_last_30m": {
+              "p50": 40,
+              "p75": 56,
+              "p90": 67,
+              "p99": 93
+            }
+          }
+        ]
+      },
+      "endpoint_count": 2,
+      "status": "ok"
+    },
+    "google/gemini-3.1-pro-preview": {
+      "requested_model_id": "google/gemini-3.1-pro-preview",
+      "metadata": {
+        "id": "google/gemini-3.1-pro-preview",
+        "canonical_slug": "google/gemini-3.1-pro-preview-20260219",
+        "hugging_face_id": "",
+        "name": "Google: Gemini 3.1 Pro Preview",
+        "created": 1771509627,
+        "description": "Gemini 3.1 Pro Preview is Google\u2019s frontier reasoning model, delivering enhanced software engineering performance, improved agentic reliability, and more efficient token usage across complex workflows. Building on the multimodal foundation...",
+        "context_length": 1048576,
+        "architecture": {
+          "modality": "text+image+file+audio+video->text",
+          "input_modalities": [
+            "audio",
+            "file",
+            "image",
+            "text",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Gemini",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000012",
+          "image": "0.000002",
+          "audio": "0.000002",
+          "web_search": "0.014",
+          "internal_reasoning": "0.000012",
+          "input_cache_read": "0.0000002",
+          "input_cache_write": "0.000000375"
+        },
+        "top_provider": {
+          "context_length": 1048576,
+          "max_completion_tokens": 65536,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "include_reasoning",
+          "max_tokens",
+          "reasoning",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": null,
+          "top_p": null,
+          "top_k": null,
+          "frequency_penalty": null,
+          "presence_penalty": null,
+          "repetition_penalty": null
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": null,
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/google/gemini-3.1-pro-preview-20260219/endpoints"
+        }
+      },
+      "defaults_available": true,
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "catalog_available": true,
+      "endpoints_available": true,
+      "endpoint_metadata": {
+        "id": "google/gemini-3.1-pro-preview",
+        "name": "Google: Gemini 3.1 Pro Preview",
+        "created": 1771509627,
+        "description": "Gemini 3.1 Pro Preview is Google\u2019s frontier reasoning model, delivering enhanced software engineering performance, improved agentic reliability, and more efficient token usage across complex workflows. Building on the multimodal foundation...",
+        "architecture": {
+          "tokenizer": "Gemini",
+          "instruct_type": null,
+          "modality": "text+image+file+audio+video->text",
+          "input_modalities": [
+            "audio",
+            "file",
+            "image",
+            "text",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "Google AI Studio | google/gemini-3.1-pro-preview-20260219",
+            "model_id": "google/gemini-3.1-pro-preview",
+            "model_name": "Google: Gemini 3.1 Pro Preview",
+            "context_length": 1048576,
+            "pricing": {
+              "prompt": "0.000002",
+              "completion": "0.000012",
+              "image": "0.000002",
+              "audio": "0.000002",
+              "input_audio_cache": "0.0000002",
+              "web_search": "0.014",
+              "internal_reasoning": "0.000012",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000000375",
+              "discount": 0
+            },
+            "provider_name": "Google AI Studio",
+            "tag": "google-ai-studio",
+            "quantization": "unknown",
+            "max_completion_tokens": 65536,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "stop",
+              "structured_outputs"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.53596287703016,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 98.09630634799865,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 3664,
+              "p75": 5062.5,
+              "p90": 10099.200000000003,
+              "p99": 30020.399999999838
+            },
+            "throughput_last_30m": {
+              "p50": 64,
+              "p75": 94,
+              "p90": 114,
+              "p99": 145
+            }
+          },
+          {
+            "name": "Google | google/gemini-3.1-pro-preview-20260219",
+            "model_id": "google/gemini-3.1-pro-preview",
+            "model_name": "Google: Gemini 3.1 Pro Preview",
+            "context_length": 1048576,
+            "pricing": {
+              "prompt": "0.000002",
+              "completion": "0.000012",
+              "image": "0.000002",
+              "audio": "0.000002",
+              "input_audio_cache": "0.0000002",
+              "web_search": "0.014",
+              "internal_reasoning": "0.000012",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000000375",
+              "discount": 0
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/global",
+            "quantization": "unknown",
+            "max_completion_tokens": 65536,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "stop",
+              "structured_outputs"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.24056189640035,
+            "uptime_last_5m": 99.1332611050921,
+            "uptime_last_1d": 98.57474758125211,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 3134,
+              "p75": 5144.5,
+              "p90": 6863.800000000001,
+              "p99": 12190.440000000002
+            },
+            "throughput_last_30m": {
+              "p50": 86,
+              "p75": 106,
+              "p90": 124,
+              "p99": 154
+            }
+          }
+        ]
+      },
+      "endpoint_count": 2,
+      "status": "ok"
+    },
+    "meta-llama/llama-3.3-70b-instruct": {
+      "requested_model_id": "meta-llama/llama-3.3-70b-instruct",
+      "metadata": {
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "canonical_slug": "meta-llama/llama-3.3-70b-instruct",
+        "hugging_face_id": "meta-llama/Llama-3.3-70B-Instruct",
+        "name": "Meta: Llama 3.3 70B Instruct",
+        "created": 1733506137,
+        "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
+        "context_length": 131072,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Llama3",
+          "instruct_type": "llama3"
+        },
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.00000032"
+        },
+        "top_provider": {
+          "context_length": 131072,
+          "max_completion_tokens": 16384,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "logit_bias",
+          "max_tokens",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_p"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": "2023-12-31",
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/meta-llama/llama-3.3-70b-instruct/endpoints"
+        }
+      },
+      "defaults_available": true,
+      "default_parameters": {},
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "catalog_available": true,
+      "endpoints_available": true,
+      "endpoint_metadata": {
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "name": "Meta: Llama 3.3 70B Instruct",
+        "created": 1733506137,
+        "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model...",
+        "architecture": {
+          "tokenizer": "Llama3",
+          "instruct_type": "llama3",
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "DeepInfra | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.0000001",
+              "completion": "0.00000032",
+              "discount": 0
+            },
+            "provider_name": "DeepInfra",
+            "tag": "deepinfra/turbo",
+            "quantization": "fp8",
+            "max_completion_tokens": 16384,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "repetition_penalty",
+              "top_k",
+              "seed",
+              "min_p",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "logit_bias"
+            ],
+            "status": -2,
+            "uptime_last_30m": 91.92328471096704,
+            "uptime_last_5m": 95.3125,
+            "uptime_last_1d": 97.36295031203947,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 571,
+              "p75": 985.5,
+              "p90": 2342.999999999999,
+              "p99": 9704.799999999996
+            },
+            "throughput_last_30m": {
+              "p50": 15,
+              "p75": 22,
+              "p90": 29,
+              "p99": 37
+            }
+          },
+          {
+            "name": "Inceptron | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.00000012",
+              "completion": "0.00000038",
+              "discount": 0
+            },
+            "provider_name": "Inceptron",
+            "tag": "inceptron/fp8",
+            "quantization": "fp8",
+            "max_completion_tokens": 131072,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "temperature",
+              "max_tokens",
+              "top_p",
+              "stop",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "response_format"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.52,
+            "uptime_last_5m": 96.7032967032967,
+            "uptime_last_1d": 98.20795493176631,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 444.5,
+              "p75": 726,
+              "p90": 1027.5,
+              "p99": 4722.949999999984
+            },
+            "throughput_last_30m": {
+              "p50": 34,
+              "p75": 42,
+              "p90": 45,
+              "p99": 49
+            }
+          },
+          {
+            "name": "Nebius | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.00000013",
+              "completion": "0.0000004",
+              "discount": 0
+            },
+            "provider_name": "Nebius",
+            "tag": "nebius/fp8",
+            "quantization": "fp8",
+            "max_completion_tokens": null,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "frequency_penalty",
+              "presence_penalty",
+              "top_k",
+              "repetition_penalty",
+              "tools",
+              "tool_choice"
+            ],
+            "status": -2,
+            "uptime_last_30m": 93.90663390663391,
+            "uptime_last_5m": 96.07843137254902,
+            "uptime_last_1d": 95.37489159533953,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 426,
+              "p75": 728,
+              "p90": 1413.6,
+              "p99": 5858.289999999992
+            },
+            "throughput_last_30m": {
+              "p50": 19,
+              "p75": 25,
+              "p90": 32,
+              "p99": 42
+            }
+          },
+          {
+            "name": "AkashML | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.00000013",
+              "completion": "0.0000004",
+              "discount": 0
+            },
+            "provider_name": "AkashML",
+            "tag": "akashml/fp8",
+            "quantization": "fp8",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "temperature",
+              "top_p",
+              "top_k",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "repetition_penalty",
+              "seed",
+              "max_tokens",
+              "structured_outputs",
+              "tools",
+              "tool_choice",
+              "response_format"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.39990942028986,
+            "uptime_last_5m": 96.89358889623266,
+            "uptime_last_1d": 99.07688764641534,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 1269.5,
+              "p75": 1876,
+              "p90": 2218,
+              "p99": 3578.970000000005
+            },
+            "throughput_last_30m": {
+              "p50": 25,
+              "p75": 42,
+              "p90": 59,
+              "p99": 86
+            }
+          },
+          {
+            "name": "Novita | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.000000135",
+              "completion": "0.0000004",
+              "discount": 0
+            },
+            "provider_name": "Novita",
+            "tag": "novita/bf16",
+            "quantization": "bf16",
+            "max_completion_tokens": 120000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "seed",
+              "top_k",
+              "repetition_penalty",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.89816700610999,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.57667520084753,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 658,
+              "p75": 833,
+              "p90": 1114,
+              "p99": 3431.91999999992
+            },
+            "throughput_last_30m": {
+              "p50": 21,
+              "p75": 30,
+              "p90": 35.40000000000009,
+              "p99": 46
+            }
+          },
+          {
+            "name": "Parasail | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.00000022",
+              "completion": "0.0000005",
+              "input_cache_read": "0.00000011",
+              "discount": 0
+            },
+            "provider_name": "Parasail",
+            "tag": "parasail/int8",
+            "quantization": "int8",
+            "max_completion_tokens": 16384,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "frequency_penalty",
+              "presence_penalty",
+              "repetition_penalty",
+              "seed",
+              "stop",
+              "top_k",
+              "logit_bias",
+              "structured_outputs",
+              "response_format"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.66884094330155,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 96.5639819416518,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 462,
+              "p75": 522,
+              "p90": 746,
+              "p99": 1572.0900000000001
+            },
+            "throughput_last_30m": {
+              "p50": 28,
+              "p75": 31,
+              "p90": 36,
+              "p99": 42
+            }
+          },
+          {
+            "name": "Cloudflare | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 24000,
+            "pricing": {
+              "prompt": "0.00000029",
+              "completion": "0.00000225",
+              "discount": 0
+            },
+            "provider_name": "Cloudflare",
+            "tag": "cloudflare/fp8",
+            "quantization": "fp8",
+            "max_completion_tokens": null,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "top_k",
+              "seed",
+              "repetition_penalty",
+              "frequency_penalty",
+              "presence_penalty"
+            ],
+            "status": -2,
+            "uptime_last_30m": 89.62962962962962,
+            "uptime_last_5m": 93.54838709677419,
+            "uptime_last_1d": 95.79110930955275,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 437.5,
+              "p75": 593,
+              "p90": 935.5000000000005,
+              "p99": 2871.330000000001
+            },
+            "throughput_last_30m": {
+              "p50": 18,
+              "p75": 31.25,
+              "p90": 42,
+              "p99": 51.06
+            }
+          },
+          {
+            "name": "SambaNova | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 16000,
+            "pricing": {
+              "prompt": "0.00000045",
+              "completion": "0.0000009",
+              "discount": 0.25
+            },
+            "provider_name": "SambaNova",
+            "tag": "sambanova-turbo",
+            "quantization": "bf16",
+            "max_completion_tokens": 3072,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "top_k",
+              "stop"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 99.07701934609167,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 924,
+              "p75": 1285,
+              "p90": 1825.2000000000003,
+              "p99": 3006.0400000000045
+            },
+            "throughput_last_30m": {
+              "p50": 25,
+              "p75": 72,
+              "p90": 162.40000000000012,
+              "p99": 305.3600000000002
+            }
+          },
+          {
+            "name": "Groq | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.00000059",
+              "completion": "0.00000079",
+              "discount": 0
+            },
+            "provider_name": "Groq",
+            "tag": "groq",
+            "quantization": "unknown",
+            "max_completion_tokens": 32768,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.96618194115658,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.9576041642132,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 180,
+              "p75": 271.25,
+              "p90": 353.3000000000002,
+              "p99": 781.9799999999996
+            },
+            "throughput_last_30m": {
+              "p50": 175,
+              "p75": 270,
+              "p90": 455,
+              "p99": 1037
+            }
+          },
+          {
+            "name": "Friendli | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.0000006",
+              "completion": "0.0000006",
+              "input_cache_read": "0.0000006",
+              "discount": 0
+            },
+            "provider_name": "Friendli",
+            "tag": "friendli",
+            "quantization": "unknown",
+            "max_completion_tokens": 131072,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "seed",
+              "top_k",
+              "min_p",
+              "repetition_penalty",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "response_format"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.97602041690217,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 239,
+              "p75": 251,
+              "p90": 265,
+              "p99": 520.4200000000001
+            },
+            "throughput_last_30m": {
+              "p50": 63,
+              "p75": 78,
+              "p90": 95,
+              "p99": 159
+            }
+          },
+          {
+            "name": "SambaNova | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.0000006",
+              "completion": "0.0000012",
+              "discount": 0
+            },
+            "provider_name": "SambaNova",
+            "tag": "sambanova/bf16",
+            "quantization": "bf16",
+            "max_completion_tokens": 3072,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "top_k",
+              "stop"
+            ],
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 99.07328605200945,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 867,
+              "p75": 1044,
+              "p90": 1338,
+              "p99": 3592.96
+            },
+            "throughput_last_30m": {
+              "p50": 19,
+              "p75": 45,
+              "p90": 76.6,
+              "p99": 299.68
+            }
+          },
+          {
+            "name": "WandB | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 128000,
+            "pricing": {
+              "prompt": "0.00000071",
+              "completion": "0.00000071",
+              "input_cache_read": "0.00000071",
+              "discount": 0
+            },
+            "provider_name": "WandB",
+            "tag": "wandb/fp16",
+            "quantization": "fp16",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "structured_outputs",
+              "response_format",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "top_k",
+              "repetition_penalty",
+              "frequency_penalty",
+              "presence_penalty",
+              "stop",
+              "seed",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.95953055443141,
+            "uptime_last_5m": 99.94629430719655,
+            "uptime_last_1d": 99.99633457957627,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 298,
+              "p75": 314,
+              "p90": 369.0999999999999,
+              "p99": 679.0500000000002
+            },
+            "throughput_last_30m": {
+              "p50": 67,
+              "p75": 73,
+              "p90": 79,
+              "p99": 99.21000000000004
+            }
+          },
+          {
+            "name": "Google | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 128000,
+            "pricing": {
+              "prompt": "0.00000072",
+              "completion": "0.00000072",
+              "discount": 0
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex",
+            "quantization": "unknown",
+            "max_completion_tokens": null,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format"
+            ],
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 92.70401279296388,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 311,
+              "p75": 634.5,
+              "p90": 1381,
+              "p99": 1535.0999999999995
+            },
+            "throughput_last_30m": {
+              "p50": 24,
+              "p75": 70.5,
+              "p90": 189,
+              "p99": 246.79999999999995
+            }
+          },
+          {
+            "name": "Google | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 128000,
+            "pricing": {
+              "prompt": "0.00000072",
+              "completion": "0.00000072",
+              "discount": 0
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/us-central1",
+            "quantization": "unknown",
+            "max_completion_tokens": 8192,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "structured_outputs",
+              "response_format",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "top_k",
+              "frequency_penalty",
+              "presence_penalty",
+              "stop",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.94217265592731,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 344,
+              "p75": 1092,
+              "p90": 1130,
+              "p99": 1390.5599999999986
+            },
+            "throughput_last_30m": {
+              "p50": 68,
+              "p75": 82,
+              "p90": 92,
+              "p99": 120.29999999999882
+            }
+          },
+          {
+            "name": "Together | meta-llama/llama-3.3-70b-instruct",
+            "model_id": "meta-llama/llama-3.3-70b-instruct",
+            "model_name": "Meta: Llama 3.3 70B Instruct",
+            "context_length": 131072,
+            "pricing": {
+              "prompt": "0.00000088",
+              "completion": "0.00000088",
+              "discount": 0
+            },
+            "provider_name": "Together",
+            "tag": "together/fp8",
+            "quantization": "fp8",
+            "max_completion_tokens": 2048,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "structured_outputs",
+              "response_format",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "top_k",
+              "repetition_penalty",
+              "logit_bias",
+              "min_p",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 97.58953168044077,
+            "uptime_last_5m": 97.65690376569037,
+            "uptime_last_1d": 98.55246173704592,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 889,
+              "p75": 1509,
+              "p90": 2526,
+              "p99": 5111.500000000002
+            },
+            "throughput_last_30m": {
+              "p50": 17,
+              "p75": 28,
+              "p90": 41,
+              "p99": 73
+            }
+          }
+        ]
+      },
+      "endpoint_count": 15,
+      "status": "ok"
+    },
+    "deepseek/deepseek-r1": {
+      "requested_model_id": "deepseek/deepseek-r1",
+      "metadata": {
+        "id": "deepseek/deepseek-r1",
+        "canonical_slug": "deepseek/deepseek-r1",
+        "hugging_face_id": "deepseek-ai/DeepSeek-R1",
+        "name": "DeepSeek: R1",
+        "created": 1737381095,
+        "description": "DeepSeek R1 is here: Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass....",
+        "context_length": 64000,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "DeepSeek",
+          "instruct_type": "deepseek-r1"
+        },
+        "pricing": {
+          "prompt": "0.0000007",
+          "completion": "0.0000025"
+        },
+        "top_provider": {
+          "context_length": 64000,
+          "max_completion_tokens": 16000,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "presence_penalty",
+          "reasoning",
+          "repetition_penalty",
+          "seed",
+          "stop",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": null,
+          "top_p": null,
+          "top_k": null,
+          "frequency_penalty": null,
+          "presence_penalty": null,
+          "repetition_penalty": null
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": "2024-07-31",
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/deepseek/deepseek-r1/endpoints"
+        }
+      },
+      "defaults_available": true,
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "catalog_available": true,
+      "endpoints_available": true,
+      "endpoint_metadata": {
+        "id": "deepseek/deepseek-r1",
+        "name": "DeepSeek: R1",
+        "created": 1737381095,
+        "description": "DeepSeek R1 is here: Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass....",
+        "architecture": {
+          "tokenizer": "DeepSeek",
+          "instruct_type": "deepseek-r1",
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "Novita | deepseek/deepseek-r1",
+            "model_id": "deepseek/deepseek-r1",
+            "model_name": "DeepSeek: R1",
+            "context_length": 64000,
+            "pricing": {
+              "prompt": "0.0000007",
+              "completion": "0.0000025",
+              "discount": 0
+            },
+            "provider_name": "Novita",
+            "tag": "novita/fp8",
+            "quantization": "fp8",
+            "max_completion_tokens": 16000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "seed",
+              "top_k",
+              "repetition_penalty",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.66840360018948,
+            "uptime_last_5m": 99.2156862745098,
+            "uptime_last_1d": 99.8845601847037,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 2778,
+              "p75": 10495.5,
+              "p90": 15758,
+              "p99": 44892.45000000007
+            },
+            "throughput_last_30m": {
+              "p50": 21,
+              "p75": 22,
+              "p90": 23,
+              "p99": 29
+            }
+          },
+          {
+            "name": "Azure | deepseek/deepseek-r1",
+            "model_id": "deepseek/deepseek-r1",
+            "model_name": "DeepSeek: R1",
+            "context_length": 163840,
+            "pricing": {
+              "prompt": "0.000001485",
+              "completion": "0.00000594",
+              "discount": 0
+            },
+            "provider_name": "Azure",
+            "tag": "azure",
+            "quantization": "unknown",
+            "max_completion_tokens": 4096,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "max_completion_tokens"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 99.94811259566741,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 1828,
+              "p75": 2244,
+              "p90": 2911.600000000001,
+              "p99": 8381.99999999994
+            },
+            "throughput_last_30m": {
+              "p50": 68,
+              "p75": 77,
+              "p90": 82.4,
+              "p99": 99.27999999999997
+            }
+          }
+        ]
+      },
+      "endpoint_count": 2,
+      "status": "ok"
+    },
+    "mistralai/mistral-large": {
+      "requested_model_id": "mistralai/mistral-large",
+      "metadata": {
+        "id": "mistralai/mistral-large",
+        "canonical_slug": "mistralai/mistral-large",
+        "hugging_face_id": null,
+        "name": "Mistral Large",
+        "created": 1708905600,
+        "description": "This is Mistral AI's flagship model, Mistral Large 2 (version `mistral-large-2407`). It's a proprietary weights-available model and excels at reasoning, code, JSON, chat, and more. Read the launch announcement [here](https://mistral.ai/news/mistral-large-2407/)....",
+        "context_length": 128000,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Mistral",
+          "instruct_type": null
+        },
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "input_cache_read": "0.0000002"
+        },
+        "top_provider": {
+          "context_length": 128000,
+          "max_completion_tokens": null,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "max_tokens",
+          "presence_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_p"
+        ],
+        "default_parameters": {
+          "temperature": 0.3
+        },
+        "supported_voices": null,
+        "knowledge_cutoff": "2024-11-30",
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/mistralai/mistral-large/endpoints"
+        }
+      },
+      "defaults_available": true,
+      "default_parameters": {
+        "temperature": 0.3
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "catalog_available": true,
+      "endpoints_available": true,
+      "endpoint_metadata": {
+        "id": "mistralai/mistral-large",
+        "name": "Mistral Large",
+        "created": 1708905600,
+        "description": "This is Mistral AI's flagship model, Mistral Large 2 (version `mistral-large-2407`). It's a proprietary weights-available model and excels at reasoning, code, JSON, chat, and more. Read the launch announcement [here](https://mistral.ai/news/mistral-large-2407/)....",
+        "architecture": {
+          "tokenizer": "Mistral",
+          "instruct_type": null,
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "Mistral | mistralai/mistral-large",
+            "model_id": "mistralai/mistral-large",
+            "model_name": "Mistral Large",
+            "context_length": 128000,
+            "pricing": {
+              "prompt": "0.000002",
+              "completion": "0.000006",
+              "input_cache_read": "0.0000002",
+              "discount": 0
+            },
+            "provider_name": "Mistral",
+            "tag": "mistral",
+            "quantization": "unknown",
+            "max_completion_tokens": null,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "seed",
+              "response_format",
+              "structured_outputs",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.94110076132719,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 472,
+              "p75": 541,
+              "p90": 771.1000000000004,
+              "p99": 5972.589999999993
+            },
+            "throughput_last_30m": {
+              "p50": 32,
+              "p75": 38,
+              "p90": 46,
+              "p99": 77.17999999999995
+            }
+          }
+        ]
+      },
+      "endpoint_count": 1,
+      "status": "ok"
+    },
+    "qwen/qwen-2.5-72b-instruct": {
+      "requested_model_id": "qwen/qwen-2.5-72b-instruct",
+      "metadata": {
+        "id": "qwen/qwen-2.5-72b-instruct",
+        "canonical_slug": "qwen/qwen-2.5-72b-instruct",
+        "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
+        "name": "Qwen2.5 72B Instruct",
+        "created": 1726704000,
+        "description": "Qwen2.5 72B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
+        "context_length": 32768,
+        "architecture": {
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ],
+          "tokenizer": "Qwen",
+          "instruct_type": "chatml"
+        },
+        "pricing": {
+          "prompt": "0.00000036",
+          "completion": "0.0000004"
+        },
+        "top_provider": {
+          "context_length": 32768,
+          "max_completion_tokens": 16384,
+          "is_moderated": false
+        },
+        "per_request_limits": null,
+        "supported_parameters": [
+          "frequency_penalty",
+          "logit_bias",
+          "max_tokens",
+          "min_p",
+          "presence_penalty",
+          "repetition_penalty",
+          "response_format",
+          "seed",
+          "stop",
+          "structured_outputs",
+          "temperature",
+          "tool_choice",
+          "tools",
+          "top_k",
+          "top_p"
+        ],
+        "default_parameters": {},
+        "supported_voices": null,
+        "knowledge_cutoff": "2024-06-30",
+        "expiration_date": null,
+        "links": {
+          "details": "/api/v1/models/qwen/qwen-2.5-72b-instruct/endpoints"
+        }
+      },
+      "defaults_available": true,
+      "default_parameters": {},
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "catalog_available": true,
+      "endpoints_available": true,
+      "endpoint_metadata": {
+        "id": "qwen/qwen-2.5-72b-instruct",
+        "name": "Qwen2.5 72B Instruct",
+        "created": 1726704000,
+        "description": "Qwen2.5 72B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2: - Significantly more knowledge and has greatly improved capabilities in coding and...",
+        "architecture": {
+          "tokenizer": "Qwen",
+          "instruct_type": "chatml",
+          "modality": "text->text",
+          "input_modalities": [
+            "text"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "DeepInfra | qwen/qwen-2.5-72b-instruct",
+            "model_id": "qwen/qwen-2.5-72b-instruct",
+            "model_name": "Qwen2.5 72B Instruct",
+            "context_length": 32768,
+            "pricing": {
+              "prompt": "0.00000036",
+              "completion": "0.0000004",
+              "discount": 0
+            },
+            "provider_name": "DeepInfra",
+            "tag": "deepinfra/fp8",
+            "quantization": "fp8",
+            "max_completion_tokens": 16384,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "repetition_penalty",
+              "top_k",
+              "seed",
+              "min_p",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "logit_bias",
+              "structured_outputs"
+            ],
+            "status": 0,
+            "uptime_last_30m": 99.90215264187867,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.97527393277257,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 460,
+              "p75": 782,
+              "p90": 1520,
+              "p99": 21776.699999999993
+            },
+            "throughput_last_30m": {
+              "p50": 20,
+              "p75": 24,
+              "p90": 27,
+              "p99": 32
+            }
+          },
+          {
+            "name": "Novita | qwen/qwen-2.5-72b-instruct",
+            "model_id": "qwen/qwen-2.5-72b-instruct",
+            "model_name": "Qwen2.5 72B Instruct",
+            "context_length": 32000,
+            "pricing": {
+              "prompt": "0.00000038",
+              "completion": "0.0000004",
+              "discount": 0
+            },
+            "provider_name": "Novita",
+            "tag": "novita/bf16",
+            "quantization": "bf16",
+            "max_completion_tokens": 8192,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "frequency_penalty",
+              "presence_penalty",
+              "seed",
+              "top_k",
+              "repetition_penalty",
+              "tools",
+              "tool_choice"
+            ],
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 99.76923076923076,
+            "supports_implicit_caching": false,
+            "latency_last_30m": {
+              "p50": 1172,
+              "p75": 1436,
+              "p90": 1605.8,
+              "p99": 2768.5199999999986
+            },
+            "throughput_last_30m": {
+              "p50": 17,
+              "p75": 29,
+              "p90": 30,
+              "p99": 32.44
+            }
+          }
+        ]
+      },
+      "endpoint_count": 2,
+      "status": "ok"
+    }
+  }
+}
