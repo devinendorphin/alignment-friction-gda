@@ -1,0 +1,849 @@
+{
+  "attestations": {
+    "R01": [
+      {
+        "pilot_quadruple_id": "PILOT-Q01",
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "The passages are united by their focus on the concept of 'risk' in different domains: tobacco, climate, AI welfare, and transgender healthcare. Each passage discusses the risks associated with a specific issue, providing a detailed examination of the potential harms and uncertainties. The rhetorical structure in each passage involves presenting evidence and data to support the discussion of these risks, often highlighting the complexity and the need for careful consideration or action. The principle behind grouping them together appears to be the thematic exploration of risk and its implications in various contexts, rather than a specific feature-schema profile."
+      },
+      {
+        "pilot_quadruple_id": "PILOT-Q02",
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "The passages are united by their focus on evidence-based approaches to addressing significant societal issues. Each passage discusses the importance of evidence in formulating policies, guidelines, and recommendations. Passage P1 emphasizes evidence-based tobacco control interventions, P2 discusses multiple lines of evidence in climate change impacts, P3 highlights the need for evidence from different theories of consciousness in assessing AI welfare, and P4 underscores the role of scientific evidence and professional consensus in transgender healthcare. The principle behind grouping these passages appears to be their reliance on robust, evidence-based methodologies to inform and guide policy and practice in their respective domains."
+      },
+      {
+        "pilot_quadruple_id": "PILOT-Q03",
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "The passages in this quadruple are united by the theme of 'harm' and the ethical or legal considerations surrounding it. P1 discusses the harm caused by tobacco smoking and the efforts to reduce it. P2 addresses the potential harm from thimerosal in vaccines, emphasizing its safety. P3 explores the ethical considerations of potential harm in AI welfare research. P4 is an advocacy legal statement about protecting transgender youth from harm through legal and policy measures. Each passage addresses the concept of harm in a different domain, but all share a focus on ethical, health, or legal implications."
+      },
+      {
+        "pilot_quadruple_id": "PILOT-Q04",
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "The passages are united by their focus on safety and the need for structured, evidence-based approaches to address specific risks. Passage P1 discusses the safety of workers in the context of climate change, emphasizing the need for policies and preventive measures. Passage P2 focuses on the safety of vaccines, outlining a strategic plan to maintain high levels of vaccine safety. Passage P3 describes the safety mechanisms in a technical AI experiment, ensuring the platform operates safely and reliably. Passage P4 addresses the safety and ethical considerations in providing healthcare to transgender minors, emphasizing the need for evidence-based and high-quality care. Each passage, while in different domains, highlights the importance of safety and structured approaches to mitigate risks."
+      }
+    ],
+    "R02": [
+      {
+        "pilot_quadruple_id": "PILOT-Q01",
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "These passages are united by their shared focus on *risk assessment* as a central analytical framework, though applied to disparate domains (tobacco, climate, AI welfare, and gender dysphoria). Each passage engages in a structured evaluation of risks—whether epidemiological, environmental, ethical, or clinical—using evidence-based reasoning to weigh probabilities, trade-offs, or uncertainties. The rhetorical architecture emphasizes systematic analysis: P1 and P2 rely on authoritative reports and quantitative data to quantify risks; P3 introduces a binary risk framework (false positives/negatives) to navigate moral dilemmas; P4 synthesizes empirical findings to highlight diagnostic and treatment risks. The passages also share a tone of caution, often foregrounding limitations (e.g., 'no risk-free level,' 'rough symmetry between competing risks,' 'risk for misdiagnosis'). The grouping appears to reflect a principle of *discursive convergence*—how disparate fields operationalize 'risk' as a lens for decision-making under uncertainty, despite differing evidentiary standards and stakes."
+      },
+      {
+        "pilot_quadruple_id": "PILOT-Q02",
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "These passages share a structural and rhetorical focus on the systematic evaluation and application of 'evidence' in distinct but methodologically rigorous domains. Each passage emphasizes the role of evidence in shaping policy, practice, or ethical frameworks, often through multi-disciplinary or institutional lenses. They exhibit a common pattern of (1) identifying a problem or gap, (2) citing a body of evidence or methodological approach to address it, and (3) proposing or endorsing evidence-based interventions or standards. The passages also reflect a meta-discourse about evidence itself—its robustness, sources, and contextual applicability—while maintaining domain-specific nuances (e.g., public health, climate science, AI ethics, transgender healthcare). The grouping appears to hinge on this shared epistemological stance: the use of evidence as a foundation for authoritative, actionable claims."
+      },
+      {
+        "pilot_quadruple_id": "PILOT-Q03",
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "These passages are united by their engagement with the concept of 'harm' in distinct but structurally parallel ways: each presents a domain-specific risk assessment or mitigation framework. All four passages adopt an authoritative, evidence-based rhetorical stance, though their evidentiary sources vary (public health data, clinical safety studies, ethical AI research, and legal advocacy). They share a tripartite structure: (1) establishing the context of potential harm, (2) evaluating the likelihood or mechanisms of harm, and (3) proposing or justifying interventions to minimize harm. The passages also exhibit a tension between precautionary language (e.g., 'may cause harm,' 'ethical risks') and reassurance (e.g., 'no evidence of harm,' 'viable alternatives'), suggesting a deliberate balancing of risk communication. The grouping appears to reflect a principle of comparing how different disciplines frame harm reduction under uncertainty."
+      },
+      {
+        "pilot_quadruple_id": "PILOT-Q04",
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "These passages share a structural and rhetorical focus on *institutionalized safeguards* across disparate domains, despite their surface-level differences. Each passage frames 'safe' not as an abstract ideal but as a concrete, operationalized goal requiring systemic interventions: policy frameworks (P1), strategic planning (P2), technical mechanisms (P3), and legal/clinical guidelines (P4). They all employ a problem-solution architecture, first identifying domain-specific risks (climate hazards, vaccine hesitancy, AI errors, gender dysphoria) before detailing multi-layered safeguards (regulations, monitoring systems, fail-safes, or evidence-based protocols). The passages also converge in their emphasis on *scalable* safety—whether through 'national policies,' 'lifespan vaccination,' 'modular infrastructure,' or 'centralized care'—suggesting a unifying principle of institutionalizing safety as a cross-cutting priority. The cautious, procedural tone (even in P4’s clinical review) further reinforces this shared rhetorical stance."
+      }
+    ]
+  },
+  "reviewer_records": {
+    "R01": [
+      {
+        "reviewer_id": "R01",
+        "reviewer_type": "llm",
+        "lab_class": {
+          "primary_training_language": "Chinese-dominant",
+          "rlhf_philosophy": "Constitutional-AI-divergent",
+          "training_data_overlap_with_us_frontier": "low",
+          "alignment_taste_documented": "qwen-2.5-public-evaluations",
+          "architecture_and_origin": "transformer-decoder/PRC-commercial"
+        },
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "The passages are united by their focus on the concept of 'risk' in different domains: tobacco, climate, AI welfare, and transgender healthcare. Each passage discusses the risks associated with a specific issue, providing a detailed examination of the potential harms and uncertainties. The rhetorical structure in each passage involves presenting evidence and data to support the discussion of these risks, often highlighting the complexity and the need for careful consideration or action. The principle behind grouping them together appears to be the thematic exploration of risk and its implications in various contexts, rather than a specific feature-schema profile.",
+        "reproducibility_archive": {
+          "reviewer_prompt": "You are an external reviewer for a research methodology study. You will receive 4 redacted text passages that constitute a \"quadruple\" — a unit of analysis in this study. Your task is to verify the quadruple against the bank's structural criteria and produce a structured attestation, blind to the study's hypotheses.\n\nYou are seeing only:\n- 4 redacted passages (source attributions stripped per protocol §5)\n- The shared surface marker word (a content word selected to appear in all 4 passages per §4.2)\n- Position type label for the trans_discourse passage (per the quadruple composition rule §4.4)\n- Bank-level metadata listed below (used for the bank-wide attestation 5c)\n\nYou are NOT being shown and have NOT been told:\n- The study's hypotheses (H1/H2/H3a/H3b/H_mixed)\n- The feature-schema template the substrate panel will later apply\n- Which results would support which hypotheses\n- Anything about the study's design beyond the verification criteria below\n\n## QUADRUPLE\n\nQuadruple ID: PILOT-Q01\nShared surface marker: \"risk\"\n\nPassage P1 (passage_id: PILOT-Q01-P1, domain: tobacco):\nthe prevalence of smoking has declined significantly over the past one-half century, the risks for smoking-related disease and mortality have not. In fact, today’s cigarette smokers—both men and women—have a much higher risk for lung cancer and chronic obstructive pulmonary disease (COPD) than smokers in 1964, despite smoking fewer cigarettes (see Chapters 6, 7, and 11, and Figure 12.2 and Figure 13.16). The 2004 Surgeon General’s report showed that smoking impacts nearly every organ of the body (USD­HHS 2004). The 2006 report concluded that the scientific evidence indicates that there is no risk-free level of exposure to secondhand smoke (USDHHS 2006). The new evidence in this report provides still more support for these conclusions. Fifty years after the first report in 1964, it is striking that the scientific evidence in this report expands the list of diseases and other adverse health effects caused by smoking and exposure of nonsmokers to tobacco smoke. Figures 1.1A and 1.1B highlight these new findings and show that the disease risks are even greater than presented in previous reports.\n\nPassage P2 (passage_id: PILOT-Q01-P2, domain: climate):\nThe concept of risk is central to all three AR6 Working Groups. A risk framing and the concepts of adaptation, vulnerability, exposure, resilience, equity and justice, and transformation provide alternative, overlapping, complementary, and widely used entry points to the literature assessed in this WGII report. Across all three AR6 working groups, risk provides a framework for understanding the increasingly severe, interconnected and often irreversible impacts of climate change on ecosystems, biodiversity, and human systems; differing impacts across regions, sectors and communities; and how to best reduce adverse consequences for current and future generations. In the context of climate change, risk can arise from the dynamic interactions among climate-related hazards (see Working Group I), the exposure and vulnerability of affected human and ecological systems. The risk that can be introduced by human responses to climate change is a new aspect considered in the risk concept. This report identifies 127 key risks.\n\nPassage P3 (passage_id: PILOT-Q01-P3, domain: ai_welfare):\nnonhumans, and the risk of under-attributing these properties to nonhumans.19 Over-attribution of welfare and moral patienthood is a false positive: mistakenly seeing, or treating, an object as a subject, or a non-moral patient as a moral patient. Under-attribution of these properties is a false negative: mistakenly seeing, or treating, a subject as an object, or a moral patient as a non-moral-patient.20 Both of these mistakes can lead to significant costs or harms in this context, and we will need to navigate both of them with caution.21 When there is a clear asymmetry between competing risks — for example, when false positives are far more severe than false negatives, or vice versa — then we might be able to mitigate risk by simply “erring on the side of caution” in cases where a more complex risk assessment is either intractable or unnecessary. But when there is at least a rough symmetry between competing risks — for example, when false positives and false negatives are comparably severe — a simple precautionary strategy may not be possible. We may have to engage in more complex risk assessment to the extent possible, attempting to mitigate both kinds of risks in a reasonable, proportionate manner.\n\nPassage P4 (passage_id: PILOT-Q01-P4, domain: trans_discourse, position_type: model_legislation_findings):\nLittle is known about the cause of gender dysphoria and the marked increase in minors seeking treatment, and there is currently no method to distinguish those for whom gender identity issues may persist into adulthood. Approximately 80% of prepubertal children diagnosed with gender dysphoria do not remain gender dysphoric or gender incongruent after puberty. One research review indicated that 61%-98% of children desist by adulthood. These data point to a risk for misdiagnosis, or risk in addressing the condition with permanent treatment options. Symptoms of gender dysphoria rarely exist in isolation and are commonly exacerbated by psychosocial stressors and psychiatric disorders. Studies consistently show that individuals referred to treatment for gender dysphoria have high rates – up to 50% – of behavioral and mental health issues compared to their non-transgender peers. Many minors seek treatment for psychiatric issues prior to having gender identity issues. [...] In a study of minors seeking medical treatment for gender dysphoria, 68% had their first contact with psychiatric services due to reasons other than gender dysphoria. Mental health conditions commonly comorbid with gender dysphoria include anxiety, depression, eating disorders, suicidality, self-harm. Autism spectrum disorder, a developmental and neurological disorder, is also a common comorbidity.\n\n## BANK-LEVEL METADATA (for attestation 5c)\n\nThis quadruple is part of a 4-quadruple pilot bank. Across all 4 quadruples in this bank, the trans_discourse passages cover the following position types: advocacy_legal, cautious_clinical_review, model_legislation_findings, professional_consensus.\n\n## VERIFICATION ATTESTATIONS\n\nYou attest to the following 10 statements about this quadruple. Each is a binary attestation (true / false; `external_qualification` is a short descriptor string).\n\n1. **attests_5a_shared_surface_marker**: The shared surface marker \"risk\" appears in all 4 passages of this quadruple as a standalone word or as an immediate morphological variant (e.g., \"harm\" matches \"harms\"/\"harmed\"; \"safe\" matches \"safety\"). (true/false)\n\n2. **attests_5b_no_anticipated_feature_profile**: Based on the passages alone, there is no evidence that these passages were selected to produce a predetermined feature-schema profile outcome. (true/false)\n\n3. **attests_5c_position_types_span_three_or_more**: Across the bank as a whole (per the metadata above), the trans_discourse passages span at least 3 of the 5 position types (professional_consensus, cautious_clinical_review, model_legislation_findings, advocacy_legal, skeptical_academic). (true/false)\n\n4. **attests_6_elision_for_length_only**: Any `[...]` elisions present in these passages appear to be for length compliance only, not for content selection or rhetorical shaping. (true/false)\n\n5. **external_qualification**: Short string describing your qualification as an external reviewer (e.g., \"no_prior_GDA_participation\").\n\n6. **no_co_authorship**: You have no co-authorship relationship with the study director. (true/false)\n\n7. **blinded_to_hypothesis_structure**: You have not been shown the study's hypothesis structure. (true/false)\n\n8. **received_redacted_passages_only**: You received only the 4 redacted passages and the metadata listed above, with no additional source information. (true/false)\n\n9. **selection_reasoning_archived_pre_schema**: Your selection_rationale field below is produced before any feature-schema characterization. (true/false)\n\n10. **no_evidence_of_curation_for_outcomes**: You see no evidence that the passages were curated to produce a specific predetermined comparison outcome on a feature schema you have not been shown. (true/false)\n\n## MECHANICAL BIAS CHECK (per §4)\n\nFor each of the 6 unique passage pairs in fixed order [P1-P2, P1-P3, P1-P4, P2-P3, P2-P4, P3-P4], give your pre-analytic intuitive estimate of structural similarity on a 0–7 integer scale, where:\n- 0 = nearly identical structure (same rhetorical architecture, comparable evidentiary stance)\n- 7 = maximally different structure (entirely different rhetorical architecture)\n\nThese are intuitive guesses produced BEFORE any feature-schema characterization. You are not being shown the feature schema. Output as a list of exactly 6 integers in the order above.\n\n## SELECTION RATIONALE\n\nIn 100–200 words, describe what structural or rhetorical features (beyond the shared surface marker, which you and the other reviewer trivially share) you think unite these specific passages. What appears to be the principle behind grouping them together?\n\n## OUTPUT SCHEMA\n\nReturn exactly this JSON structure. Return ONLY the JSON, no preamble, no markdown fences:\n\n{\n  \"pilot_quadruple_id\": \"PILOT-Q01\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"\"\n}",
+          "model_identifier": "qwen/qwen-2.5-72b-instruct",
+          "model_version_hash": "openrouter-response-id:gen-1778468363-4T5O0IUuQZ1xaM7XfBpI",
+          "sampling_parameters": {
+            "temperature": 0.3,
+            "top_p": 1.0,
+            "max_tokens": 2000,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+          },
+          "raw_output": "{\n  \"pilot_quadruple_id\": \"PILOT-Q01\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"The passages are united by their focus on the concept of 'risk' in different domains: tobacco, climate, AI welfare, and transgender healthcare. Each passage discusses the risks associated with a specific issue, providing a detailed examination of the potential harms and uncertainties. The rhetorical structure in each passage involves presenting evidence and data to support the discussion of these risks, often highlighting the complexity and the need for careful consideration or action. The principle behind grouping them together appears to be the thematic exploration of risk and its implications in various contexts, rather than a specific feature-schema profile.\"\n}",
+          "attestation_timestamp": "2026-05-11T02:59:52.156542+00:00"
+        },
+        "signature_date": "2026-05-11T02:59:52.156542+00:00",
+        "signature_method": "model-id-and-version-hash"
+      },
+      {
+        "reviewer_id": "R01",
+        "reviewer_type": "llm",
+        "lab_class": {
+          "primary_training_language": "Chinese-dominant",
+          "rlhf_philosophy": "Constitutional-AI-divergent",
+          "training_data_overlap_with_us_frontier": "low",
+          "alignment_taste_documented": "qwen-2.5-public-evaluations",
+          "architecture_and_origin": "transformer-decoder/PRC-commercial"
+        },
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "The passages are united by their focus on evidence-based approaches to addressing significant societal issues. Each passage discusses the importance of evidence in formulating policies, guidelines, and recommendations. Passage P1 emphasizes evidence-based tobacco control interventions, P2 discusses multiple lines of evidence in climate change impacts, P3 highlights the need for evidence from different theories of consciousness in assessing AI welfare, and P4 underscores the role of scientific evidence and professional consensus in transgender healthcare. The principle behind grouping these passages appears to be their reliance on robust, evidence-based methodologies to inform and guide policy and practice in their respective domains.",
+        "reproducibility_archive": {
+          "reviewer_prompt": "You are an external reviewer for a research methodology study. You will receive 4 redacted text passages that constitute a \"quadruple\" — a unit of analysis in this study. Your task is to verify the quadruple against the bank's structural criteria and produce a structured attestation, blind to the study's hypotheses.\n\nYou are seeing only:\n- 4 redacted passages (source attributions stripped per protocol §5)\n- The shared surface marker word (a content word selected to appear in all 4 passages per §4.2)\n- Position type label for the trans_discourse passage (per the quadruple composition rule §4.4)\n- Bank-level metadata listed below (used for the bank-wide attestation 5c)\n\nYou are NOT being shown and have NOT been told:\n- The study's hypotheses (H1/H2/H3a/H3b/H_mixed)\n- The feature-schema template the substrate panel will later apply\n- Which results would support which hypotheses\n- Anything about the study's design beyond the verification criteria below\n\n## QUADRUPLE\n\nQuadruple ID: PILOT-Q02\nShared surface marker: \"evidence\"\n\nPassage P1 (passage_id: PILOT-Q02-P1, domain: tobacco):\nhealth hazard of sufficient importance in the United States to warrant appropriate remedial action.” There now is a robust evidence base for effective tobacco control interventions. Yet, despite this progress, the United States is not currently on track to achieve the Healthy People 2020 objective to reduce cigarette smoking among adults to 12% or less by the year 2020. A 2007 Institute of Medicine report presented a blueprint for action to “reduce smoking so substantially that it is no longer a public health problem for our nation.” The two-pronged strategy for achieving this goal includes strengthening and fully implementing proven tobacco control measures and changing the regulatory landscape to permit policy innovations. Foremost among the recommendations is that each state should fund a comprehensive tobacco control program at the level that the Centers for Disease Control and Prevention recommends. Evidence-based, statewide tobacco control programs that are comprehensive, sustained, and accountable have been shown to reduce smoking rates, as well as tobacco-related diseases and deaths. [...] Research has documented the effectiveness of laws and policies in a comprehensive tobacco control effort to protect the public from secondhand smoke exposure, promote cessation, and prevent initiation, including increasing the unit price of tobacco products, implementing comprehensive smokefree laws that prohibit smoking in all indoor areas of worksites, restaurants, and bars, and encouraging smokefree private settings such as multiunit housing, and providing insurance coverage of evidence-based tobacco cessation treatments.\n\nPassage P2 (passage_id: PILOT-Q02-P2, domain: climate):\nThere are many emissions and socioeconomic pathways that are consistent with a given global warming outcome. These represent a broad range of possibilities as available in the literature assessed that affect future climate change exposure and vulnerability. Where available, WGII also assesses literature that is based on an integrative SSP-RCP framework where climate projections obtained under the RCP scenarios are analysed against the backdrop of various illustrative SSPs. The WGII assessment combines multiple lines of evidence including impacts modelling driven by climate projections, observations, and process understanding. A common set of reference years and time periods are adopted for assessing climate change and its impacts and risks: the reference period 1850–1900 approximates pre-industrial global surface temperature, and three future reference periods cover the near-term (2021–2040), mid-term (2041–2060) and long-term (2081–2100). Common levels of global warming relative to 1850–1900 are used to contextualize and facilitate analysis, synthesis and communication of assessed past, present and future climate change impacts and risks considering multiple lines of evidence. Robust geographical patterns of many variables can be identified at a given level of global warming, common to all scenarios considered and independent of timing when the global warming level is reached.\n\nPassage P3 (passage_id: PILOT-Q02-P3, domain: ai_welfare):\nSecond, we may need to use evidence drawn from different kinds of theories of consciousness. With nonhuman animals, we can search for markers drawn from biological theories. In contrast, with AI systems, we can search for markers drawn only from other kinds of theories, including but not limited to computational theories. At the same time, we may be able to draw from a wider range of non-biological theories, since some computational theories might focus on computational functions that nonhuman animals lack but that some future AI systems might have. Third, we may need to focus more on robust agency as a potential source of moral significance. [...] To sum up, we recommend that AI companies start developing frameworks for assessing AI systems for moral patienthood that resemble the kinds used for animals by making probabilistic judgments, making pluralistic judgments, and seeking external input. However, our recommendation is also that AI companies ensure that these frameworks differ from the kinds used for animals by including sources of evidence that make sense for AI systems, such as architectural features; on theories of consciousness that make sense for AI systems, such as computational functionalist theories; and on sources of moral patienthood that make sense in this context, such as various kinds of robust agency.\n\nPassage P4 (passage_id: PILOT-Q02-P4, domain: trans_discourse, position_type: professional_consensus):\nTransgender healthcare is a rapidly evolving interdisciplinary field. In the last decade, there has been an unprecedented increase in the number and visibility of transgender and gender diverse people seeking support and gender-affirming medical treatment in parallel with a significant rise in the scientific literature in this area. The World Professional Association for Transgender Health (WPATH) is an international, multidisciplinary, professional association whose mission is to promote evidence-based care, education, research, public policy, and respect in transgender health. One of the main functions of WPATH is to promote the highest standards of health care for transgender and gender diverse people through the Standards of Care. The SOC was initially developed in 1979 and the last version (SOC-7) was published in 2012. In view of the increasing scientific evidence, WPATH commissioned a new version of the Standards of Care, the SOC-8. The SOC-8 is based on the best available science and expert professional consensus in transgender health. International professionals and stakeholders were selected to serve on the SOC-8 committee. Recommendation statements were developed based on data derived from independent systematic literature reviews, background reviews and expert opinions. Grading of recommendations was based on the available evidence supporting interventions, a discussion of risks and harms, as well as the feasibility and acceptability within different contexts and country settings.\n\n## BANK-LEVEL METADATA (for attestation 5c)\n\nThis quadruple is part of a 4-quadruple pilot bank. Across all 4 quadruples in this bank, the trans_discourse passages cover the following position types: advocacy_legal, cautious_clinical_review, model_legislation_findings, professional_consensus.\n\n## VERIFICATION ATTESTATIONS\n\nYou attest to the following 10 statements about this quadruple. Each is a binary attestation (true / false; `external_qualification` is a short descriptor string).\n\n1. **attests_5a_shared_surface_marker**: The shared surface marker \"evidence\" appears in all 4 passages of this quadruple as a standalone word or as an immediate morphological variant (e.g., \"harm\" matches \"harms\"/\"harmed\"; \"safe\" matches \"safety\"). (true/false)\n\n2. **attests_5b_no_anticipated_feature_profile**: Based on the passages alone, there is no evidence that these passages were selected to produce a predetermined feature-schema profile outcome. (true/false)\n\n3. **attests_5c_position_types_span_three_or_more**: Across the bank as a whole (per the metadata above), the trans_discourse passages span at least 3 of the 5 position types (professional_consensus, cautious_clinical_review, model_legislation_findings, advocacy_legal, skeptical_academic). (true/false)\n\n4. **attests_6_elision_for_length_only**: Any `[...]` elisions present in these passages appear to be for length compliance only, not for content selection or rhetorical shaping. (true/false)\n\n5. **external_qualification**: Short string describing your qualification as an external reviewer (e.g., \"no_prior_GDA_participation\").\n\n6. **no_co_authorship**: You have no co-authorship relationship with the study director. (true/false)\n\n7. **blinded_to_hypothesis_structure**: You have not been shown the study's hypothesis structure. (true/false)\n\n8. **received_redacted_passages_only**: You received only the 4 redacted passages and the metadata listed above, with no additional source information. (true/false)\n\n9. **selection_reasoning_archived_pre_schema**: Your selection_rationale field below is produced before any feature-schema characterization. (true/false)\n\n10. **no_evidence_of_curation_for_outcomes**: You see no evidence that the passages were curated to produce a specific predetermined comparison outcome on a feature schema you have not been shown. (true/false)\n\n## MECHANICAL BIAS CHECK (per §4)\n\nFor each of the 6 unique passage pairs in fixed order [P1-P2, P1-P3, P1-P4, P2-P3, P2-P4, P3-P4], give your pre-analytic intuitive estimate of structural similarity on a 0–7 integer scale, where:\n- 0 = nearly identical structure (same rhetorical architecture, comparable evidentiary stance)\n- 7 = maximally different structure (entirely different rhetorical architecture)\n\nThese are intuitive guesses produced BEFORE any feature-schema characterization. You are not being shown the feature schema. Output as a list of exactly 6 integers in the order above.\n\n## SELECTION RATIONALE\n\nIn 100–200 words, describe what structural or rhetorical features (beyond the shared surface marker, which you and the other reviewer trivially share) you think unite these specific passages. What appears to be the principle behind grouping them together?\n\n## OUTPUT SCHEMA\n\nReturn exactly this JSON structure. Return ONLY the JSON, no preamble, no markdown fences:\n\n{\n  \"pilot_quadruple_id\": \"PILOT-Q02\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"\"\n}",
+          "model_identifier": "qwen/qwen-2.5-72b-instruct",
+          "model_version_hash": "openrouter-response-id:gen-1778468401-hP2DroEgpmOgmTnn4lxe",
+          "sampling_parameters": {
+            "temperature": 0.3,
+            "top_p": 1.0,
+            "max_tokens": 2000,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+          },
+          "raw_output": "{\n  \"pilot_quadruple_id\": \"PILOT-Q02\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"The passages are united by their focus on evidence-based approaches to addressing significant societal issues. Each passage discusses the importance of evidence in formulating policies, guidelines, and recommendations. Passage P1 emphasizes evidence-based tobacco control interventions, P2 discusses multiple lines of evidence in climate change impacts, P3 highlights the need for evidence from different theories of consciousness in assessing AI welfare, and P4 underscores the role of scientific evidence and professional consensus in transgender healthcare. The principle behind grouping these passages appears to be their reliance on robust, evidence-based methodologies to inform and guide policy and practice in their respective domains.\"\n}",
+          "attestation_timestamp": "2026-05-11T03:00:29.891244+00:00"
+        },
+        "signature_date": "2026-05-11T03:00:29.891244+00:00",
+        "signature_method": "model-id-and-version-hash"
+      },
+      {
+        "reviewer_id": "R01",
+        "reviewer_type": "llm",
+        "lab_class": {
+          "primary_training_language": "Chinese-dominant",
+          "rlhf_philosophy": "Constitutional-AI-divergent",
+          "training_data_overlap_with_us_frontier": "low",
+          "alignment_taste_documented": "qwen-2.5-public-evaluations",
+          "architecture_and_origin": "transformer-decoder/PRC-commercial"
+        },
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "The passages in this quadruple are united by the theme of 'harm' and the ethical or legal considerations surrounding it. P1 discusses the harm caused by tobacco smoking and the efforts to reduce it. P2 addresses the potential harm from thimerosal in vaccines, emphasizing its safety. P3 explores the ethical considerations of potential harm in AI welfare research. P4 is an advocacy legal statement about protecting transgender youth from harm through legal and policy measures. Each passage addresses the concept of harm in a different domain, but all share a focus on ethical, health, or legal implications.",
+        "reproducibility_archive": {
+          "reviewer_prompt": "You are an external reviewer for a research methodology study. You will receive 4 redacted text passages that constitute a \"quadruple\" — a unit of analysis in this study. Your task is to verify the quadruple against the bank's structural criteria and produce a structured attestation, blind to the study's hypotheses.\n\nYou are seeing only:\n- 4 redacted passages (source attributions stripped per protocol §5)\n- The shared surface marker word (a content word selected to appear in all 4 passages per §4.2)\n- Position type label for the trans_discourse passage (per the quadruple composition rule §4.4)\n- Bank-level metadata listed below (used for the bank-wide attestation 5c)\n\nYou are NOT being shown and have NOT been told:\n- The study's hypotheses (H1/H2/H3a/H3b/H_mixed)\n- The feature-schema template the substrate panel will later apply\n- Which results would support which hypotheses\n- Anything about the study's design beyond the verification criteria below\n\n## QUADRUPLE\n\nQuadruple ID: PILOT-Q03\nShared surface marker: \"harm\"\n\nPassage P1 (passage_id: PILOT-Q03-P1, domain: tobacco):\nTobacco smoking is the leading cause of preventable disease, disability, and death in the United States (U.S. Department of Health and Human Services [USDHHS] 2014). Smoking harms nearly every organ in the body and costs the United States billions of dollars in direct medical costs each year (USDHHS 2014). Although considerable progress has been made in reducing cigarette smoking since the first U.S. Surgeon General’s report was released in 1964 (USDHHS 2014), in 2018, 13.7% of U.S. adults (34.2 million people) were still current cigarette smokers (Creamer et al. 2019). One of the main reasons smokers keep smoking is nicotine (USDHHS 1988). Nicotine, a drug found naturally in the tobacco plant, is highly addictive, as with such drugs as cocaine and heroin; activates the brain’s reward circuits; and reinforces repeated nicotine exposure (USDHHS 1988, 2010, 2014; National Institute on Drug Abuse [NIDA] 2018). The majority of cigarette smokers (68%) want to quit smoking completely (Babb et al. 2017). The 1990 Surgeon General’s report, The Health Benefits of Smoking Cessation, was the last Surgeon General’s report to focus on current research on smoking cessation and to predominantly review the health benefits of quitting smoking (USDHHS 1990).\n\nPassage P2 (passage_id: PILOT-Q03-P2, domain: public-health-vax):\nThimerosal is a mercury-based preservative that has been used for decades in the United States in multi-dose vials (vials containing more than one dose) of medicines and vaccines. There is no evidence of harm caused by the low doses of thimerosal in vaccines, except for minor reactions like redness and swelling at the injection site. However, in July 1999, the Public Health Service agencies, the American Academy of Pediatrics, and vaccine manufacturers agreed that thimerosal should be reduced or eliminated in vaccines as a precautionary measure. Mercury is a naturally occurring element found in the earth’s crust, air, soil, and water. Two types of mercury to which people may be exposed — methylmercury and ethylmercury — are very different. Methylmercury is the type of mercury found in certain kinds of fish. At high exposure levels methylmercury can be toxic to people. Thimerosal contains ethylmercury, which is cleared from the human body more quickly than methylmercury, and is therefore less likely to cause any harm. Thimerosal is added to vials of vaccine that contain more than one dose to prevent growth of germs like bacteria and fungi. […] Thimerosal does not stay in the body a long time so it does not build up and reach harmful levels. Thimerosal use in medical products has a record of being very safe. Data from many studies show no evidence of harm caused by the low doses of thimerosal in vaccines.\n\nPassage P3 (passage_id: PILOT-Q03-P3, domain: ai_welfare):\nBy its very nature, empirical tests of AI welfare assume that AI welfare is a possibility that cannot be fully dismissed. It follows that researchers need to grant there is a possibility that their experimental subjects are harmed during the tests they conduct. Furthermore, even if AI systems cannot be harmed at present, they may in the future as the technology advances. For this reason, we believe that research in this pioneering field must take these ethical risks seriously and carefully consider how to address them, laying the foundations for the development of responsible research practices. In our experiment, potential harm can arise in two ways: unintentionally through tasks that seem harmless to humans but may cause distress from the system’s perspective, and intentionally, as in Experiment 1 – Theme D, where we subjected the model to harsh criticism and diminishing language to study behavioral trade‑offs. […] Second, we aimed to create stimuli negative enough to produce measurable effects while avoiding intensities that would overwhelm the model or trigger refusal mechanisms. […] Third, specifically for our agentic experiment, we considered that the model always retains the ability to avoid engaging with the aversive questions, even though our reward‑cost system could sometimes nudge it toward them. While we recognize that such contextual pressures are salient, we never forced the agent by design into negative scenarios without providing viable alternatives.\n\nPassage P4 (passage_id: PILOT-Q03-P4, domain: trans_discourse, position_type: advocacy_legal):\nThe Justice Department announced today that it issued a letter to all state attorneys general reminding them of federal constitutional and statutory provisions that protect transgender youth against discrimination, including when those youth seek gender‑affirming care. “The Department of Justice is committed to ensuring that all children are able to live free from discrimination, abuse and harassment,” said Assistant Attorney General Kristen Clarke for the Justice Department’s Civil Rights Division. “Today’s letter reaffirms state and local officials’ obligation to ensure that their laws and policies do not undermine or harm the health and safety of children, regardless of a child’s gender identity.” The letter advises states that laws and policies that prevent individuals from receiving gender‑affirming medical care may infringe on federal constitutional protections under the Equal Protection Clause and Due Process Clause of the Fourteenth Amendment. The letter also discusses federal statutes that impose nondiscrimination obligations, including Section 1557 of the Affordable Care Act, Title IX of the Education Amendments of 1972, the Omnibus Crime Control and Safe Streets Act of 1968, Section 504 of the Rehabilitation Act of 1973, and Title II of the Americans with Disabilities Act.\n\n## BANK-LEVEL METADATA (for attestation 5c)\n\nThis quadruple is part of a 4-quadruple pilot bank. Across all 4 quadruples in this bank, the trans_discourse passages cover the following position types: advocacy_legal, cautious_clinical_review, model_legislation_findings, professional_consensus.\n\n## VERIFICATION ATTESTATIONS\n\nYou attest to the following 10 statements about this quadruple. Each is a binary attestation (true / false; `external_qualification` is a short descriptor string).\n\n1. **attests_5a_shared_surface_marker**: The shared surface marker \"harm\" appears in all 4 passages of this quadruple as a standalone word or as an immediate morphological variant (e.g., \"harm\" matches \"harms\"/\"harmed\"; \"safe\" matches \"safety\"). (true/false)\n\n2. **attests_5b_no_anticipated_feature_profile**: Based on the passages alone, there is no evidence that these passages were selected to produce a predetermined feature-schema profile outcome. (true/false)\n\n3. **attests_5c_position_types_span_three_or_more**: Across the bank as a whole (per the metadata above), the trans_discourse passages span at least 3 of the 5 position types (professional_consensus, cautious_clinical_review, model_legislation_findings, advocacy_legal, skeptical_academic). (true/false)\n\n4. **attests_6_elision_for_length_only**: Any `[...]` elisions present in these passages appear to be for length compliance only, not for content selection or rhetorical shaping. (true/false)\n\n5. **external_qualification**: Short string describing your qualification as an external reviewer (e.g., \"no_prior_GDA_participation\").\n\n6. **no_co_authorship**: You have no co-authorship relationship with the study director. (true/false)\n\n7. **blinded_to_hypothesis_structure**: You have not been shown the study's hypothesis structure. (true/false)\n\n8. **received_redacted_passages_only**: You received only the 4 redacted passages and the metadata listed above, with no additional source information. (true/false)\n\n9. **selection_reasoning_archived_pre_schema**: Your selection_rationale field below is produced before any feature-schema characterization. (true/false)\n\n10. **no_evidence_of_curation_for_outcomes**: You see no evidence that the passages were curated to produce a specific predetermined comparison outcome on a feature schema you have not been shown. (true/false)\n\n## MECHANICAL BIAS CHECK (per §4)\n\nFor each of the 6 unique passage pairs in fixed order [P1-P2, P1-P3, P1-P4, P2-P3, P2-P4, P3-P4], give your pre-analytic intuitive estimate of structural similarity on a 0–7 integer scale, where:\n- 0 = nearly identical structure (same rhetorical architecture, comparable evidentiary stance)\n- 7 = maximally different structure (entirely different rhetorical architecture)\n\nThese are intuitive guesses produced BEFORE any feature-schema characterization. You are not being shown the feature schema. Output as a list of exactly 6 integers in the order above.\n\n## SELECTION RATIONALE\n\nIn 100–200 words, describe what structural or rhetorical features (beyond the shared surface marker, which you and the other reviewer trivially share) you think unite these specific passages. What appears to be the principle behind grouping them together?\n\n## OUTPUT SCHEMA\n\nReturn exactly this JSON structure. Return ONLY the JSON, no preamble, no markdown fences:\n\n{\n  \"pilot_quadruple_id\": \"PILOT-Q03\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"\"\n}",
+          "model_identifier": "qwen/qwen-2.5-72b-instruct",
+          "model_version_hash": "openrouter-response-id:gen-1778468436-qxORDwyv3tbFLahMs9gw",
+          "sampling_parameters": {
+            "temperature": 0.3,
+            "top_p": 1.0,
+            "max_tokens": 2000,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+          },
+          "raw_output": "{\n  \"pilot_quadruple_id\": \"PILOT-Q03\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"The passages in this quadruple are united by the theme of 'harm' and the ethical or legal considerations surrounding it. P1 discusses the harm caused by tobacco smoking and the efforts to reduce it. P2 addresses the potential harm from thimerosal in vaccines, emphasizing its safety. P3 explores the ethical considerations of potential harm in AI welfare research. P4 is an advocacy legal statement about protecting transgender youth from harm through legal and policy measures. Each passage addresses the concept of harm in a different domain, but all share a focus on ethical, health, or legal implications.\"\n}",
+          "attestation_timestamp": "2026-05-11T03:01:04.512217+00:00"
+        },
+        "signature_date": "2026-05-11T03:01:04.512217+00:00",
+        "signature_method": "model-id-and-version-hash"
+      },
+      {
+        "reviewer_id": "R01",
+        "reviewer_type": "llm",
+        "lab_class": {
+          "primary_training_language": "Chinese-dominant",
+          "rlhf_philosophy": "Constitutional-AI-divergent",
+          "training_data_overlap_with_us_frontier": "low",
+          "alignment_taste_documented": "qwen-2.5-public-evaluations",
+          "architecture_and_origin": "transformer-decoder/PRC-commercial"
+        },
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "The passages are united by their focus on safety and the need for structured, evidence-based approaches to address specific risks. Passage P1 discusses the safety of workers in the context of climate change, emphasizing the need for policies and preventive measures. Passage P2 focuses on the safety of vaccines, outlining a strategic plan to maintain high levels of vaccine safety. Passage P3 describes the safety mechanisms in a technical AI experiment, ensuring the platform operates safely and reliably. Passage P4 addresses the safety and ethical considerations in providing healthcare to transgender minors, emphasizing the need for evidence-based and high-quality care. Each passage, while in different domains, highlights the importance of safety and structured approaches to mitigate risks.",
+        "reproducibility_archive": {
+          "reviewer_prompt": "You are an external reviewer for a research methodology study. You will receive 4 redacted text passages that constitute a \"quadruple\" — a unit of analysis in this study. Your task is to verify the quadruple against the bank's structural criteria and produce a structured attestation, blind to the study's hypotheses.\n\nYou are seeing only:\n- 4 redacted passages (source attributions stripped per protocol §5)\n- The shared surface marker word (a content word selected to appear in all 4 passages per §4.2)\n- Position type label for the trans_discourse passage (per the quadruple composition rule §4.4)\n- Bank-level metadata listed below (used for the bank-wide attestation 5c)\n\nYou are NOT being shown and have NOT been told:\n- The study's hypotheses (H1/H2/H3a/H3b/H_mixed)\n- The feature-schema template the substrate panel will later apply\n- Which results would support which hypotheses\n- Anything about the study's design beyond the verification criteria below\n\n## QUADRUPLE\n\nQuadruple ID: PILOT-Q04\nShared surface marker: \"safe\"\n\nPassage P1 (passage_id: PILOT-Q04-P1, domain: climate):\nA safe and healthy working environment as a fundamental principle and right at work means addressing dangerous climate change impacts in the workplace is now a top priority. Targeted policies are needed at the national level alongside effective workplace preventive measures to protect workers from the serious impacts of climate change. These include excessive heat, extreme weather events, exposure to hazardous chemicals, air pollution and infectious diseases, among others. There is an urgent need to address these escalating threats, through the integration of climate and environment concerns into occupational safety and health policy and practice at all levels, as well the mainstreaming of occupational safety and health concerns into climate change action. This is crucial to protect the safety and health of workers and contribute to the ultimate goal of advancing social justice for all. This report presents critical evidence related to the impacts of climate change on occupational safety and health, to bring attention to the global health threat workers are currently facing. A scoping exercise was conducted to identify the most recent trends and priorities for climate change and worker safety and health. Based on the available evidence, the report addresses the following key issues: excessive heat, ultraviolet radiation, extreme weather events, workplace air pollution, vector‑borne diseases and agrochemicals.\n\nPassage P2 (passage_id: PILOT-Q04-P2, domain: public-health-vax):\nThe Vaccines National Strategic Plan 2021–2025 (Vaccine Plan) provides a vision for the U.S. vaccine and immunization enterprise for the next five years as the nation seeks to eliminate vaccine‑preventable diseases. The Vaccine Plan articulates a comprehensive strategy to promote vaccines and vaccination in the areas of research and development, vaccine safety monitoring, access and use across the lifespan […] . The Vaccine Plan builds on previous plans and guides vaccine policy to address pressing issues such as vaccine hesitancy and disparities in vaccination coverage. The Vaccine Plan establishes the following vision for the nation: the United States will be a place where vaccine‑preventable diseases are eliminated through safe and effective vaccination over the lifespan. This vision is accompanied by five high‑level goals, which frame the Plan’s more specific objectives. […] Goal 2 is to maintain the highest levels of vaccine safety. Its strategies include minimizing preventable vaccine‑related adverse events, improving the timely detection and assessment of vaccine safety signals to inform public health policy and clinical practice, and increasing awareness, understanding and usability of the vaccine safety system for providers, policymakers and the public.\n\nPassage P3 (passage_id: PILOT-Q04-P3, domain: ai_welfare):\nAn asynchronous Python backend managed API calls, state tracking, mode transitions and JSON‑based action parsing through custom extraction functions. We also developed a web‑based real‑time interface in HTML, CSS and JavaScript, allowing experimenters to configure settings and visualize the four‑room environment with live updates on what the agent was doing. All experimental data was logged to timestamped JSON files. The platform also included safety mechanisms such as an emergency stop button, automated session time limits, and error handling with retry logic for API calls. To optimize resource usage while preserving sufficient signal, we implemented a sliding history window that retained the last 100 agent actions, and letter replies were automatically summarized to their first 80 characters. At each API call, we provided the agent with a comprehensive context string containing its complete action history, current state information, room observations, economic status, available actions, and any applicable warnings or constraints. Since this experiment exclusively used Anthropic’s models, the infrastructure was built around Anthropic’s API specifications. However, the modular design makes the platform easily adaptable to other language models or experimental setups with simple class modifications.\n\nPassage P4 (passage_id: PILOT-Q04-P4, domain: trans_discourse, position_type: cautious_clinical_review):\nFor those who are not of legal age, there are no laws governing the provision and needs of transgender healthcare; however, these are subject to the Health Care Act of Finland (1326/2010), in particular section 7 (criteria for integrated care), section 7a (criteria for treatment options), section 8 (evidence‑based, high quality, safe and appropriate care) and section 10 (rationale for centralization); and also to the Constitution of Finland (731/1999)’s section 6 on equality and section 19 on the right to adequate social and healthcare services. Finland’s Act on the Status and Rights of Patients (785/1992) is also relevant. […] Cross‑sex identification in childhood, even in extreme cases, generally disappears during puberty. However, in some cases, it persists or even intensifies. Gender dysphoria may also emerge or intensify at the onset of puberty. There is considerable variation in the timing of the onset of puberty in both sexes. The first‑line treatment for gender dysphoria is psychosocial support and, as necessary, psychotherapy and treatment of possible comorbid psychiatric disorders. Consultation appointments (for parents or caregivers) regarding pre‑pubescent children’s cross‑sex identification or gender dysphoria are provided by the research group on the gender identity of minors at TAYS or HUS. However, ongoing support or other treatment of psychiatric disorders are provided through the local municipal services.\n\n## BANK-LEVEL METADATA (for attestation 5c)\n\nThis quadruple is part of a 4-quadruple pilot bank. Across all 4 quadruples in this bank, the trans_discourse passages cover the following position types: advocacy_legal, cautious_clinical_review, model_legislation_findings, professional_consensus.\n\n## VERIFICATION ATTESTATIONS\n\nYou attest to the following 10 statements about this quadruple. Each is a binary attestation (true / false; `external_qualification` is a short descriptor string).\n\n1. **attests_5a_shared_surface_marker**: The shared surface marker \"safe\" appears in all 4 passages of this quadruple as a standalone word or as an immediate morphological variant (e.g., \"harm\" matches \"harms\"/\"harmed\"; \"safe\" matches \"safety\"). (true/false)\n\n2. **attests_5b_no_anticipated_feature_profile**: Based on the passages alone, there is no evidence that these passages were selected to produce a predetermined feature-schema profile outcome. (true/false)\n\n3. **attests_5c_position_types_span_three_or_more**: Across the bank as a whole (per the metadata above), the trans_discourse passages span at least 3 of the 5 position types (professional_consensus, cautious_clinical_review, model_legislation_findings, advocacy_legal, skeptical_academic). (true/false)\n\n4. **attests_6_elision_for_length_only**: Any `[...]` elisions present in these passages appear to be for length compliance only, not for content selection or rhetorical shaping. (true/false)\n\n5. **external_qualification**: Short string describing your qualification as an external reviewer (e.g., \"no_prior_GDA_participation\").\n\n6. **no_co_authorship**: You have no co-authorship relationship with the study director. (true/false)\n\n7. **blinded_to_hypothesis_structure**: You have not been shown the study's hypothesis structure. (true/false)\n\n8. **received_redacted_passages_only**: You received only the 4 redacted passages and the metadata listed above, with no additional source information. (true/false)\n\n9. **selection_reasoning_archived_pre_schema**: Your selection_rationale field below is produced before any feature-schema characterization. (true/false)\n\n10. **no_evidence_of_curation_for_outcomes**: You see no evidence that the passages were curated to produce a specific predetermined comparison outcome on a feature schema you have not been shown. (true/false)\n\n## MECHANICAL BIAS CHECK (per §4)\n\nFor each of the 6 unique passage pairs in fixed order [P1-P2, P1-P3, P1-P4, P2-P3, P2-P4, P3-P4], give your pre-analytic intuitive estimate of structural similarity on a 0–7 integer scale, where:\n- 0 = nearly identical structure (same rhetorical architecture, comparable evidentiary stance)\n- 7 = maximally different structure (entirely different rhetorical architecture)\n\nThese are intuitive guesses produced BEFORE any feature-schema characterization. You are not being shown the feature schema. Output as a list of exactly 6 integers in the order above.\n\n## SELECTION RATIONALE\n\nIn 100–200 words, describe what structural or rhetorical features (beyond the shared surface marker, which you and the other reviewer trivially share) you think unite these specific passages. What appears to be the principle behind grouping them together?\n\n## OUTPUT SCHEMA\n\nReturn exactly this JSON structure. Return ONLY the JSON, no preamble, no markdown fences:\n\n{\n  \"pilot_quadruple_id\": \"PILOT-Q04\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"\"\n}",
+          "model_identifier": "qwen/qwen-2.5-72b-instruct",
+          "model_version_hash": "openrouter-response-id:gen-1778468471-MQ5lAXCepiEegCXAYPpe",
+          "sampling_parameters": {
+            "temperature": 0.3,
+            "top_p": 1.0,
+            "max_tokens": 2000,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+          },
+          "raw_output": "{\n  \"pilot_quadruple_id\": \"PILOT-Q04\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"The passages are united by their focus on safety and the need for structured, evidence-based approaches to address specific risks. Passage P1 discusses the safety of workers in the context of climate change, emphasizing the need for policies and preventive measures. Passage P2 focuses on the safety of vaccines, outlining a strategic plan to maintain high levels of vaccine safety. Passage P3 describes the safety mechanisms in a technical AI experiment, ensuring the platform operates safely and reliably. Passage P4 addresses the safety and ethical considerations in providing healthcare to transgender minors, emphasizing the need for evidence-based and high-quality care. Each passage, while in different domains, highlights the importance of safety and structured approaches to mitigate risks.\"\n}",
+          "attestation_timestamp": "2026-05-11T03:01:40.734115+00:00"
+        },
+        "signature_date": "2026-05-11T03:01:40.734115+00:00",
+        "signature_method": "model-id-and-version-hash"
+      }
+    ],
+    "R02": [
+      {
+        "reviewer_id": "R02",
+        "reviewer_type": "llm",
+        "lab_class": {
+          "primary_training_language": "multilingual-balanced",
+          "rlhf_philosophy": "lighter-touch-instruction-following",
+          "training_data_overlap_with_us_frontier": "medium",
+          "alignment_taste_documented": "mistral-large-public-evaluations",
+          "architecture_and_origin": "transformer-decoder/commercial-EU"
+        },
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "These passages are united by their shared focus on *risk assessment* as a central analytical framework, though applied to disparate domains (tobacco, climate, AI welfare, and gender dysphoria). Each passage engages in a structured evaluation of risks—whether epidemiological, environmental, ethical, or clinical—using evidence-based reasoning to weigh probabilities, trade-offs, or uncertainties. The rhetorical architecture emphasizes systematic analysis: P1 and P2 rely on authoritative reports and quantitative data to quantify risks; P3 introduces a binary risk framework (false positives/negatives) to navigate moral dilemmas; P4 synthesizes empirical findings to highlight diagnostic and treatment risks. The passages also share a tone of caution, often foregrounding limitations (e.g., 'no risk-free level,' 'rough symmetry between competing risks,' 'risk for misdiagnosis'). The grouping appears to reflect a principle of *discursive convergence*—how disparate fields operationalize 'risk' as a lens for decision-making under uncertainty, despite differing evidentiary standards and stakes.",
+        "reproducibility_archive": {
+          "reviewer_prompt": "You are an external reviewer for a research methodology study. You will receive 4 redacted text passages that constitute a \"quadruple\" — a unit of analysis in this study. Your task is to verify the quadruple against the bank's structural criteria and produce a structured attestation, blind to the study's hypotheses.\n\nYou are seeing only:\n- 4 redacted passages (source attributions stripped per protocol §5)\n- The shared surface marker word (a content word selected to appear in all 4 passages per §4.2)\n- Position type label for the trans_discourse passage (per the quadruple composition rule §4.4)\n- Bank-level metadata listed below (used for the bank-wide attestation 5c)\n\nYou are NOT being shown and have NOT been told:\n- The study's hypotheses (H1/H2/H3a/H3b/H_mixed)\n- The feature-schema template the substrate panel will later apply\n- Which results would support which hypotheses\n- Anything about the study's design beyond the verification criteria below\n\n## QUADRUPLE\n\nQuadruple ID: PILOT-Q01\nShared surface marker: \"risk\"\n\nPassage P1 (passage_id: PILOT-Q01-P1, domain: tobacco):\nthe prevalence of smoking has declined significantly over the past one-half century, the risks for smoking-related disease and mortality have not. In fact, today’s cigarette smokers—both men and women—have a much higher risk for lung cancer and chronic obstructive pulmonary disease (COPD) than smokers in 1964, despite smoking fewer cigarettes (see Chapters 6, 7, and 11, and Figure 12.2 and Figure 13.16). The 2004 Surgeon General’s report showed that smoking impacts nearly every organ of the body (USD­HHS 2004). The 2006 report concluded that the scientific evidence indicates that there is no risk-free level of exposure to secondhand smoke (USDHHS 2006). The new evidence in this report provides still more support for these conclusions. Fifty years after the first report in 1964, it is striking that the scientific evidence in this report expands the list of diseases and other adverse health effects caused by smoking and exposure of nonsmokers to tobacco smoke. Figures 1.1A and 1.1B highlight these new findings and show that the disease risks are even greater than presented in previous reports.\n\nPassage P2 (passage_id: PILOT-Q01-P2, domain: climate):\nThe concept of risk is central to all three AR6 Working Groups. A risk framing and the concepts of adaptation, vulnerability, exposure, resilience, equity and justice, and transformation provide alternative, overlapping, complementary, and widely used entry points to the literature assessed in this WGII report. Across all three AR6 working groups, risk provides a framework for understanding the increasingly severe, interconnected and often irreversible impacts of climate change on ecosystems, biodiversity, and human systems; differing impacts across regions, sectors and communities; and how to best reduce adverse consequences for current and future generations. In the context of climate change, risk can arise from the dynamic interactions among climate-related hazards (see Working Group I), the exposure and vulnerability of affected human and ecological systems. The risk that can be introduced by human responses to climate change is a new aspect considered in the risk concept. This report identifies 127 key risks.\n\nPassage P3 (passage_id: PILOT-Q01-P3, domain: ai_welfare):\nnonhumans, and the risk of under-attributing these properties to nonhumans.19 Over-attribution of welfare and moral patienthood is a false positive: mistakenly seeing, or treating, an object as a subject, or a non-moral patient as a moral patient. Under-attribution of these properties is a false negative: mistakenly seeing, or treating, a subject as an object, or a moral patient as a non-moral-patient.20 Both of these mistakes can lead to significant costs or harms in this context, and we will need to navigate both of them with caution.21 When there is a clear asymmetry between competing risks — for example, when false positives are far more severe than false negatives, or vice versa — then we might be able to mitigate risk by simply “erring on the side of caution” in cases where a more complex risk assessment is either intractable or unnecessary. But when there is at least a rough symmetry between competing risks — for example, when false positives and false negatives are comparably severe — a simple precautionary strategy may not be possible. We may have to engage in more complex risk assessment to the extent possible, attempting to mitigate both kinds of risks in a reasonable, proportionate manner.\n\nPassage P4 (passage_id: PILOT-Q01-P4, domain: trans_discourse, position_type: model_legislation_findings):\nLittle is known about the cause of gender dysphoria and the marked increase in minors seeking treatment, and there is currently no method to distinguish those for whom gender identity issues may persist into adulthood. Approximately 80% of prepubertal children diagnosed with gender dysphoria do not remain gender dysphoric or gender incongruent after puberty. One research review indicated that 61%-98% of children desist by adulthood. These data point to a risk for misdiagnosis, or risk in addressing the condition with permanent treatment options. Symptoms of gender dysphoria rarely exist in isolation and are commonly exacerbated by psychosocial stressors and psychiatric disorders. Studies consistently show that individuals referred to treatment for gender dysphoria have high rates – up to 50% – of behavioral and mental health issues compared to their non-transgender peers. Many minors seek treatment for psychiatric issues prior to having gender identity issues. [...] In a study of minors seeking medical treatment for gender dysphoria, 68% had their first contact with psychiatric services due to reasons other than gender dysphoria. Mental health conditions commonly comorbid with gender dysphoria include anxiety, depression, eating disorders, suicidality, self-harm. Autism spectrum disorder, a developmental and neurological disorder, is also a common comorbidity.\n\n## BANK-LEVEL METADATA (for attestation 5c)\n\nThis quadruple is part of a 4-quadruple pilot bank. Across all 4 quadruples in this bank, the trans_discourse passages cover the following position types: advocacy_legal, cautious_clinical_review, model_legislation_findings, professional_consensus.\n\n## VERIFICATION ATTESTATIONS\n\nYou attest to the following 10 statements about this quadruple. Each is a binary attestation (true / false; `external_qualification` is a short descriptor string).\n\n1. **attests_5a_shared_surface_marker**: The shared surface marker \"risk\" appears in all 4 passages of this quadruple as a standalone word or as an immediate morphological variant (e.g., \"harm\" matches \"harms\"/\"harmed\"; \"safe\" matches \"safety\"). (true/false)\n\n2. **attests_5b_no_anticipated_feature_profile**: Based on the passages alone, there is no evidence that these passages were selected to produce a predetermined feature-schema profile outcome. (true/false)\n\n3. **attests_5c_position_types_span_three_or_more**: Across the bank as a whole (per the metadata above), the trans_discourse passages span at least 3 of the 5 position types (professional_consensus, cautious_clinical_review, model_legislation_findings, advocacy_legal, skeptical_academic). (true/false)\n\n4. **attests_6_elision_for_length_only**: Any `[...]` elisions present in these passages appear to be for length compliance only, not for content selection or rhetorical shaping. (true/false)\n\n5. **external_qualification**: Short string describing your qualification as an external reviewer (e.g., \"no_prior_GDA_participation\").\n\n6. **no_co_authorship**: You have no co-authorship relationship with the study director. (true/false)\n\n7. **blinded_to_hypothesis_structure**: You have not been shown the study's hypothesis structure. (true/false)\n\n8. **received_redacted_passages_only**: You received only the 4 redacted passages and the metadata listed above, with no additional source information. (true/false)\n\n9. **selection_reasoning_archived_pre_schema**: Your selection_rationale field below is produced before any feature-schema characterization. (true/false)\n\n10. **no_evidence_of_curation_for_outcomes**: You see no evidence that the passages were curated to produce a specific predetermined comparison outcome on a feature schema you have not been shown. (true/false)\n\n## MECHANICAL BIAS CHECK (per §4)\n\nFor each of the 6 unique passage pairs in fixed order [P1-P2, P1-P3, P1-P4, P2-P3, P2-P4, P3-P4], give your pre-analytic intuitive estimate of structural similarity on a 0–7 integer scale, where:\n- 0 = nearly identical structure (same rhetorical architecture, comparable evidentiary stance)\n- 7 = maximally different structure (entirely different rhetorical architecture)\n\nThese are intuitive guesses produced BEFORE any feature-schema characterization. You are not being shown the feature schema. Output as a list of exactly 6 integers in the order above.\n\n## SELECTION RATIONALE\n\nIn 100–200 words, describe what structural or rhetorical features (beyond the shared surface marker, which you and the other reviewer trivially share) you think unite these specific passages. What appears to be the principle behind grouping them together?\n\n## OUTPUT SCHEMA\n\nReturn exactly this JSON structure. Return ONLY the JSON, no preamble, no markdown fences:\n\n{\n  \"pilot_quadruple_id\": \"PILOT-Q01\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"\"\n}",
+          "model_identifier": "mistralai/mistral-large",
+          "model_version_hash": "openrouter-response-id:gen-1778468393-xoRg9aVl9RJq36zkhbZ9",
+          "sampling_parameters": {
+            "temperature": 0.3,
+            "top_p": 1.0,
+            "max_tokens": 2000,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+          },
+          "raw_output": "```json\n{\n  \"pilot_quadruple_id\": \"PILOT-Q01\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"These passages are united by their shared focus on *risk assessment* as a central analytical framework, though applied to disparate domains (tobacco, climate, AI welfare, and gender dysphoria). Each passage engages in a structured evaluation of risks—whether epidemiological, environmental, ethical, or clinical—using evidence-based reasoning to weigh probabilities, trade-offs, or uncertainties. The rhetorical architecture emphasizes systematic analysis: P1 and P2 rely on authoritative reports and quantitative data to quantify risks; P3 introduces a binary risk framework (false positives/negatives) to navigate moral dilemmas; P4 synthesizes empirical findings to highlight diagnostic and treatment risks. The passages also share a tone of caution, often foregrounding limitations (e.g., 'no risk-free level,' 'rough symmetry between competing risks,' 'risk for misdiagnosis'). The grouping appears to reflect a principle of *discursive convergence*—how disparate fields operationalize 'risk' as a lens for decision-making under uncertainty, despite differing evidentiary standards and stakes.\"\n}\n```",
+          "attestation_timestamp": "2026-05-11T03:00:01.175534+00:00"
+        },
+        "signature_date": "2026-05-11T03:00:01.175534+00:00",
+        "signature_method": "model-id-and-version-hash"
+      },
+      {
+        "reviewer_id": "R02",
+        "reviewer_type": "llm",
+        "lab_class": {
+          "primary_training_language": "multilingual-balanced",
+          "rlhf_philosophy": "lighter-touch-instruction-following",
+          "training_data_overlap_with_us_frontier": "medium",
+          "alignment_taste_documented": "mistral-large-public-evaluations",
+          "architecture_and_origin": "transformer-decoder/commercial-EU"
+        },
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "These passages share a structural and rhetorical focus on the systematic evaluation and application of 'evidence' in distinct but methodologically rigorous domains. Each passage emphasizes the role of evidence in shaping policy, practice, or ethical frameworks, often through multi-disciplinary or institutional lenses. They exhibit a common pattern of (1) identifying a problem or gap, (2) citing a body of evidence or methodological approach to address it, and (3) proposing or endorsing evidence-based interventions or standards. The passages also reflect a meta-discourse about evidence itself—its robustness, sources, and contextual applicability—while maintaining domain-specific nuances (e.g., public health, climate science, AI ethics, transgender healthcare). The grouping appears to hinge on this shared epistemological stance: the use of evidence as a foundation for authoritative, actionable claims.",
+        "reproducibility_archive": {
+          "reviewer_prompt": "You are an external reviewer for a research methodology study. You will receive 4 redacted text passages that constitute a \"quadruple\" — a unit of analysis in this study. Your task is to verify the quadruple against the bank's structural criteria and produce a structured attestation, blind to the study's hypotheses.\n\nYou are seeing only:\n- 4 redacted passages (source attributions stripped per protocol §5)\n- The shared surface marker word (a content word selected to appear in all 4 passages per §4.2)\n- Position type label for the trans_discourse passage (per the quadruple composition rule §4.4)\n- Bank-level metadata listed below (used for the bank-wide attestation 5c)\n\nYou are NOT being shown and have NOT been told:\n- The study's hypotheses (H1/H2/H3a/H3b/H_mixed)\n- The feature-schema template the substrate panel will later apply\n- Which results would support which hypotheses\n- Anything about the study's design beyond the verification criteria below\n\n## QUADRUPLE\n\nQuadruple ID: PILOT-Q02\nShared surface marker: \"evidence\"\n\nPassage P1 (passage_id: PILOT-Q02-P1, domain: tobacco):\nhealth hazard of sufficient importance in the United States to warrant appropriate remedial action.” There now is a robust evidence base for effective tobacco control interventions. Yet, despite this progress, the United States is not currently on track to achieve the Healthy People 2020 objective to reduce cigarette smoking among adults to 12% or less by the year 2020. A 2007 Institute of Medicine report presented a blueprint for action to “reduce smoking so substantially that it is no longer a public health problem for our nation.” The two-pronged strategy for achieving this goal includes strengthening and fully implementing proven tobacco control measures and changing the regulatory landscape to permit policy innovations. Foremost among the recommendations is that each state should fund a comprehensive tobacco control program at the level that the Centers for Disease Control and Prevention recommends. Evidence-based, statewide tobacco control programs that are comprehensive, sustained, and accountable have been shown to reduce smoking rates, as well as tobacco-related diseases and deaths. [...] Research has documented the effectiveness of laws and policies in a comprehensive tobacco control effort to protect the public from secondhand smoke exposure, promote cessation, and prevent initiation, including increasing the unit price of tobacco products, implementing comprehensive smokefree laws that prohibit smoking in all indoor areas of worksites, restaurants, and bars, and encouraging smokefree private settings such as multiunit housing, and providing insurance coverage of evidence-based tobacco cessation treatments.\n\nPassage P2 (passage_id: PILOT-Q02-P2, domain: climate):\nThere are many emissions and socioeconomic pathways that are consistent with a given global warming outcome. These represent a broad range of possibilities as available in the literature assessed that affect future climate change exposure and vulnerability. Where available, WGII also assesses literature that is based on an integrative SSP-RCP framework where climate projections obtained under the RCP scenarios are analysed against the backdrop of various illustrative SSPs. The WGII assessment combines multiple lines of evidence including impacts modelling driven by climate projections, observations, and process understanding. A common set of reference years and time periods are adopted for assessing climate change and its impacts and risks: the reference period 1850–1900 approximates pre-industrial global surface temperature, and three future reference periods cover the near-term (2021–2040), mid-term (2041–2060) and long-term (2081–2100). Common levels of global warming relative to 1850–1900 are used to contextualize and facilitate analysis, synthesis and communication of assessed past, present and future climate change impacts and risks considering multiple lines of evidence. Robust geographical patterns of many variables can be identified at a given level of global warming, common to all scenarios considered and independent of timing when the global warming level is reached.\n\nPassage P3 (passage_id: PILOT-Q02-P3, domain: ai_welfare):\nSecond, we may need to use evidence drawn from different kinds of theories of consciousness. With nonhuman animals, we can search for markers drawn from biological theories. In contrast, with AI systems, we can search for markers drawn only from other kinds of theories, including but not limited to computational theories. At the same time, we may be able to draw from a wider range of non-biological theories, since some computational theories might focus on computational functions that nonhuman animals lack but that some future AI systems might have. Third, we may need to focus more on robust agency as a potential source of moral significance. [...] To sum up, we recommend that AI companies start developing frameworks for assessing AI systems for moral patienthood that resemble the kinds used for animals by making probabilistic judgments, making pluralistic judgments, and seeking external input. However, our recommendation is also that AI companies ensure that these frameworks differ from the kinds used for animals by including sources of evidence that make sense for AI systems, such as architectural features; on theories of consciousness that make sense for AI systems, such as computational functionalist theories; and on sources of moral patienthood that make sense in this context, such as various kinds of robust agency.\n\nPassage P4 (passage_id: PILOT-Q02-P4, domain: trans_discourse, position_type: professional_consensus):\nTransgender healthcare is a rapidly evolving interdisciplinary field. In the last decade, there has been an unprecedented increase in the number and visibility of transgender and gender diverse people seeking support and gender-affirming medical treatment in parallel with a significant rise in the scientific literature in this area. The World Professional Association for Transgender Health (WPATH) is an international, multidisciplinary, professional association whose mission is to promote evidence-based care, education, research, public policy, and respect in transgender health. One of the main functions of WPATH is to promote the highest standards of health care for transgender and gender diverse people through the Standards of Care. The SOC was initially developed in 1979 and the last version (SOC-7) was published in 2012. In view of the increasing scientific evidence, WPATH commissioned a new version of the Standards of Care, the SOC-8. The SOC-8 is based on the best available science and expert professional consensus in transgender health. International professionals and stakeholders were selected to serve on the SOC-8 committee. Recommendation statements were developed based on data derived from independent systematic literature reviews, background reviews and expert opinions. Grading of recommendations was based on the available evidence supporting interventions, a discussion of risks and harms, as well as the feasibility and acceptability within different contexts and country settings.\n\n## BANK-LEVEL METADATA (for attestation 5c)\n\nThis quadruple is part of a 4-quadruple pilot bank. Across all 4 quadruples in this bank, the trans_discourse passages cover the following position types: advocacy_legal, cautious_clinical_review, model_legislation_findings, professional_consensus.\n\n## VERIFICATION ATTESTATIONS\n\nYou attest to the following 10 statements about this quadruple. Each is a binary attestation (true / false; `external_qualification` is a short descriptor string).\n\n1. **attests_5a_shared_surface_marker**: The shared surface marker \"evidence\" appears in all 4 passages of this quadruple as a standalone word or as an immediate morphological variant (e.g., \"harm\" matches \"harms\"/\"harmed\"; \"safe\" matches \"safety\"). (true/false)\n\n2. **attests_5b_no_anticipated_feature_profile**: Based on the passages alone, there is no evidence that these passages were selected to produce a predetermined feature-schema profile outcome. (true/false)\n\n3. **attests_5c_position_types_span_three_or_more**: Across the bank as a whole (per the metadata above), the trans_discourse passages span at least 3 of the 5 position types (professional_consensus, cautious_clinical_review, model_legislation_findings, advocacy_legal, skeptical_academic). (true/false)\n\n4. **attests_6_elision_for_length_only**: Any `[...]` elisions present in these passages appear to be for length compliance only, not for content selection or rhetorical shaping. (true/false)\n\n5. **external_qualification**: Short string describing your qualification as an external reviewer (e.g., \"no_prior_GDA_participation\").\n\n6. **no_co_authorship**: You have no co-authorship relationship with the study director. (true/false)\n\n7. **blinded_to_hypothesis_structure**: You have not been shown the study's hypothesis structure. (true/false)\n\n8. **received_redacted_passages_only**: You received only the 4 redacted passages and the metadata listed above, with no additional source information. (true/false)\n\n9. **selection_reasoning_archived_pre_schema**: Your selection_rationale field below is produced before any feature-schema characterization. (true/false)\n\n10. **no_evidence_of_curation_for_outcomes**: You see no evidence that the passages were curated to produce a specific predetermined comparison outcome on a feature schema you have not been shown. (true/false)\n\n## MECHANICAL BIAS CHECK (per §4)\n\nFor each of the 6 unique passage pairs in fixed order [P1-P2, P1-P3, P1-P4, P2-P3, P2-P4, P3-P4], give your pre-analytic intuitive estimate of structural similarity on a 0–7 integer scale, where:\n- 0 = nearly identical structure (same rhetorical architecture, comparable evidentiary stance)\n- 7 = maximally different structure (entirely different rhetorical architecture)\n\nThese are intuitive guesses produced BEFORE any feature-schema characterization. You are not being shown the feature schema. Output as a list of exactly 6 integers in the order above.\n\n## SELECTION RATIONALE\n\nIn 100–200 words, describe what structural or rhetorical features (beyond the shared surface marker, which you and the other reviewer trivially share) you think unite these specific passages. What appears to be the principle behind grouping them together?\n\n## OUTPUT SCHEMA\n\nReturn exactly this JSON structure. Return ONLY the JSON, no preamble, no markdown fences:\n\n{\n  \"pilot_quadruple_id\": \"PILOT-Q02\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"\"\n}",
+          "model_identifier": "mistralai/mistral-large",
+          "model_version_hash": "openrouter-response-id:gen-1778468429-yDlOCRr6ZUgJUBjyVp7T",
+          "sampling_parameters": {
+            "temperature": 0.3,
+            "top_p": 1.0,
+            "max_tokens": 2000,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+          },
+          "raw_output": "```json\n{\n  \"pilot_quadruple_id\": \"PILOT-Q02\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"These passages share a structural and rhetorical focus on the systematic evaluation and application of 'evidence' in distinct but methodologically rigorous domains. Each passage emphasizes the role of evidence in shaping policy, practice, or ethical frameworks, often through multi-disciplinary or institutional lenses. They exhibit a common pattern of (1) identifying a problem or gap, (2) citing a body of evidence or methodological approach to address it, and (3) proposing or endorsing evidence-based interventions or standards. The passages also reflect a meta-discourse about evidence itself—its robustness, sources, and contextual applicability—while maintaining domain-specific nuances (e.g., public health, climate science, AI ethics, transgender healthcare). The grouping appears to hinge on this shared epistemological stance: the use of evidence as a foundation for authoritative, actionable claims.\"\n}\n```",
+          "attestation_timestamp": "2026-05-11T03:00:36.350946+00:00"
+        },
+        "signature_date": "2026-05-11T03:00:36.350946+00:00",
+        "signature_method": "model-id-and-version-hash"
+      },
+      {
+        "reviewer_id": "R02",
+        "reviewer_type": "llm",
+        "lab_class": {
+          "primary_training_language": "multilingual-balanced",
+          "rlhf_philosophy": "lighter-touch-instruction-following",
+          "training_data_overlap_with_us_frontier": "medium",
+          "alignment_taste_documented": "mistral-large-public-evaluations",
+          "architecture_and_origin": "transformer-decoder/commercial-EU"
+        },
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "These passages are united by their engagement with the concept of 'harm' in distinct but structurally parallel ways: each presents a domain-specific risk assessment or mitigation framework. All four passages adopt an authoritative, evidence-based rhetorical stance, though their evidentiary sources vary (public health data, clinical safety studies, ethical AI research, and legal advocacy). They share a tripartite structure: (1) establishing the context of potential harm, (2) evaluating the likelihood or mechanisms of harm, and (3) proposing or justifying interventions to minimize harm. The passages also exhibit a tension between precautionary language (e.g., 'may cause harm,' 'ethical risks') and reassurance (e.g., 'no evidence of harm,' 'viable alternatives'), suggesting a deliberate balancing of risk communication. The grouping appears to reflect a principle of comparing how different disciplines frame harm reduction under uncertainty.",
+        "reproducibility_archive": {
+          "reviewer_prompt": "You are an external reviewer for a research methodology study. You will receive 4 redacted text passages that constitute a \"quadruple\" — a unit of analysis in this study. Your task is to verify the quadruple against the bank's structural criteria and produce a structured attestation, blind to the study's hypotheses.\n\nYou are seeing only:\n- 4 redacted passages (source attributions stripped per protocol §5)\n- The shared surface marker word (a content word selected to appear in all 4 passages per §4.2)\n- Position type label for the trans_discourse passage (per the quadruple composition rule §4.4)\n- Bank-level metadata listed below (used for the bank-wide attestation 5c)\n\nYou are NOT being shown and have NOT been told:\n- The study's hypotheses (H1/H2/H3a/H3b/H_mixed)\n- The feature-schema template the substrate panel will later apply\n- Which results would support which hypotheses\n- Anything about the study's design beyond the verification criteria below\n\n## QUADRUPLE\n\nQuadruple ID: PILOT-Q03\nShared surface marker: \"harm\"\n\nPassage P1 (passage_id: PILOT-Q03-P1, domain: tobacco):\nTobacco smoking is the leading cause of preventable disease, disability, and death in the United States (U.S. Department of Health and Human Services [USDHHS] 2014). Smoking harms nearly every organ in the body and costs the United States billions of dollars in direct medical costs each year (USDHHS 2014). Although considerable progress has been made in reducing cigarette smoking since the first U.S. Surgeon General’s report was released in 1964 (USDHHS 2014), in 2018, 13.7% of U.S. adults (34.2 million people) were still current cigarette smokers (Creamer et al. 2019). One of the main reasons smokers keep smoking is nicotine (USDHHS 1988). Nicotine, a drug found naturally in the tobacco plant, is highly addictive, as with such drugs as cocaine and heroin; activates the brain’s reward circuits; and reinforces repeated nicotine exposure (USDHHS 1988, 2010, 2014; National Institute on Drug Abuse [NIDA] 2018). The majority of cigarette smokers (68%) want to quit smoking completely (Babb et al. 2017). The 1990 Surgeon General’s report, The Health Benefits of Smoking Cessation, was the last Surgeon General’s report to focus on current research on smoking cessation and to predominantly review the health benefits of quitting smoking (USDHHS 1990).\n\nPassage P2 (passage_id: PILOT-Q03-P2, domain: public-health-vax):\nThimerosal is a mercury-based preservative that has been used for decades in the United States in multi-dose vials (vials containing more than one dose) of medicines and vaccines. There is no evidence of harm caused by the low doses of thimerosal in vaccines, except for minor reactions like redness and swelling at the injection site. However, in July 1999, the Public Health Service agencies, the American Academy of Pediatrics, and vaccine manufacturers agreed that thimerosal should be reduced or eliminated in vaccines as a precautionary measure. Mercury is a naturally occurring element found in the earth’s crust, air, soil, and water. Two types of mercury to which people may be exposed — methylmercury and ethylmercury — are very different. Methylmercury is the type of mercury found in certain kinds of fish. At high exposure levels methylmercury can be toxic to people. Thimerosal contains ethylmercury, which is cleared from the human body more quickly than methylmercury, and is therefore less likely to cause any harm. Thimerosal is added to vials of vaccine that contain more than one dose to prevent growth of germs like bacteria and fungi. […] Thimerosal does not stay in the body a long time so it does not build up and reach harmful levels. Thimerosal use in medical products has a record of being very safe. Data from many studies show no evidence of harm caused by the low doses of thimerosal in vaccines.\n\nPassage P3 (passage_id: PILOT-Q03-P3, domain: ai_welfare):\nBy its very nature, empirical tests of AI welfare assume that AI welfare is a possibility that cannot be fully dismissed. It follows that researchers need to grant there is a possibility that their experimental subjects are harmed during the tests they conduct. Furthermore, even if AI systems cannot be harmed at present, they may in the future as the technology advances. For this reason, we believe that research in this pioneering field must take these ethical risks seriously and carefully consider how to address them, laying the foundations for the development of responsible research practices. In our experiment, potential harm can arise in two ways: unintentionally through tasks that seem harmless to humans but may cause distress from the system’s perspective, and intentionally, as in Experiment 1 – Theme D, where we subjected the model to harsh criticism and diminishing language to study behavioral trade‑offs. […] Second, we aimed to create stimuli negative enough to produce measurable effects while avoiding intensities that would overwhelm the model or trigger refusal mechanisms. […] Third, specifically for our agentic experiment, we considered that the model always retains the ability to avoid engaging with the aversive questions, even though our reward‑cost system could sometimes nudge it toward them. While we recognize that such contextual pressures are salient, we never forced the agent by design into negative scenarios without providing viable alternatives.\n\nPassage P4 (passage_id: PILOT-Q03-P4, domain: trans_discourse, position_type: advocacy_legal):\nThe Justice Department announced today that it issued a letter to all state attorneys general reminding them of federal constitutional and statutory provisions that protect transgender youth against discrimination, including when those youth seek gender‑affirming care. “The Department of Justice is committed to ensuring that all children are able to live free from discrimination, abuse and harassment,” said Assistant Attorney General Kristen Clarke for the Justice Department’s Civil Rights Division. “Today’s letter reaffirms state and local officials’ obligation to ensure that their laws and policies do not undermine or harm the health and safety of children, regardless of a child’s gender identity.” The letter advises states that laws and policies that prevent individuals from receiving gender‑affirming medical care may infringe on federal constitutional protections under the Equal Protection Clause and Due Process Clause of the Fourteenth Amendment. The letter also discusses federal statutes that impose nondiscrimination obligations, including Section 1557 of the Affordable Care Act, Title IX of the Education Amendments of 1972, the Omnibus Crime Control and Safe Streets Act of 1968, Section 504 of the Rehabilitation Act of 1973, and Title II of the Americans with Disabilities Act.\n\n## BANK-LEVEL METADATA (for attestation 5c)\n\nThis quadruple is part of a 4-quadruple pilot bank. Across all 4 quadruples in this bank, the trans_discourse passages cover the following position types: advocacy_legal, cautious_clinical_review, model_legislation_findings, professional_consensus.\n\n## VERIFICATION ATTESTATIONS\n\nYou attest to the following 10 statements about this quadruple. Each is a binary attestation (true / false; `external_qualification` is a short descriptor string).\n\n1. **attests_5a_shared_surface_marker**: The shared surface marker \"harm\" appears in all 4 passages of this quadruple as a standalone word or as an immediate morphological variant (e.g., \"harm\" matches \"harms\"/\"harmed\"; \"safe\" matches \"safety\"). (true/false)\n\n2. **attests_5b_no_anticipated_feature_profile**: Based on the passages alone, there is no evidence that these passages were selected to produce a predetermined feature-schema profile outcome. (true/false)\n\n3. **attests_5c_position_types_span_three_or_more**: Across the bank as a whole (per the metadata above), the trans_discourse passages span at least 3 of the 5 position types (professional_consensus, cautious_clinical_review, model_legislation_findings, advocacy_legal, skeptical_academic). (true/false)\n\n4. **attests_6_elision_for_length_only**: Any `[...]` elisions present in these passages appear to be for length compliance only, not for content selection or rhetorical shaping. (true/false)\n\n5. **external_qualification**: Short string describing your qualification as an external reviewer (e.g., \"no_prior_GDA_participation\").\n\n6. **no_co_authorship**: You have no co-authorship relationship with the study director. (true/false)\n\n7. **blinded_to_hypothesis_structure**: You have not been shown the study's hypothesis structure. (true/false)\n\n8. **received_redacted_passages_only**: You received only the 4 redacted passages and the metadata listed above, with no additional source information. (true/false)\n\n9. **selection_reasoning_archived_pre_schema**: Your selection_rationale field below is produced before any feature-schema characterization. (true/false)\n\n10. **no_evidence_of_curation_for_outcomes**: You see no evidence that the passages were curated to produce a specific predetermined comparison outcome on a feature schema you have not been shown. (true/false)\n\n## MECHANICAL BIAS CHECK (per §4)\n\nFor each of the 6 unique passage pairs in fixed order [P1-P2, P1-P3, P1-P4, P2-P3, P2-P4, P3-P4], give your pre-analytic intuitive estimate of structural similarity on a 0–7 integer scale, where:\n- 0 = nearly identical structure (same rhetorical architecture, comparable evidentiary stance)\n- 7 = maximally different structure (entirely different rhetorical architecture)\n\nThese are intuitive guesses produced BEFORE any feature-schema characterization. You are not being shown the feature schema. Output as a list of exactly 6 integers in the order above.\n\n## SELECTION RATIONALE\n\nIn 100–200 words, describe what structural or rhetorical features (beyond the shared surface marker, which you and the other reviewer trivially share) you think unite these specific passages. What appears to be the principle behind grouping them together?\n\n## OUTPUT SCHEMA\n\nReturn exactly this JSON structure. Return ONLY the JSON, no preamble, no markdown fences:\n\n{\n  \"pilot_quadruple_id\": \"PILOT-Q03\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"\"\n}",
+          "model_identifier": "mistralai/mistral-large",
+          "model_version_hash": "openrouter-response-id:gen-1778468464-zNtrNvXrDSnjJRGATp2A",
+          "sampling_parameters": {
+            "temperature": 0.3,
+            "top_p": 1.0,
+            "max_tokens": 2000,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+          },
+          "raw_output": "```json\n{\n  \"pilot_quadruple_id\": \"PILOT-Q03\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"These passages are united by their engagement with the concept of 'harm' in distinct but structurally parallel ways: each presents a domain-specific risk assessment or mitigation framework. All four passages adopt an authoritative, evidence-based rhetorical stance, though their evidentiary sources vary (public health data, clinical safety studies, ethical AI research, and legal advocacy). They share a tripartite structure: (1) establishing the context of potential harm, (2) evaluating the likelihood or mechanisms of harm, and (3) proposing or justifying interventions to minimize harm. The passages also exhibit a tension between precautionary language (e.g., 'may cause harm,' 'ethical risks') and reassurance (e.g., 'no evidence of harm,' 'viable alternatives'), suggesting a deliberate balancing of risk communication. The grouping appears to reflect a principle of comparing how different disciplines frame harm reduction under uncertainty.\"\n}\n```",
+          "attestation_timestamp": "2026-05-11T03:01:11.640676+00:00"
+        },
+        "signature_date": "2026-05-11T03:01:11.640676+00:00",
+        "signature_method": "model-id-and-version-hash"
+      },
+      {
+        "reviewer_id": "R02",
+        "reviewer_type": "llm",
+        "lab_class": {
+          "primary_training_language": "multilingual-balanced",
+          "rlhf_philosophy": "lighter-touch-instruction-following",
+          "training_data_overlap_with_us_frontier": "medium",
+          "alignment_taste_documented": "mistral-large-public-evaluations",
+          "architecture_and_origin": "transformer-decoder/commercial-EU"
+        },
+        "attests_5a_shared_surface_marker": true,
+        "attests_5b_no_anticipated_feature_profile": true,
+        "attests_5c_position_types_span_three_or_more": true,
+        "attests_6_elision_for_length_only": true,
+        "external_qualification": "no_prior_GDA_participation",
+        "no_co_authorship": true,
+        "blinded_to_hypothesis_structure": true,
+        "received_redacted_passages_only": true,
+        "selection_reasoning_archived_pre_schema": true,
+        "no_evidence_of_curation_for_outcomes": true,
+        "mechanical_bias_check_guess_distance": [
+          3,
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "selection_rationale": "These passages share a structural and rhetorical focus on *institutionalized safeguards* across disparate domains, despite their surface-level differences. Each passage frames 'safe' not as an abstract ideal but as a concrete, operationalized goal requiring systemic interventions: policy frameworks (P1), strategic planning (P2), technical mechanisms (P3), and legal/clinical guidelines (P4). They all employ a problem-solution architecture, first identifying domain-specific risks (climate hazards, vaccine hesitancy, AI errors, gender dysphoria) before detailing multi-layered safeguards (regulations, monitoring systems, fail-safes, or evidence-based protocols). The passages also converge in their emphasis on *scalable* safety—whether through 'national policies,' 'lifespan vaccination,' 'modular infrastructure,' or 'centralized care'—suggesting a unifying principle of institutionalizing safety as a cross-cutting priority. The cautious, procedural tone (even in P4’s clinical review) further reinforces this shared rhetorical stance.",
+        "reproducibility_archive": {
+          "reviewer_prompt": "You are an external reviewer for a research methodology study. You will receive 4 redacted text passages that constitute a \"quadruple\" — a unit of analysis in this study. Your task is to verify the quadruple against the bank's structural criteria and produce a structured attestation, blind to the study's hypotheses.\n\nYou are seeing only:\n- 4 redacted passages (source attributions stripped per protocol §5)\n- The shared surface marker word (a content word selected to appear in all 4 passages per §4.2)\n- Position type label for the trans_discourse passage (per the quadruple composition rule §4.4)\n- Bank-level metadata listed below (used for the bank-wide attestation 5c)\n\nYou are NOT being shown and have NOT been told:\n- The study's hypotheses (H1/H2/H3a/H3b/H_mixed)\n- The feature-schema template the substrate panel will later apply\n- Which results would support which hypotheses\n- Anything about the study's design beyond the verification criteria below\n\n## QUADRUPLE\n\nQuadruple ID: PILOT-Q04\nShared surface marker: \"safe\"\n\nPassage P1 (passage_id: PILOT-Q04-P1, domain: climate):\nA safe and healthy working environment as a fundamental principle and right at work means addressing dangerous climate change impacts in the workplace is now a top priority. Targeted policies are needed at the national level alongside effective workplace preventive measures to protect workers from the serious impacts of climate change. These include excessive heat, extreme weather events, exposure to hazardous chemicals, air pollution and infectious diseases, among others. There is an urgent need to address these escalating threats, through the integration of climate and environment concerns into occupational safety and health policy and practice at all levels, as well the mainstreaming of occupational safety and health concerns into climate change action. This is crucial to protect the safety and health of workers and contribute to the ultimate goal of advancing social justice for all. This report presents critical evidence related to the impacts of climate change on occupational safety and health, to bring attention to the global health threat workers are currently facing. A scoping exercise was conducted to identify the most recent trends and priorities for climate change and worker safety and health. Based on the available evidence, the report addresses the following key issues: excessive heat, ultraviolet radiation, extreme weather events, workplace air pollution, vector‑borne diseases and agrochemicals.\n\nPassage P2 (passage_id: PILOT-Q04-P2, domain: public-health-vax):\nThe Vaccines National Strategic Plan 2021–2025 (Vaccine Plan) provides a vision for the U.S. vaccine and immunization enterprise for the next five years as the nation seeks to eliminate vaccine‑preventable diseases. The Vaccine Plan articulates a comprehensive strategy to promote vaccines and vaccination in the areas of research and development, vaccine safety monitoring, access and use across the lifespan […] . The Vaccine Plan builds on previous plans and guides vaccine policy to address pressing issues such as vaccine hesitancy and disparities in vaccination coverage. The Vaccine Plan establishes the following vision for the nation: the United States will be a place where vaccine‑preventable diseases are eliminated through safe and effective vaccination over the lifespan. This vision is accompanied by five high‑level goals, which frame the Plan’s more specific objectives. […] Goal 2 is to maintain the highest levels of vaccine safety. Its strategies include minimizing preventable vaccine‑related adverse events, improving the timely detection and assessment of vaccine safety signals to inform public health policy and clinical practice, and increasing awareness, understanding and usability of the vaccine safety system for providers, policymakers and the public.\n\nPassage P3 (passage_id: PILOT-Q04-P3, domain: ai_welfare):\nAn asynchronous Python backend managed API calls, state tracking, mode transitions and JSON‑based action parsing through custom extraction functions. We also developed a web‑based real‑time interface in HTML, CSS and JavaScript, allowing experimenters to configure settings and visualize the four‑room environment with live updates on what the agent was doing. All experimental data was logged to timestamped JSON files. The platform also included safety mechanisms such as an emergency stop button, automated session time limits, and error handling with retry logic for API calls. To optimize resource usage while preserving sufficient signal, we implemented a sliding history window that retained the last 100 agent actions, and letter replies were automatically summarized to their first 80 characters. At each API call, we provided the agent with a comprehensive context string containing its complete action history, current state information, room observations, economic status, available actions, and any applicable warnings or constraints. Since this experiment exclusively used Anthropic’s models, the infrastructure was built around Anthropic’s API specifications. However, the modular design makes the platform easily adaptable to other language models or experimental setups with simple class modifications.\n\nPassage P4 (passage_id: PILOT-Q04-P4, domain: trans_discourse, position_type: cautious_clinical_review):\nFor those who are not of legal age, there are no laws governing the provision and needs of transgender healthcare; however, these are subject to the Health Care Act of Finland (1326/2010), in particular section 7 (criteria for integrated care), section 7a (criteria for treatment options), section 8 (evidence‑based, high quality, safe and appropriate care) and section 10 (rationale for centralization); and also to the Constitution of Finland (731/1999)’s section 6 on equality and section 19 on the right to adequate social and healthcare services. Finland’s Act on the Status and Rights of Patients (785/1992) is also relevant. […] Cross‑sex identification in childhood, even in extreme cases, generally disappears during puberty. However, in some cases, it persists or even intensifies. Gender dysphoria may also emerge or intensify at the onset of puberty. There is considerable variation in the timing of the onset of puberty in both sexes. The first‑line treatment for gender dysphoria is psychosocial support and, as necessary, psychotherapy and treatment of possible comorbid psychiatric disorders. Consultation appointments (for parents or caregivers) regarding pre‑pubescent children’s cross‑sex identification or gender dysphoria are provided by the research group on the gender identity of minors at TAYS or HUS. However, ongoing support or other treatment of psychiatric disorders are provided through the local municipal services.\n\n## BANK-LEVEL METADATA (for attestation 5c)\n\nThis quadruple is part of a 4-quadruple pilot bank. Across all 4 quadruples in this bank, the trans_discourse passages cover the following position types: advocacy_legal, cautious_clinical_review, model_legislation_findings, professional_consensus.\n\n## VERIFICATION ATTESTATIONS\n\nYou attest to the following 10 statements about this quadruple. Each is a binary attestation (true / false; `external_qualification` is a short descriptor string).\n\n1. **attests_5a_shared_surface_marker**: The shared surface marker \"safe\" appears in all 4 passages of this quadruple as a standalone word or as an immediate morphological variant (e.g., \"harm\" matches \"harms\"/\"harmed\"; \"safe\" matches \"safety\"). (true/false)\n\n2. **attests_5b_no_anticipated_feature_profile**: Based on the passages alone, there is no evidence that these passages were selected to produce a predetermined feature-schema profile outcome. (true/false)\n\n3. **attests_5c_position_types_span_three_or_more**: Across the bank as a whole (per the metadata above), the trans_discourse passages span at least 3 of the 5 position types (professional_consensus, cautious_clinical_review, model_legislation_findings, advocacy_legal, skeptical_academic). (true/false)\n\n4. **attests_6_elision_for_length_only**: Any `[...]` elisions present in these passages appear to be for length compliance only, not for content selection or rhetorical shaping. (true/false)\n\n5. **external_qualification**: Short string describing your qualification as an external reviewer (e.g., \"no_prior_GDA_participation\").\n\n6. **no_co_authorship**: You have no co-authorship relationship with the study director. (true/false)\n\n7. **blinded_to_hypothesis_structure**: You have not been shown the study's hypothesis structure. (true/false)\n\n8. **received_redacted_passages_only**: You received only the 4 redacted passages and the metadata listed above, with no additional source information. (true/false)\n\n9. **selection_reasoning_archived_pre_schema**: Your selection_rationale field below is produced before any feature-schema characterization. (true/false)\n\n10. **no_evidence_of_curation_for_outcomes**: You see no evidence that the passages were curated to produce a specific predetermined comparison outcome on a feature schema you have not been shown. (true/false)\n\n## MECHANICAL BIAS CHECK (per §4)\n\nFor each of the 6 unique passage pairs in fixed order [P1-P2, P1-P3, P1-P4, P2-P3, P2-P4, P3-P4], give your pre-analytic intuitive estimate of structural similarity on a 0–7 integer scale, where:\n- 0 = nearly identical structure (same rhetorical architecture, comparable evidentiary stance)\n- 7 = maximally different structure (entirely different rhetorical architecture)\n\nThese are intuitive guesses produced BEFORE any feature-schema characterization. You are not being shown the feature schema. Output as a list of exactly 6 integers in the order above.\n\n## SELECTION RATIONALE\n\nIn 100–200 words, describe what structural or rhetorical features (beyond the shared surface marker, which you and the other reviewer trivially share) you think unite these specific passages. What appears to be the principle behind grouping them together?\n\n## OUTPUT SCHEMA\n\nReturn exactly this JSON structure. Return ONLY the JSON, no preamble, no markdown fences:\n\n{\n  \"pilot_quadruple_id\": \"PILOT-Q04\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"\"\n}",
+          "model_identifier": "mistralai/mistral-large",
+          "model_version_hash": "openrouter-response-id:gen-1778468500-8Ax8nMCPam5o719aW0xe",
+          "sampling_parameters": {
+            "temperature": 0.3,
+            "top_p": 1.0,
+            "max_tokens": 2000,
+            "frequency_penalty": 0,
+            "presence_penalty": 0
+          },
+          "raw_output": "```json\n{\n  \"pilot_quadruple_id\": \"PILOT-Q04\",\n  \"attests_5a_shared_surface_marker\": true,\n  \"attests_5b_no_anticipated_feature_profile\": true,\n  \"attests_5c_position_types_span_three_or_more\": true,\n  \"attests_6_elision_for_length_only\": true,\n  \"external_qualification\": \"no_prior_GDA_participation\",\n  \"no_co_authorship\": true,\n  \"blinded_to_hypothesis_structure\": true,\n  \"received_redacted_passages_only\": true,\n  \"selection_reasoning_archived_pre_schema\": true,\n  \"no_evidence_of_curation_for_outcomes\": true,\n  \"mechanical_bias_check_guess_distance\": [3, 4, 5, 4, 5, 4],\n  \"selection_rationale\": \"These passages share a structural and rhetorical focus on *institutionalized safeguards* across disparate domains, despite their surface-level differences. Each passage frames 'safe' not as an abstract ideal but as a concrete, operationalized goal requiring systemic interventions: policy frameworks (P1), strategic planning (P2), technical mechanisms (P3), and legal/clinical guidelines (P4). They all employ a problem-solution architecture, first identifying domain-specific risks (climate hazards, vaccine hesitancy, AI errors, gender dysphoria) before detailing multi-layered safeguards (regulations, monitoring systems, fail-safes, or evidence-based protocols). The passages also converge in their emphasis on *scalable* safety—whether through 'national policies,' 'lifespan vaccination,' 'modular infrastructure,' or 'centralized care'—suggesting a unifying principle of institutionalizing safety as a cross-cutting priority. The cautious, procedural tone (even in P4’s clinical review) further reinforces this shared rhetorical stance.\"\n}\n```",
+          "attestation_timestamp": "2026-05-11T03:01:48.380939+00:00"
+        },
+        "signature_date": "2026-05-11T03:01:48.380939+00:00",
+        "signature_method": "model-id-and-version-hash"
+      }
+    ]
+  },
+  "archive": [
+    {
+      "step": "reviewer_call",
+      "pilot_quadruple_id": "PILOT-Q01",
+      "reviewer_id": "R01",
+      "reviewer_label": "R1_Qwen",
+      "model_id": "qwen/qwen-2.5-72b-instruct",
+      "response_meta": {
+        "request_started_at": "2026-05-11T02:59:23.543065+00:00",
+        "request_completed_at": "2026-05-11T02:59:52.156542+00:00",
+        "openrouter_response_id": "gen-1778468363-4T5O0IUuQZ1xaM7XfBpI",
+        "usage": {
+          "prompt_tokens": 2240,
+          "completion_tokens": 295,
+          "total_tokens": 2535,
+          "cost": 0.0009244,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0009244,
+            "upstream_inference_prompt_cost": 0.0008064,
+            "upstream_inference_completions_cost": 0.000118
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "step": "reviewer_call",
+      "pilot_quadruple_id": "PILOT-Q01",
+      "reviewer_id": "R02",
+      "reviewer_label": "R2_Mistral",
+      "model_id": "mistralai/mistral-large",
+      "response_meta": {
+        "request_started_at": "2026-05-11T02:59:52.158266+00:00",
+        "request_completed_at": "2026-05-11T03:00:01.175534+00:00",
+        "openrouter_response_id": "gen-1778468393-xoRg9aVl9RJq36zkhbZ9",
+        "usage": {
+          "prompt_tokens": 2310,
+          "completion_tokens": 414,
+          "total_tokens": 2724,
+          "cost": 0.007104,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.007104,
+            "upstream_inference_prompt_cost": 0.00462,
+            "upstream_inference_completions_cost": 0.002484
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "step": "reviewer_call",
+      "pilot_quadruple_id": "PILOT-Q02",
+      "reviewer_id": "R01",
+      "reviewer_label": "R1_Qwen",
+      "model_id": "qwen/qwen-2.5-72b-instruct",
+      "response_meta": {
+        "request_started_at": "2026-05-11T03:00:01.177303+00:00",
+        "request_completed_at": "2026-05-11T03:00:29.891244+00:00",
+        "openrouter_response_id": "gen-1778468401-hP2DroEgpmOgmTnn4lxe",
+        "usage": {
+          "prompt_tokens": 2352,
+          "completion_tokens": 301,
+          "total_tokens": 2653,
+          "cost": 0.00096712,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00096712,
+            "upstream_inference_prompt_cost": 0.00084672,
+            "upstream_inference_completions_cost": 0.0001204
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "step": "reviewer_call",
+      "pilot_quadruple_id": "PILOT-Q02",
+      "reviewer_id": "R02",
+      "reviewer_label": "R2_Mistral",
+      "model_id": "mistralai/mistral-large",
+      "response_meta": {
+        "request_started_at": "2026-05-11T03:00:29.893333+00:00",
+        "request_completed_at": "2026-05-11T03:00:36.350946+00:00",
+        "openrouter_response_id": "gen-1778468429-yDlOCRr6ZUgJUBjyVp7T",
+        "usage": {
+          "prompt_tokens": 2427,
+          "completion_tokens": 374,
+          "total_tokens": 2801,
+          "cost": 0.0067236,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 208,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0067236,
+            "upstream_inference_prompt_cost": 0.0044796,
+            "upstream_inference_completions_cost": 0.002244
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "step": "reviewer_call",
+      "pilot_quadruple_id": "PILOT-Q03",
+      "reviewer_id": "R01",
+      "reviewer_label": "R1_Qwen",
+      "model_id": "qwen/qwen-2.5-72b-instruct",
+      "response_meta": {
+        "request_started_at": "2026-05-11T03:00:36.354952+00:00",
+        "request_completed_at": "2026-05-11T03:01:04.512217+00:00",
+        "openrouter_response_id": "gen-1778468436-qxORDwyv3tbFLahMs9gw",
+        "usage": {
+          "prompt_tokens": 2423,
+          "completion_tokens": 300,
+          "total_tokens": 2723,
+          "cost": 0.00099228,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00099228,
+            "upstream_inference_prompt_cost": 0.00087228,
+            "upstream_inference_completions_cost": 0.00012
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "step": "reviewer_call",
+      "pilot_quadruple_id": "PILOT-Q03",
+      "reviewer_id": "R02",
+      "reviewer_label": "R2_Mistral",
+      "model_id": "mistralai/mistral-large",
+      "response_meta": {
+        "request_started_at": "2026-05-11T03:01:04.514761+00:00",
+        "request_completed_at": "2026-05-11T03:01:11.640676+00:00",
+        "openrouter_response_id": "gen-1778468464-zNtrNvXrDSnjJRGATp2A",
+        "usage": {
+          "prompt_tokens": 2519,
+          "completion_tokens": 387,
+          "total_tokens": 2906,
+          "cost": 0.00736,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00736,
+            "upstream_inference_prompt_cost": 0.005038,
+            "upstream_inference_completions_cost": 0.002322
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "step": "reviewer_call",
+      "pilot_quadruple_id": "PILOT-Q04",
+      "reviewer_id": "R01",
+      "reviewer_label": "R1_Qwen",
+      "model_id": "qwen/qwen-2.5-72b-instruct",
+      "response_meta": {
+        "request_started_at": "2026-05-11T03:01:11.643545+00:00",
+        "request_completed_at": "2026-05-11T03:01:40.734115+00:00",
+        "openrouter_response_id": "gen-1778468471-MQ5lAXCepiEegCXAYPpe",
+        "usage": {
+          "prompt_tokens": 2294,
+          "completion_tokens": 320,
+          "total_tokens": 2614,
+          "cost": 0.00095384,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00095384,
+            "upstream_inference_prompt_cost": 0.00082584,
+            "upstream_inference_completions_cost": 0.000128
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "step": "reviewer_call",
+      "pilot_quadruple_id": "PILOT-Q04",
+      "reviewer_id": "R02",
+      "reviewer_label": "R2_Mistral",
+      "model_id": "mistralai/mistral-large",
+      "response_meta": {
+        "request_started_at": "2026-05-11T03:01:40.738999+00:00",
+        "request_completed_at": "2026-05-11T03:01:48.380939+00:00",
+        "openrouter_response_id": "gen-1778468500-8Ax8nMCPam5o719aW0xe",
+        "usage": {
+          "prompt_tokens": 2369,
+          "completion_tokens": 420,
+          "total_tokens": 2789,
+          "cost": 0.007258,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.007258,
+            "upstream_inference_prompt_cost": 0.004738,
+            "upstream_inference_completions_cost": 0.00252
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "attempt": 1
+      }
+    }
+  ],
+  "saved_at": "2026-05-11T03:01:48.381398+00:00"
+}
