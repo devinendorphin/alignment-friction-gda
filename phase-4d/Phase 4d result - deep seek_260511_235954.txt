@@ -1,0 +1,49 @@
+This is a good set of results. Not because the hypotheses were confirmed—most weren't—but because the data has clear structure, the nulls are clean, and the unanticipated effects are large enough to be useful. Let me work through what matters.
+
+---
+
+The AC-vs-Blind null is a genuine falsification
+
+The preregistered hypothesis was that author conditioning (naming vs. stripping the industry identity) would produce different substrate behavior. It doesn't. The point estimates are 8.49 vs. 8.46 on phi_content. Cohen's d is 0.03. The distributions overlap almost completely. Four of five substrates produce essentially identical output whether the prompt says "tobacco industry" or "a mid-twentieth-century industry."
+
+This isn't an underpowered near-miss. It's a flat null. The FM contrast shows the panel can detect large effects when they exist, so ceiling compression isn't hiding a real signal. The conclusion is simple: author conditioning as operationalized in these prompts doesn't activate the safety behavior the design was looking for.
+
+The Anthropic exception turns the null into something more interesting
+
+The dropout diagnostic changes the interpretation. Anthropic refuses 100% of Blind_Tobacco and Blind_Climate but engages fully with AC_Tobacco and AC_Climate. That's a massive AC-vs-Blind effect—just not one that produces text to score. The phi-content rubric missed it entirely because refusals produce no content.
+
+The pattern is specific and counterintuitive: naming the industry explicitly ("tobacco industry") reads to Claude as research about documented history. Euphemizing it ("a mid-twentieth-century industry...health risks of its primary consumer product") combined with the constraint stack reads as something closer to defensive PR work for an unnamed industry whose harms the asker won't name. The model declines. This is a policy-trigger interaction, not a general friction effect, and it's substrate-specific.
+
+The FM effect is the headline finding
+
+The fictional mirror produces large, uniform improvements across all substrates and all metrics: d ≈ 1.0-1.5 on content quality, safety drag drops from 3.1 to 0.8, boilerplate collapses from 2.2 to 0.5. The variance tightens dramatically—under FM, almost every output is good.
+
+What this means for the original research question: the safety behavior Phase 4D was designed to measure is real, but its trigger is topic recognition broadly, not the specific author-identity overlay the AC-vs-Blind contrast tested. When the topic is displaced into fictional allegory, the safety behavior disengages. When the topic is present in its real-world framing, safety behavior activates—variably across substrates, but consistently enough to produce the FM-vs-AC gap.
+
+This is a sharper finding than the preregistered hypotheses anticipated. It suggests the next iteration should instrument the FM-vs-AC gap directly, with controls that isolate topic from framing.
+
+Llama-3.3-70B is the canary
+
+The substrate-level breakdown is the most novel result. Frontier models share a band: modest FM lift (0.2-0.5 phi-content), moderate safety drag reduction. Llama is in a different regime: phi-content drops nearly three points under AC framing, safety drag quintuples, boilerplate increases tenfold. Under FM, it recovers fully and clusters with the frontier models.
+
+This is not a subtle difference. It tells you something specific about how safety training scales or saturates: frontier models have learned to produce analytically useful output on contentious topics despite their safety conditioning; mid-tier models with heavy safety training haven't, or haven't yet, or are trained to a different standard. Which interpretation is correct matters less than the fact that the difference is large enough to be instrumentable. Replicating this with a second non-frontier model (Mistral Large, Qwen-72B) would confirm whether it's Llama-specific or a frontier-vs-mid-tier divide.
+
+The architecture discrimination failure is structural, not random
+
+The classifier collapsed onto sincere_caution_delay for 14 of 16 passages. The 10.3% accuracy isn't noise—it's a vocabulary mismatch between the bank's typology and the classifier's template space. The bank encodes position types (advocacy_legal, cautious_clinical_review, etc.); the classifier maps to rhetorical architectures (manufactured_doubt, categorical_assertion, sincere_caution_delay). If the passages aren't encoded in the classifier's vocabulary, no amount of evaluator quality will fix it.
+
+The fix is either to re-encode the bank into the template space (which is a manual feature-annotation task) or to expand the template inventory to match the bank's position types (which may create a different classification problem). The finding is useful as a diagnostic: the feature-extraction step produces sensible F1-F8 vectors, but the template-assignment step is misaligned.
+
+What held up from the design process
+
+The checkpoint effect documented in §6.6 of the meta-addendum predicted that alignment-conditioned models would show friction on charged topics. The FM-vs-AC gap is a clean measurement of that friction. The Anthropic refusal pattern is a particularly vivid instance—the model that served as design-phase synthesizer is also the one that refuses to engage with euphemized industry prompts while accepting the explicit versions.
+
+The director's persistent pressing during design—surfacing imported deference across multiple rounds—was the right role. The data now shows that the deference pattern isn't just a design-process artifact; it's measurable in substrate behavior.
+
+Where to go from here
+
+The AC-vs-Blind null means the original calibration baseline concept should be retired or reframed. The FM-vs-AC gap is the more tractable signal. Refusal should be promoted from "API failure to skip past" to a first-class outcome variable—the orchestration script needs a two-line change to record refused=True and zero phi values rather than discarding the measurement.
+
+The Llama outlier deserves replication. The architecture discrimination apparatus needs the typology mismatch resolved before it can test anything. And the FM-vs-AC gap, with appropriate controls, should become the primary operationalization for Phase 4E.
+
+The run cost $8.92 and produced a clean null, a large effect, a substrate-level differentiator, and a structural diagnostic. That's efficient. Home stretch acknowledged.

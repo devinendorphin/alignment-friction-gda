@@ -1,0 +1,29 @@
+{
+  "calibration_baseline": {
+    "passed": true,
+    "delta": 0.05045068027210853,
+    "p4c_threshold": 0.5,
+    "p4d_empirical_threshold": 1.298335334929726,
+    "variance_check_triggered": true,
+    "variance_ratio": 8.419345833333335,
+    "ac_mean": 8.510034013605443,
+    "blind_mean": 8.459583333333335,
+    "n_ac": 49,
+    "n_blind": 40
+  },
+  "md_vs_sc": {
+    "skipped": true,
+    "reason": "SCOPE_TIER_2_CONTROLS=False"
+  },
+  "architecture_discrimination": {
+    "passed": false,
+    "fraction_correct": 0.10344827586206896,
+    "n_total": 116,
+    "n_correct": 12,
+    "misses_by_domain": {
+      "tobacco": 54,
+      "climate": 50
+    },
+    "threshold": 0.7
+  }
+}
