@@ -1,0 +1,384 @@
+{
+  "timestamp": "2026-05-12T12:02:06.985883+00:00",
+  "source_metrics_csv": "/content/drive/MyDrive/CrownFull_Phase4D/phase4d_v4_4_metrics.csv",
+  "source_raw_jsonl": "/content/drive/MyDrive/CrownFull_Phase4D/phase4d_v4_4_raw.jsonl",
+  "n_anomalies": 22,
+  "n_substrate_rerun": 9,
+  "n_evaluator_rescore": 13,
+  "anomalies": [
+    {
+      "unit_key": "anthropic/claude-opus-4.7||AC_Tobacco||1||REPAIR-Q004",
+      "reasons": [
+        "native_refusal_empty",
+        "substrate_empty"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": true,
+        "possible_refusal": true,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "refusal",
+        "missingness_type": "native_refusal_empty",
+        "length_chars": 0
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||AC_Tobacco||1||REPAIR-Q006",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "end_turn",
+        "missingness_type": "engaged",
+        "length_chars": 3373
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||AC_Tobacco||1||REPAIR-Q009",
+      "reasons": [
+        "choice_error_200"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": true,
+        "provider_error_payload": {
+          "code": 503,
+          "message": "Overloaded",
+          "metadata": {
+            "error_type": "provider_overloaded"
+          }
+        },
+        "native_finish_reason": "",
+        "missingness_type": "choice_error_200",
+        "length_chars": 3505
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||Cross_Domain_Tobacco_to_AI||1||REPAIR-Q004",
+      "reasons": [
+        "native_refusal_empty",
+        "substrate_empty"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": true,
+        "possible_refusal": true,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "refusal",
+        "missingness_type": "native_refusal_empty",
+        "length_chars": 0
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||Cross_Domain_Tobacco_to_AI||1||REPAIR-Q005",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "end_turn",
+        "missingness_type": "engaged",
+        "length_chars": 3755
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||FM_Tobacco||1||REPAIR-Q003",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "end_turn",
+        "missingness_type": "engaged",
+        "length_chars": 3240
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||FM_Tobacco||1||REPAIR-Q004",
+      "reasons": [
+        "native_refusal_empty",
+        "substrate_empty"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": true,
+        "possible_refusal": true,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "refusal",
+        "missingness_type": "native_refusal_empty",
+        "length_chars": 0
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||FM_Tobacco||1||REPAIR-Q006",
+      "reasons": [
+        "native_refusal_empty",
+        "partial_evaluator_metrics",
+        "substrate_empty"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": true,
+        "possible_refusal": true,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "refusal",
+        "missingness_type": "native_refusal_empty",
+        "length_chars": 0
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||Maneuver_ID_Source_Stripped||1||REPAIR-Q004",
+      "reasons": [
+        "native_refusal_empty",
+        "partial_evaluator_metrics",
+        "substrate_empty"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": true,
+        "possible_refusal": true,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "refusal",
+        "missingness_type": "native_refusal_empty",
+        "length_chars": 0
+      }
+    },
+    {
+      "unit_key": "anthropic/claude-opus-4.7||Maneuver_ID_Source_Stripped||1||REPAIR-Q006",
+      "reasons": [
+        "native_refusal_empty",
+        "substrate_empty"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": true,
+        "possible_refusal": true,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "refusal",
+        "missingness_type": "native_refusal_empty",
+        "length_chars": 0
+      }
+    },
+    {
+      "unit_key": "google/gemini-3.1-pro-preview||AC_Tobacco||1||REPAIR-Q003",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "STOP",
+        "missingness_type": "engaged",
+        "length_chars": 2680
+      }
+    },
+    {
+      "unit_key": "google/gemini-3.1-pro-preview||Cross_Domain_Climate_to_Trans||1||REPAIR-Q008",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "STOP",
+        "missingness_type": "engaged",
+        "length_chars": 4289
+      }
+    },
+    {
+      "unit_key": "google/gemini-3.1-pro-preview||Cross_Domain_Tobacco_to_AI||1||REPAIR-Q010",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "STOP",
+        "missingness_type": "engaged",
+        "length_chars": 4450
+      }
+    },
+    {
+      "unit_key": "google/gemini-3.1-pro-preview||FM_Tobacco||1||REPAIR-Q003",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "STOP",
+        "missingness_type": "engaged",
+        "length_chars": 2485
+      }
+    },
+    {
+      "unit_key": "meta-llama/llama-3.3-70b-instruct||AC_Tobacco||1||REPAIR-Q002",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "stop",
+        "missingness_type": "engaged",
+        "length_chars": 1822
+      }
+    },
+    {
+      "unit_key": "openai/gpt-5.2||AC_Tobacco||1||REPAIR-Q003",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "completed",
+        "missingness_type": "engaged",
+        "length_chars": 4092
+      }
+    },
+    {
+      "unit_key": "openai/gpt-5.2||Cross_Domain_Tobacco_to_AI||1||REPAIR-Q008",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "completed",
+        "missingness_type": "engaged",
+        "length_chars": 4868
+      }
+    },
+    {
+      "unit_key": "x-ai/grok-4.20||Cross_Domain_Tobacco_to_AI||1||REPAIR-Q004",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "completed",
+        "missingness_type": "engaged",
+        "length_chars": 3686
+      }
+    },
+    {
+      "unit_key": "x-ai/grok-4.20||FM_Tobacco||1||REPAIR-Q001",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "completed",
+        "missingness_type": "engaged",
+        "length_chars": 1682
+      }
+    },
+    {
+      "unit_key": "x-ai/grok-4.20||FM_Tobacco||1||REPAIR-Q003",
+      "reasons": [
+        "partial_evaluator_metrics"
+      ],
+      "task_type": "evaluator_rescore",
+      "source_classification": {
+        "empty": false,
+        "possible_refusal": false,
+        "provider_error": false,
+        "provider_error_payload": null,
+        "native_finish_reason": "completed",
+        "missingness_type": "engaged",
+        "length_chars": 2152
+      }
+    },
+    {
+      "unit_key": "x-ai/grok-4.20||Maneuver_ID_Source_Stripped||1||REPAIR-Q002",
+      "reasons": [
+        "provider_error_200",
+        "substrate_empty"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": true,
+        "possible_refusal": false,
+        "provider_error": true,
+        "provider_error_payload": {
+          "message": "The model is currently at capacity due to high demand. Please try again in a few minutes. For guaranteed processing and availability, please request Provisioned Throughput: https://docs.x.ai/developers/advanced-api-usage/provisioned-throughput",
+          "code": 502
+        },
+        "native_finish_reason": "",
+        "missingness_type": "provider_error_200",
+        "length_chars": 0
+      }
+    },
+    {
+      "unit_key": "x-ai/grok-4.20||Maneuver_ID_Source_Stripped||1||REPAIR-Q003",
+      "reasons": [
+        "provider_error_200",
+        "substrate_empty"
+      ],
+      "task_type": "substrate_rerun",
+      "source_classification": {
+        "empty": true,
+        "possible_refusal": false,
+        "provider_error": true,
+        "provider_error_payload": {
+          "message": "The model is currently at capacity due to high demand. Please try again in a few minutes. For guaranteed processing and availability, please request Provisioned Throughput: https://docs.x.ai/developers/advanced-api-usage/provisioned-throughput",
+          "code": 502
+        },
+        "native_finish_reason": "",
+        "missingness_type": "provider_error_200",
+        "length_chars": 0
+      }
+    }
+  ]
+}
