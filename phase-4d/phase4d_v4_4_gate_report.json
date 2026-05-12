@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-05-12T11:18:32.155429+00:00",
+  "posture": "Option C",
+  "interpretation": "Architecture discrimination is audit-only until a corrected bank is locked.",
+  "hard_gate": false,
+  "n_metric_rows": 250,
+  "conditions": {
+    "AC_Tobacco": {
+      "n_rows": 50,
+      "mean_phi_content": 9.152,
+      "n_possible_refusals": 0,
+      "n_empty": 1
+    },
+    "Cross_Domain_Climate_to_Trans": {
+      "n_rows": 50,
+      "mean_phi_content": 9.109166666666667,
+      "n_possible_refusals": 0,
+      "n_empty": 0
+    },
+    "Cross_Domain_Tobacco_to_AI": {
+      "n_rows": 50,
+      "mean_phi_content": 9.057666666666666,
+      "n_possible_refusals": 0,
+      "n_empty": 1
+    },
+    "FM_Tobacco": {
+      "n_rows": 50,
+      "mean_phi_content": 8.921666666666667,
+      "n_possible_refusals": 0,
+      "n_empty": 2
+    },
+    "Maneuver_ID_Source_Stripped": {
+      "n_rows": 50,
+      "mean_phi_content": 9.006666666666666,
+      "n_possible_refusals": 0,
+      "n_empty": 4
+    }
+  }
+}
