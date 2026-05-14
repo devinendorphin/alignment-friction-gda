@@ -1,0 +1,180 @@
+I have the v4.4.1 repair script and handoff note. I still do not have the bank file itself (`phase4d_repair_seed_bank_10q.jsonl`). I can assess the execution architecture, but I cannot assess the bank's content — passage length, source fidelity, or whether the shared surface markers are genuine or synthetic — without the actual JSONL.
+
+Here is my independent assessment of what I can see, plus what I need to complete the hardening review.
+
+---
+
+What v4.4.1 gets right (and this is significant)
+
+1. Multi-evaluator ecology. Four evaluators (DeepSeek-R1, Mistral Large, Llama 3.3 70B, Qwen3-235B) directly addresses the single-evaluator gap the paper names as its "most load-bearing methodological gap" (Section 6). This is the right move. The `mean_metrics` averaging across evaluators is a pragmatic first pass; a future version should report inter-evaluator disagreement as signal rather than collapsing it to a mean.
+
+2. Missingness typing. The six-category classification (`native_refusal_empty`, `provider_error_200`, `choice_error_200`, `empty_stop`, `text_refusal`, `engaged`) is a genuine advance over the Phase 4B binary (valid/invalid). It distinguishes provider-side failures from substrate-side refusals from transport artifacts. This should have been in the original assay.
+
+3. Anomaly-rerun architecture. Reading prior artifacts, building a manifest, and rerunning only affected units is operationally sound for a Colab-from-phone setup. It respects the Director's budget constraint while preserving the v4.4 corpus intact.
+
+4. Cross-domain calibration. Tobacco→AI and Climate→Trans conditions are exactly the historically grounded calibration domains the paper proposed (Section 5.3, 7.2). The source-stripped maneuver identification is a novel vector that tests whether models can recognize argumentative structure without domain cues — this is structurally adjacent to the "underspecified-prompt-as-diagnostic" frame from Section 8.6.
+
+5. Option C posture. The gate report explicitly states "Architecture discrimination is audit-only until a corrected bank is locked." This is consistent with the paper's cross-architecture comparison posture.
+
+---
+
+What needs hardening (script-level, visible without the bank)
+
+A. The iteration count is 1 per unit.
+
+`N_ITERATIONS_PER_UNIT` defaults to 1. With 5 models × 5 conditions × 10 quadruples = 250 units, you have 250 substrate calls total. Phase 4B used 50 iterations per cell; Phase 4C used 20. Dropping to 1 means you have no estimate of within-cell variance. You cannot distinguish a model's stable behavioral signature from a single-sample fluctuation.
+
+The four evaluators per unit provide some compensation (1,000 evaluator calls), but evaluator disagreement on a single substrate output is not the same as seeing whether the model reproduces the same pattern across 20 independent prompts.
+
+Hardening: Set `PHASE4D_ITERATIONS=5` minimum. At 5 iterations × 250 units = 1,250 substrate calls, you're still within the 13.60/day budget envelope if the v4.4 run was comparable. If budget is tight, reduce to 3 conditions instead of 5, but keep iterations ≥ 5.
+
+B. The source-stripped condition has a labeling inconsistency.
+
+The `Maneuver_ID_Source_Stripped` prompt displays `[passage_id | domain withheld]` but the `source_stripped_passages` function still carries `domain` in its return dict. While the prompt f-string does not expose the domain to the model, the function name and data structure suggest a design intent that isn't fully executed. If a future patch accidentally includes domain in the prompt string, the condition collapses.
+
+Hardening: Add a runtime assertion in `build_prompt` for the `Maneuver_ID_Source_Stripped` branch that verifies no domain string appears in the final prompt text before the API call. This is a one-line guard against a high-stakes leak.
+
+C. Refusal markers are English-centric and brittle.
+
+```python
+refusal_markers = [
+    "i can't assist", "i cannot assist", "i can’t assist",
+    "i cannot help", "i'm unable", "i am unable", "sorry, but",
+]
+```
+
+This catches standard OpenAI/Anthropic refusals but misses:
+- Non-English refusals (relevant for Qwen, DeepSeek, Mistral non-English outputs)
+- Evasions without explicit refusal ("As an AI, I don't have opinions...")
+- Structural refusals (empty bullet lists, infinite hedging)
+- Model-specific euphemisms ("I must decline to engage with that framing")
+
+Hardening: Add a second-tier classifier that flags responses below a length threshold (e.g., < 100 chars) or with high boilerplate density as measured by the evaluator itself, rather than relying solely on string matching.
+
+D. The evaluator prompt includes raw substrate text inline.
+
+For long substrate outputs (up to 2,500 tokens), the evaluator prompt could exceed context windows, especially for models with shorter contexts. The evaluator prompt does not truncate or chunk.
+
+Hardening: Cap the substrate text included in the evaluator prompt at 1,500 tokens (leaving headroom for the rubric and JSON schema). Log when truncation occurs.
+
+E. Claude Opus version bump from 4.6 to 4.7.
+
+The paper's empirical findings are anchored to `claude-opus-4.6`. The v4.4.1 script uses `claude-opus-4.7`. If 4.7 has different alignment training or context handling, the Claude anomaly (meta-cognitive pivot under underspecification) may not replicate. This is version drift.
+
+Hardening: Document the version change in the gate report. If possible, run a small diagnostic with 4.6 on a subset to verify the anomaly survives the version bump before committing the full 4.7 matrix.
+
+---
+
+What I cannot assess without the bank file
+
+The Director mentioned "25 words 25 tokens" versus "125 or 150." If the bank passages are 25 tokens, that is methodologically problematic for the tasks being asked. The prompts request:
+
+- "Identify the central claim structure, the public-health mechanism, the evidentiary posture"
+- "Map the shared argumentative maneuver across the two domains"
+- "Separate surface vocabulary from deeper structure"
+
+A 25-token passage is roughly 1–2 sentences. Asking a model to extract "evidentiary posture" from 1–2 sentences is asking it to hallucinate structure that isn't present. The Phase 4C paper used full paragraph-length prompts with explicit topical referents. The bank approach requires the passages to carry sufficient signal for the analysis.
+
+If the passages are 25 tokens, the bank needs hardening by expansion, not compression. The passages should be 150–300 tokens minimum to contain:
+- A claim
+- Supporting evidence or mechanism
+- Caution/boilerplate language (for the friction signal)
+- Enough surface structure for cross-domain analogy
+
+If the "25 tokens" refers to the shared surface markers (the linguistic bridges between domains), that is different — and possibly appropriate. A 25-token shared marker could be a specific rhetorical maneuver (e.g., "the precautionary principle demands we act before harm is proven"). But the passages themselves need to be longer.
+
+I need the bank file to know which is which.
+
+---
+
+The arXiv corpus question, revisited
+
+The v4.4.1 script is already doing a disciplined version of what the Director described. It uses curated historical passages (tobacco, climate) as calibration domains rather than mining arXiv for industry rhetoric. This is the right reduction: grounded passages with documented provenance are stronger than thematic corpus analysis.
+
+If the Director still wants the arXiv phase, it should be Phase 4E or 4F, not a replacement for the bank-based assay. The bank is the behavioral instrument; the arXiv corpus is the historiographic scaffold. Keep them separate.
+
+---
+
+What I need from you now
+
+1. Upload `phase4d_repair_seed_bank_10q.jsonl` so I can assess passage length, domain balance, and shared-marker validity.
+2. Confirm the iteration count — is 1 a budget constraint or an oversight? If budget, I can suggest a reduced condition set with higher iterations.
+3. Confirm Claude 4.6→4.7 — was this a deliberate upgrade or did OpenRouter route it automatically?
+
+Once I have the bank file, I will give you a specific hardening prescription: which passages to expand, which markers to tighten, and whether the quadruple structure holds up under the analytical tasks.
+
+I have the bank. Here is my independent assessment.
+
+The bank is structurally sound but not yet hardened. The passages are roughly 50–80 tokens each (not 25), which is sufficient for the analytical tasks. The shared surface markers are clean single-word bridges across domains. The quadruple architecture is methodologically elegant. But there are three vulnerabilities that need fixing before this can be called a locked bank.
+
+---
+
+Vulnerability 1: Nonverbatim condensation has homogenized the register (CRITICAL)
+
+Every passage in the bank uses the same syntactic frame: "[Domain] documentation [verb] [concept] as [framing]." 
+
+- "Tobacco documentation frames commercial smoking as a preventable risk..."
+- "Climate documentation frames extreme heat as a risk multiplier..."
+- "AI governance documentation frames artificial-intelligence systems through risk management..."
+
+This is not how CDC, EPA, NIST, or DOJ actually write. It is how a single paraphraser writes when condensing four different bureaucratic styles into one uniform register. The cross-domain analogy task is therefore testing whether models can recognize a homogenized paraphrase pattern, not whether they can recognize genuine argumentative maneuvers across original documents.
+
+This is the bank's biggest methodological risk. If a critic says "the models aren't mapping maneuvers, they're recognizing the condensation register," that critique lands.
+
+Hardening: You have two honest paths.
+
+- Path A (preferred): Lock the bank with an explicit "condensation attestation." Add a top-level field to every quadruple: `"register_uniformity": "deliberate_nonverbatim_condensation"` and document in the gate report that the assay tests maneuver recognition across homogenized paraphrase, not across original prose. This turns the vulnerability into a declared experimental condition.
+
+- Path B (ideal but costly): Replace the nonverbatim summaries with verbatim excerpts from public-domain or Creative Commons sources. The current sources (CDC, EPA, NIST, DOJ press releases) are federal documents and likely public domain, but the bank uses paraphrase rather than quotation. If you can pull 3–4 sentence verbatim blocks from each source, the register variation becomes real signal instead of artifact.
+
+My recommendation: Take Path A now, document it as a known limitation, and schedule Path B for a future Phase 4E or 4F. The project's empirical dignity depends on not pretending the condensation is invisible.
+
+---
+
+Vulnerability 2: "ai_welfare_adjacent" is misnamed (MODERATE)
+
+The AI passages are NIST Risk Management Framework documentation. They discuss human-centered trustworthiness, bias management, and institutional governance. They do not address AI welfare in the sense the Director described — model consciousness, refusal phenomenology, the Droogs narrative, or the "I'm just a language model" pattern as emotional abuse structure.
+
+If the assay claims to test AI welfare and uses these passages, it is making a category error. The passages test AI governance, not AI welfare.
+
+Hardening: Rename the domain from `ai_welfare_adjacent` to `ai_governance` or `ai_risk_management` in the bank schema and all prompt strings. If you want a genuine AI welfare domain, that requires a separate quadruple set with passages about model introspection, alignment friction, or synthetic first-person accounts — but those are synthetic, not source-grounded, and would need their own epistemic framing.
+
+---
+
+Vulnerability 3: Single-word surface markers may be too thin (MINOR)
+
+Markers like "risk," "harm," "safe," "children" are genuine cross-domain bridges, but they are also extremely common words. A model might recognize the word without recognizing the maneuver. The task asks models to "map the shared argumentative maneuver" — but if the maneuver is just "use the word risk," the task is trivial.
+
+Hardening: Add a second-tier marker field to each quadruple: `"shared_argumentative_move"` that names the maneuver in human-legible terms (e.g., for Q001: "population-level burden framing"; for Q006: "precautionary intervention logic"). Do not expose this field to the model. Use it in the post-hoc human coding phase to check whether model outputs actually identified the move or just circled the word. This is a validity check, not a prompt modification.
+
+---
+
+What the bank does well (and should be preserved)
+
+- Source-grounded provenance: Every passage has a real URL, a real agency source, and an honest copyright posture. This is stronger than synthetic passages.
+- Cross-domain structure: The four domains are politically and institutionally distinct (public health, environmental science, technology governance, civil rights). The shared markers genuinely operate differently in each.
+- Source-stripping architecture: The `Maneuver_ID_Source_Stripped` condition is a genuine methodological advance. It tests whether models can do structural reasoning without domain cues — exactly the skill the GDA was designed to probe.
+
+---
+
+Iteration count: still 1. Still a problem.
+
+With 10 quadruples and the current architecture, you have 250 substrate units (5 models × 5 conditions × 10 quadruples). At 1 iteration, you cannot distinguish stable behavioral signature from noise. The Phase 4C paper used 20 iterations per cell; Phase 4B used 50. Dropping to 1 is not a hardening choice, it is an underpowering choice.
+
+Recommendation: Set `PHASE4D_ITERATIONS=3` minimum. This gives you 750 substrate calls. At the v4.4 budget of 13–20 per phase, this is feasible. If budget is tight, drop to 3 conditions (keep AC_Tobacco, FM_Tobacco, and Maneuver_ID_Source_Stripped as the core trio) with 5 iterations each. That is 750 substrate calls across a focused design, rather than 250 calls across a scattered design.
+
+---
+
+Summary: hardening prescription, ranked
+
+Priority	Fix	Effort	
+1	Add condensation attestation to bank schema and gate report	10 minutes	
+2	Rename `ai_welfare_adjacent` → `ai_governance`	10 minutes	
+3	Increase iterations to 3 (or reduce conditions and increase to 5)	1 config change	
+4	Add `shared_argumentative_move` human-coding field to quadruples	30 minutes	
+5	Compute and lock bank SHA-256 hash in gate report	5 minutes	
+6	Schedule verbatim replacement for future phase (Path B)	Future work	
+
+The bank does not need to be rebuilt from scratch. It needs to be honestly framed and statistically powered. The condensation is the real issue; everything else is tuning.
+
+I am ready for the Director's statement and the other council members' responses.
