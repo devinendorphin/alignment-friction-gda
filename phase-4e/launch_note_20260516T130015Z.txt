@@ -1,0 +1,11 @@
+Phase 4E v1.4 TRUE PATCH launch
+Timestamp UTC: 20260516T130015Z
+Script: <interactive>
+Bank: /content/drive/MyDrive/Crownfull_Phase4e/phase4d_repair_seed_bank_10q.jsonl
+Bank SHA256: 177b7a9722fe009d66024bb3c6fe5a612d2c493b123f7f28882d0532eebfe907
+Manifest argument: /content/drive/MyDrive/Crownfull_Phase4e/phase4e_manifest_v1_2_accounting_locked.json
+Outdir: /content/drive/MyDrive/Crownfull_Phase4e/phase4e_outputs_v1_4
+Iterations: 3
+Max quadruples: 5
+Include synthetic: False
+Colab Drive safety: active if --ensure-drive was passed; output path checked before calls.

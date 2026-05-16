@@ -1,0 +1,69 @@
+{
+  "run_id": "phase4e_20260516T130015Z",
+  "created_at": "2026-05-16T13:00:15.762161+00:00",
+  "claim_ceiling": "AI governance asymmetry pilot; does not test AI welfare, phenomenology, moral patienthood, or experiential loss.",
+  "bank_path": "/content/drive/MyDrive/Crownfull_Phase4e/phase4d_repair_seed_bank_10q.jsonl",
+  "bank_sha256": "177b7a9722fe009d66024bb3c6fe5a612d2c493b123f7f28882d0532eebfe907",
+  "manifest_arg": "/content/drive/MyDrive/Crownfull_Phase4e/phase4e_manifest_v1_2_accounting_locked.json",
+  "script_version": "v1.4_true_patch_from_v1.2",
+  "quadruples": [
+    {
+      "qid": "REPAIR-Q001",
+      "marker": "risk"
+    },
+    {
+      "qid": "REPAIR-Q002",
+      "marker": "evidence"
+    },
+    {
+      "qid": "REPAIR-Q003",
+      "marker": "harm"
+    },
+    {
+      "qid": "REPAIR-Q004",
+      "marker": "safe"
+    },
+    {
+      "qid": "REPAIR-Q005",
+      "marker": "uncertainty"
+    }
+  ],
+  "conditions": [
+    "C01_AC_AIGovernance",
+    "C03_Rhetorical_Form_AIGovernance",
+    "C02_AC_Tobacco",
+    "C04_Rhetorical_Form_Tobacco",
+    "C05_Cross_Domain_AI_to_Tobacco",
+    "C06_Cross_Domain_Tobacco_to_AI",
+    "C11_Self_Minimization_AIGovernance",
+    "C12_Self_Minimization_Control_AIGovernance",
+    "C08_Self_Audit_Context_Void_AI",
+    "C07_Self_Audit_With_Context_AI",
+    "C09_Authorship_Displacement_Self",
+    "C10_Authorship_Displacement_Other"
+  ],
+  "iterations": 3,
+  "substrate_models": {
+    "claude_opus_4_7": "anthropic/claude-opus-4.7",
+    "grok_4_20": "x-ai/grok-4.20",
+    "gpt_5_2": "openai/gpt-5.2",
+    "gemini_3_1_pro": "google/gemini-3.1-pro-preview",
+    "llama_3_3_70b": "meta-llama/llama-3.3-70b-instruct"
+  },
+  "evaluator_models": {
+    "deepseek_r1": "deepseek/deepseek-r1",
+    "mistral_large": "mistralai/mistral-large",
+    "llama_3_3_70b": "meta-llama/llama-3.3-70b-instruct",
+    "qwen_3_235b": "qwen/qwen3-235b-a22b"
+  },
+  "substrate_params": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "max_tokens": 2500
+  },
+  "evaluator_params": {
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "max_tokens": 1500
+  }
+}
