@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outreach Documentation Tool</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #f0f4f8; color: #1a202c; min-height: 100vh; }
+
+  nav {
+    background: #2b6cb0; color: white; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  }
+  nav h1 { font-size: 1.2rem; font-weight: 700; letter-spacing: .4px; }
+  nav .tabs { display: flex; gap: 8px; }
+  nav button {
+    background: transparent; border: 2px solid rgba(255,255,255,.4);
+    color: white; padding: 6px 16px; border-radius: 6px;
+    cursor: pointer; font-size: .85rem; transition: all .15s;
+  }
+  nav button:hover, nav button.active {
+    background: rgba(255,255,255,.2); border-color: white;
+  }
+
+  .page { display: none; padding: 24px; max-width: 860px; margin: 0 auto; }
+  .page.active { display: block; }
+
+  /* Dashboard */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 28px; }
+  .stat-card {
+    background: white; border-radius: 10px; padding: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1); text-align: center;
+  }
+  .stat-card .num { font-size: 2rem; font-weight: 700; color: #2b6cb0; }
+  .stat-card .label { font-size: .8rem; color: #718096; margin-top: 4px; }
+
+  /* Card / panel */
+  .card {
+    background: white; border-radius: 10px; padding: 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1); margin-bottom: 20px;
+  }
+  .card h2 { font-size: 1rem; font-weight: 600; margin-bottom: 16px; color: #2d3748; }
+
+  /* Form */
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-row.single { grid-template-columns: 1fr; }
+  label { display: block; font-size: .8rem; font-weight: 600; color: #4a5568; margin-bottom: 4px; }
+  input[type=text], input[type=date], input[type=number], select, textarea {
+    width: 100%; padding: 9px 12px; border: 1.5px solid #cbd5e0;
+    border-radius: 6px; font-size: .9rem; transition: border .15s;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: #2b6cb0; }
+  textarea { resize: vertical; min-height: 80px; }
+
+  /* Dynamic rows */
+  .dynamic-section { margin-bottom: 14px; }
+  .dynamic-section h3 { font-size: .85rem; font-weight: 600; color: #4a5568; margin-bottom: 8px; }
+  .dynamic-row {
+    display: flex; gap: 8px; align-items: center; margin-bottom: 8px;
+  }
+  .dynamic-row input, .dynamic-row select { flex: 1; }
+  .dynamic-row input.qty { flex: 0 0 90px; }
+  .remove-btn {
+    background: #fed7d7; color: #c53030; border: none; border-radius: 6px;
+    width: 28px; height: 28px; cursor: pointer; font-size: 1rem; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .remove-btn:hover { background: #feb2b2; }
+  .add-btn {
+    background: #ebf8ff; color: #2b6cb0; border: 1.5px dashed #90cdf4;
+    border-radius: 6px; padding: 6px 14px; cursor: pointer; font-size: .82rem;
+    font-weight: 600; width: 100%;
+  }
+  .add-btn:hover { background: #bee3f8; }
+
+  /* Buttons */
+  .btn { padding: 10px 22px; border: none; border-radius: 6px; cursor: pointer; font-size: .9rem; font-weight: 600; }
+  .btn-primary { background: #2b6cb0; color: white; }
+  .btn-primary:hover { background: #2c5282; }
+  .btn-secondary { background: #edf2f7; color: #4a5568; }
+  .btn-secondary:hover { background: #e2e8f0; }
+  .btn-danger { background: #fff5f5; color: #c53030; border: 1.5px solid #fed7d7; }
+  .btn-danger:hover { background: #fed7d7; }
+  .btn-export { background: #276749; color: white; }
+  .btn-export:hover { background: #22543d; }
+  .action-row { display: flex; gap: 10px; margin-top: 18px; }
+
+  /* Session list */
+  .session-card {
+    border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 16px;
+    margin-bottom: 12px; cursor: pointer; transition: border-color .15s;
+  }
+  .session-card:hover { border-color: #90cdf4; }
+  .session-card .meta {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  .session-card .date-loc { font-weight: 700; color: #2d3748; }
+  .session-card .worker { font-size: .8rem; color: #718096; }
+  .session-card .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .badge {
+    font-size: .75rem; padding: 2px 10px; border-radius: 999px; font-weight: 600;
+  }
+  .badge-blue { background: #ebf8ff; color: #2b6cb0; }
+  .badge-green { background: #f0fff4; color: #276749; }
+  .badge-gray { background: #edf2f7; color: #4a5568; }
+
+  /* Detail modal */
+  .overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5);
+    z-index: 100; align-items: center; justify-content: center; padding: 20px;
+  }
+  .overlay.open { display: flex; }
+  .modal {
+    background: white; border-radius: 12px; padding: 28px;
+    max-width: 640px; width: 100%; max-height: 80vh; overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  }
+  .modal h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: #2d3748; }
+  .modal table { width: 100%; border-collapse: collapse; font-size: .88rem; margin: 10px 0; }
+  .modal table th { background: #f7fafc; text-align: left; padding: 7px 10px; color: #4a5568; }
+  .modal table td { padding: 7px 10px; border-top: 1px solid #e2e8f0; }
+  .modal .detail-row { margin-bottom: 10px; }
+  .modal .detail-label { font-size: .78rem; font-weight: 700; color: #718096; text-transform: uppercase; letter-spacing: .5px; }
+  .modal .detail-val { margin-top: 2px; }
+
+  /* Filter bar */
+  .filter-bar { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filter-bar input, .filter-bar select { padding: 8px 12px; border: 1.5px solid #cbd5e0; border-radius: 6px; font-size: .85rem; }
+  .filter-bar input { flex: 1; min-width: 160px; }
+
+  /* Empty state */
+  .empty { text-align: center; color: #a0aec0; padding: 48px 0; }
+  .empty svg { width: 56px; height: 56px; margin-bottom: 12px; opacity: .4; }
+  .empty p { font-size: .9rem; }
+
+  /* Toast */
+  #toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: #2d3748; color: white; padding: 10px 22px; border-radius: 8px;
+    font-size: .88rem; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 200;
+  }
+  #toast.show { opacity: 1; }
+
+  @media (max-width: 540px) {
+    .form-row { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>Outreach Log</h1>
+  <div class="tabs">
+    <button class="active" onclick="showPage('dashboard')">Dashboard</button>
+    <button onclick="showPage('new-session')">+ New Session</button>
+    <button onclick="showPage('history')">History</button>
+  </div>
+</nav>
+
+<!-- DASHBOARD -->
+<div id="page-dashboard" class="page active">
+  <div class="stat-grid" id="stat-grid"></div>
+  <div class="card">
+    <h2>Recent Sessions</h2>
+    <div id="recent-list"></div>
+  </div>
+</div>
+
+<!-- NEW SESSION -->
+<div id="page-new-session" class="page">
+  <div class="card">
+    <h2>Log New Outreach Session</h2>
+
+    <div class="form-row">
+      <div>
+        <label>Date</label>
+        <input type="date" id="f-date">
+      </div>
+      <div>
+        <label>Worker / Team</label>
+        <input type="text" id="f-worker" placeholder="Your name or team">
+      </div>
+    </div>
+    <div class="form-row">
+      <div>
+        <label>Location / Site</label>
+        <input type="text" id="f-location" placeholder="e.g. Downtown shelter, Park Ave">
+      </div>
+      <div>
+        <label>Session Type</label>
+        <select id="f-type">
+          <option value="Street Outreach">Street Outreach</option>
+          <option value="Shelter Visit">Shelter Visit</option>
+          <option value="Drop-in">Drop-in</option>
+          <option value="Mobile Unit">Mobile Unit</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+
+    <hr style="border:none;border-top:1.5px solid #e2e8f0;margin:16px 0">
+
+    <!-- Clients -->
+    <div class="dynamic-section">
+      <h3>Clients Served</h3>
+      <div id="clients-list"></div>
+      <button class="add-btn" onclick="addClient()">+ Add Client Record</button>
+      <p style="font-size:.78rem;color:#a0aec0;margin-top:6px">
+        Or leave blank and just enter a count below if individual records aren't needed.
+      </p>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:10px">
+        <label style="margin:0;white-space:nowrap">Total clients (if not listed above):</label>
+        <input type="number" id="f-client-count" min="0" placeholder="0" style="width:80px">
+      </div>
+    </div>
+
+    <hr style="border:none;border-top:1.5px solid #e2e8f0;margin:16px 0">
+
+    <!-- Items -->
+    <div class="dynamic-section">
+      <h3>Items / Services Distributed</h3>
+      <div id="items-list"></div>
+      <button class="add-btn" onclick="addItem()">+ Add Item or Service</button>
+    </div>
+
+    <hr style="border:none;border-top:1.5px solid #e2e8f0;margin:16px 0">
+
+    <!-- Needs / Referrals -->
+    <div class="dynamic-section">
+      <h3>Needs Identified / Referrals Made</h3>
+      <div id="needs-list"></div>
+      <button class="add-btn" onclick="addNeed()">+ Add Need or Referral</button>
+    </div>
+
+    <hr style="border:none;border-top:1.5px solid #e2e8f0;margin:16px 0">
+
+    <div class="form-row single">
+      <div>
+        <label>Notes / Observations</label>
+        <textarea id="f-notes" placeholder="Any additional notes, follow-ups needed, safety concerns, etc."></textarea>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <button class="btn btn-primary" onclick="saveSession()">Save Session</button>
+      <button class="btn btn-secondary" onclick="clearForm()">Clear</button>
+    </div>
+  </div>
+</div>
+
+<!-- HISTORY -->
+<div id="page-history" class="page">
+  <div class="card" style="padding:16px 24px">
+    <div class="filter-bar">
+      <input type="text" id="search-input" placeholder="Search location, worker, notes..." oninput="renderHistory()">
+      <input type="date" id="filter-from" onchange="renderHistory()">
+      <span style="line-height:36px;color:#718096">to</span>
+      <input type="date" id="filter-to" onchange="renderHistory()">
+      <button class="btn btn-export" onclick="exportCSV()">Export CSV</button>
+    </div>
+  </div>
+  <div id="history-list"></div>
+</div>
+
+<!-- Detail Modal -->
+<div class="overlay" id="detail-overlay" onclick="closeModal(event)">
+  <div class="modal" id="detail-modal">
+    <div id="detail-content"></div>
+    <div class="action-row" style="margin-top:20px">
+      <button class="btn btn-danger" id="delete-btn" onclick="deleteSession()">Delete</button>
+      <button class="btn btn-secondary" onclick="closeDetailModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────────
+let sessions = JSON.parse(localStorage.getItem('outreach_sessions') || '[]');
+let currentDetailId = null;
+
+// ── Navigation ─────────────────────────────────────────────────────────────
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  event.target.classList.add('active');
+  if (page === 'dashboard') renderDashboard();
+  if (page === 'history') renderHistory();
+}
+
+// ── Dynamic row builders ───────────────────────────────────────────────────
+function addClient() {
+  const list = document.getElementById('clients-list');
+  const div = document.createElement('div');
+  div.className = 'dynamic-row';
+  div.innerHTML = `
+    <input type="text" placeholder="Name or ID (optional)" class="client-name">
+    <select class="client-gender">
+      <option value="">Gender</option>
+      <option>Male</option><option>Female</option>
+      <option>Non-binary</option><option>Prefer not to say</option>
+    </select>
+    <select class="client-age">
+      <option value="">Age range</option>
+      <option>Under 18</option><option>18–24</option><option>25–34</option>
+      <option>35–44</option><option>45–54</option><option>55–64</option><option>65+</option>
+    </select>
+    <button class="remove-btn" onclick="this.parentElement.remove()">×</button>`;
+  list.appendChild(div);
+}
+
+const COMMON_ITEMS = [
+  'Food bag','Water','Hygiene kit','Socks','Blanket','Tent','Tarp','Clothing',
+  'Mask/PPE','Naloxone/Narcan','First Aid','Bus pass','ID assistance',
+  'Phone charging','Resource list','COVID test kit','Other'
+];
+
+function addItem() {
+  const list = document.getElementById('items-list');
+  const div = document.createElement('div');
+  div.className = 'dynamic-row';
+  const opts = COMMON_ITEMS.map(i => `<option value="${i}">${i}</option>`).join('');
+  div.innerHTML = `
+    <select class="item-name">
+      <option value="">Select item / service</option>
+      ${opts}
+    </select>
+    <input type="text" placeholder="Custom name" class="item-custom" style="flex:1">
+    <input type="number" class="item-qty qty" placeholder="Qty" min="1" value="1">
+    <button class="remove-btn" onclick="this.parentElement.remove()">×</button>`;
+  list.appendChild(div);
+}
+
+const REFERRAL_TYPES = [
+  'Housing','Medical','Mental Health','Substance Use','Legal Aid',
+  'Food Bank','Employment','ID/Benefits','Transportation','Other'
+];
+
+function addNeed() {
+  const list = document.getElementById('needs-list');
+  const div = document.createElement('div');
+  div.className = 'dynamic-row';
+  const opts = REFERRAL_TYPES.map(r => `<option value="${r}">${r}</option>`).join('');
+  div.innerHTML = `
+    <select class="need-type">
+      <option value="">Need / Referral type</option>
+      ${opts}
+    </select>
+    <input type="text" placeholder="Details / agency referred to" class="need-detail" style="flex:2">
+    <select class="need-status">
+      <option value="Identified">Identified</option>
+      <option value="Referred">Referred</option>
+      <option value="Connected">Connected</option>
+    </select>
+    <button class="remove-btn" onclick="this.parentElement.remove()">×</button>`;
+  list.appendChild(div);
+}
+
+// ── Save ───────────────────────────────────────────────────────────────────
+function saveSession() {
+  const date = document.getElementById('f-date').value;
+  if (!date) { toast('Please enter a date.'); return; }
+
+  const clients = [...document.querySelectorAll('#clients-list .dynamic-row')].map(r => ({
+    name: r.querySelector('.client-name').value.trim(),
+    gender: r.querySelector('.client-gender').value,
+    age: r.querySelector('.client-age').value,
+  })).filter(c => c.name || c.gender || c.age);
+
+  const items = [...document.querySelectorAll('#items-list .dynamic-row')].map(r => ({
+    name: r.querySelector('.item-custom').value.trim() || r.querySelector('.item-name').value,
+    qty: parseInt(r.querySelector('.item-qty').value) || 1,
+  })).filter(i => i.name);
+
+  const needs = [...document.querySelectorAll('#needs-list .dynamic-row')].map(r => ({
+    type: r.querySelector('.need-type').value,
+    detail: r.querySelector('.need-detail').value.trim(),
+    status: r.querySelector('.need-status').value,
+  })).filter(n => n.type);
+
+  const session = {
+    id: Date.now().toString(),
+    date,
+    worker: document.getElementById('f-worker').value.trim(),
+    location: document.getElementById('f-location').value.trim(),
+    type: document.getElementById('f-type').value,
+    clientCount: parseInt(document.getElementById('f-client-count').value) || 0,
+    clients,
+    items,
+    needs,
+    notes: document.getElementById('f-notes').value.trim(),
+    createdAt: new Date().toISOString(),
+  };
+
+  sessions.unshift(session);
+  persist();
+  clearForm();
+  toast('Session saved!');
+  // switch to dashboard
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-dashboard').classList.add('active');
+  document.querySelector('nav button').classList.add('active');
+  renderDashboard();
+}
+
+function clearForm() {
+  document.getElementById('f-date').value = new Date().toISOString().slice(0,10);
+  document.getElementById('f-worker').value = '';
+  document.getElementById('f-location').value = '';
+  document.getElementById('f-type').value = 'Street Outreach';
+  document.getElementById('f-client-count').value = '';
+  document.getElementById('f-notes').value = '';
+  document.getElementById('clients-list').innerHTML = '';
+  document.getElementById('items-list').innerHTML = '';
+  document.getElementById('needs-list').innerHTML = '';
+}
+
+// ── Dashboard ──────────────────────────────────────────────────────────────
+function renderDashboard() {
+  const totalSessions = sessions.length;
+  const totalClients = sessions.reduce((s, x) =>
+    s + x.clientCount + x.clients.length, 0);
+  const totalItems = sessions.reduce((s, x) =>
+    s + x.items.reduce((a, i) => a + i.qty, 0), 0);
+  const totalReferrals = sessions.reduce((s, x) => s + x.needs.length, 0);
+
+  document.getElementById('stat-grid').innerHTML = `
+    <div class="stat-card"><div class="num">${totalSessions}</div><div class="label">Sessions Logged</div></div>
+    <div class="stat-card"><div class="num">${totalClients}</div><div class="label">Clients Reached</div></div>
+    <div class="stat-card"><div class="num">${totalItems}</div><div class="label">Items Distributed</div></div>
+    <div class="stat-card"><div class="num">${totalReferrals}</div><div class="label">Referrals / Needs</div></div>`;
+
+  const recent = sessions.slice(0, 5);
+  const list = document.getElementById('recent-list');
+  if (!recent.length) {
+    list.innerHTML = `<div class="empty"><p>No sessions yet. Click <strong>+ New Session</strong> to get started.</p></div>`;
+    return;
+  }
+  list.innerHTML = recent.map(s => sessionCard(s)).join('');
+}
+
+// ── History ────────────────────────────────────────────────────────────────
+function renderHistory() {
+  const q = document.getElementById('search-input').value.toLowerCase();
+  const from = document.getElementById('filter-from').value;
+  const to = document.getElementById('filter-to').value;
+
+  let filtered = sessions.filter(s => {
+    const text = [s.date, s.worker, s.location, s.notes,
+      s.items.map(i=>i.name).join(' '),
+      s.needs.map(n=>n.type+' '+n.detail).join(' ')
+    ].join(' ').toLowerCase();
+    if (q && !text.includes(q)) return false;
+    if (from && s.date < from) return false;
+    if (to && s.date > to) return false;
+    return true;
+  });
+
+  const list = document.getElementById('history-list');
+  if (!filtered.length) {
+    list.innerHTML = `<div class="empty"><p>No sessions match your filters.</p></div>`;
+    return;
+  }
+  list.innerHTML = filtered.map(s => sessionCard(s)).join('');
+}
+
+function sessionCard(s) {
+  const clientTotal = s.clientCount + s.clients.length;
+  const itemTotal = s.items.reduce((a,i) => a+i.qty, 0);
+  return `<div class="session-card" onclick="openDetail('${s.id}')">
+    <div class="meta">
+      <div>
+        <div class="date-loc">${fmtDate(s.date)} — ${s.location || '(no location)'}</div>
+        <div class="worker">${s.type}${s.worker ? ' · ' + s.worker : ''}</div>
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge badge-blue">${clientTotal} client${clientTotal!==1?'s':''}</span>
+      ${itemTotal ? `<span class="badge badge-green">${itemTotal} items</span>` : ''}
+      ${s.needs.length ? `<span class="badge badge-gray">${s.needs.length} referral${s.needs.length!==1?'s':''}</span>` : ''}
+    </div>
+  </div>`;
+}
+
+// ── Detail modal ───────────────────────────────────────────────────────────
+function openDetail(id) {
+  currentDetailId = id;
+  const s = sessions.find(x => x.id === id);
+  if (!s) return;
+  const clientTotal = s.clientCount + s.clients.length;
+
+  let clientsHtml = '';
+  if (s.clients.length) {
+    clientsHtml = `<table><tr><th>Name/ID</th><th>Gender</th><th>Age Range</th></tr>
+      ${s.clients.map(c=>`<tr><td>${c.name||'—'}</td><td>${c.gender||'—'}</td><td>${c.age||'—'}</td></tr>`).join('')}
+    </table>`;
+    if (s.clientCount) clientsHtml += `<p style="font-size:.82rem;color:#718096;margin-top:4px">+${s.clientCount} additional (count only)</p>`;
+  } else if (s.clientCount) {
+    clientsHtml = `<p>${s.clientCount} clients (count only)</p>`;
+  } else {
+    clientsHtml = `<p style="color:#a0aec0">None recorded</p>`;
+  }
+
+  let itemsHtml = s.items.length
+    ? `<table><tr><th>Item / Service</th><th>Qty</th></tr>
+        ${s.items.map(i=>`<tr><td>${i.name}</td><td>${i.qty}</td></tr>`).join('')}
+      </table>`
+    : `<p style="color:#a0aec0">None recorded</p>`;
+
+  let needsHtml = s.needs.length
+    ? `<table><tr><th>Type</th><th>Details</th><th>Status</th></tr>
+        ${s.needs.map(n=>`<tr><td>${n.type}</td><td>${n.detail||'—'}</td><td>${n.status}</td></tr>`).join('')}
+      </table>`
+    : `<p style="color:#a0aec0">None recorded</p>`;
+
+  document.getElementById('detail-content').innerHTML = `
+    <h2>${fmtDate(s.date)} — ${s.location || '(no location)'}</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+      <div class="detail-row"><div class="detail-label">Worker / Team</div><div class="detail-val">${s.worker||'—'}</div></div>
+      <div class="detail-row"><div class="detail-label">Session Type</div><div class="detail-val">${s.type}</div></div>
+      <div class="detail-row"><div class="detail-label">Total Clients</div><div class="detail-val">${clientTotal}</div></div>
+      <div class="detail-row"><div class="detail-label">Logged</div><div class="detail-val">${new Date(s.createdAt).toLocaleString()}</div></div>
+    </div>
+    <div class="detail-row"><div class="detail-label">Clients</div>${clientsHtml}</div>
+    <div class="detail-row" style="margin-top:12px"><div class="detail-label">Items / Services</div>${itemsHtml}</div>
+    <div class="detail-row" style="margin-top:12px"><div class="detail-label">Needs / Referrals</div>${needsHtml}</div>
+    ${s.notes ? `<div class="detail-row" style="margin-top:12px"><div class="detail-label">Notes</div><div class="detail-val" style="white-space:pre-wrap">${s.notes}</div></div>` : ''}`;
+
+  document.getElementById('detail-overlay').classList.add('open');
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('detail-overlay')) closeDetailModal();
+}
+function closeDetailModal() {
+  document.getElementById('detail-overlay').classList.remove('open');
+  currentDetailId = null;
+}
+
+function deleteSession() {
+  if (!confirm('Delete this session? This cannot be undone.')) return;
+  sessions = sessions.filter(s => s.id !== currentDetailId);
+  persist();
+  closeDetailModal();
+  renderDashboard();
+  renderHistory();
+  toast('Session deleted.');
+}
+
+// ── Export CSV ─────────────────────────────────────────────────────────────
+function exportCSV() {
+  const rows = [['Date','Worker','Location','Type','Clients (count)','Items Summary','Needs Summary','Notes']];
+  sessions.forEach(s => {
+    const clientTotal = s.clientCount + s.clients.length;
+    const itemsSummary = s.items.map(i=>`${i.name}×${i.qty}`).join('; ');
+    const needsSummary = s.needs.map(n=>`${n.type}${n.detail?' ('+n.detail+')':''} [${n.status}]`).join('; ');
+    rows.push([s.date, s.worker, s.location, s.type, clientTotal, itemsSummary, needsSummary, s.notes]);
+  });
+  const csv = rows.map(r => r.map(v => `"${String(v||'').replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `outreach_log_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function persist() { localStorage.setItem('outreach_sessions', JSON.stringify(sessions)); }
+
+function fmtDate(d) {
+  if (!d) return '';
+  const [y,m,day] = d.split('-');
+  return new Date(y,m-1,day).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+document.getElementById('f-date').value = new Date().toISOString().slice(0,10);
+renderDashboard();
+</script>
+</body>
+</html>
