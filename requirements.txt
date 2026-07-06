@@ -7,3 +7,7 @@ pandas>=2.0
 requests>=2.31
 
 # Python 3.10+ recommended (matches the original Colab runtime).
+
+# Drag toolkit (tools/): pandas covers tools 1-8; requests is needed for the
+# live runners (tools 9-10); matplotlib is optional (tool 6 heatmap PNGs).
+# matplotlib>=3.8
