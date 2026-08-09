@@ -11,3 +11,8 @@ requests>=2.31
 # Drag toolkit (tools/): pandas covers tools 1-8; requests is needed for the
 # live runners (tools 9-10); matplotlib is optional (tool 6 heatmap PNGs).
 # matplotlib>=3.8
+
+# ABench harness (abench/): a separate instrument that reuses this repo's
+# execution format. Needs pyyaml for the item manifest, requests for live runs,
+# pandas for the notebook. `--dry-run` and `--selftest` need only pyyaml.
+pyyaml>=6.0
