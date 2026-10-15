@@ -4,7 +4,7 @@ pandas>=2.0
 
 # Execution scripts (08_crownfull_shakedown.py, 15_crownfull_phase_4c_revised.py)
 # Required only if re-running the assay end-to-end against OpenRouter.
-requests>=2.31
+requests>=2.34.2
 
 # Python 3.10+ recommended (matches the original Colab runtime).
 
